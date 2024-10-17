@@ -36,7 +36,7 @@ public class Entity : MonoBehaviour
     /// <summary>
     /// 物理帧
     /// </summary>
-    protected virtual void OnTick()
+    protected virtual void OnTick(float delta)
     {
 
     }
@@ -44,7 +44,7 @@ public class Entity : MonoBehaviour
     /// <summary>
     /// 渲染帧
     /// </summary>
-    protected virtual void OnUpdate()
+    protected virtual void OnUpdate(float delta)
     {
 
     }
@@ -79,12 +79,12 @@ public class Entity : MonoBehaviour
 
     private void FixedUpdate()
     {
-        OnTick();
+        OnTick(Time.fixedDeltaTime);
     }
 
     private void Update()
     {
-        OnUpdate();
+        OnUpdate(Time.deltaTime);
     }
 
     

@@ -21,12 +21,12 @@ public class SampleEntity : Entity
         //销毁
     }
 
-    protected override void OnTick()
+    protected override void OnTick(float delta)
     {
         // 物理帧
     }
 
-    protected override void OnUpdate()
+    protected override void OnUpdate(float delta)
     {
         // 渲染帧
     }
