@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96604b19288b83499cf01efb355f8a7, type: 3}
   m_Name: Autotiles3D_Settings
   m_EditorClassIdentifier: 
-  _useUndoAPI: 1
+  _useUndoAPI: 0
   SuppressTileAmountWarning: 0
