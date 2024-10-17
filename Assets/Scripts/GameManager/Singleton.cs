@@ -4,9 +4,9 @@ using UnityEngine;
 using System;
 
 
-public class Singleton<T>
+public class Singleton<T> where T : new()
 {
-    private static readonly T instance = Activator.CreateInstance<T>();
+    private static readonly T instance = new T();
 
     public static T Instance
     {
