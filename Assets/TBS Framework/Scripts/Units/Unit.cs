@@ -561,7 +561,7 @@ namespace TbsFramework.Units
         /// </summary>
         public virtual void MarkAsSelected()
         {
-            Debug.Log("MarkAsSelected");
+            Debug.Log(Environment.StackTrace);
             if (UnitHighlighterAggregator != null)
             {
                 UnitHighlighterAggregator.MarkAsSelectedFn?.ForEach(o => o.Apply(this, null));
