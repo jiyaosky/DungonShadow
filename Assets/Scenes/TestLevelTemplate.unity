@@ -189,6 +189,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -943291725
   _ruleID: -1
   _tileName: Plank
@@ -264,6 +271,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -554100646
   _ruleID: -1
   _tileName: Fence
@@ -444,6 +458,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -943291725
   _ruleID: -1
   _tileName: Plank
@@ -850,6 +871,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -976,6 +1004,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -984,6 +1019,51 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 1}
   _isBaked: 0
   View: {fileID: 204979715}
+--- !u!1 &210052614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 210052615}
+  - component: {fileID: 210052616}
+  m_Layer: 0
+  m_Name: Player_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &210052615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210052614}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1650533017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &210052616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210052614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41187f0ac7b81114ca3f839ca4a8d91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNumber: 0
 --- !u!1 &210060317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -1333,6 +1420,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -1459,6 +1553,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -1586,6 +1687,39 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &230522701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5016973401563446711, guid: 365b0ba2cc9609844a30ba09d438c115,
+    type: 3}
+  m_PrefabInstance: {fileID: 500240087225757617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &230522704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230522701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2ef4edc989c1e04499a8e995c801eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Is2D: 0
+  PlayersParent: {fileID: 1650533017}
+  ShouldStartGameImmediately: 1
+--- !u!114 &230522707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230522701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd35b3dbf68bf6409d4f8b8b17a662b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &234253620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,6 +1887,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -1984,6 +2125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -2059,6 +2207,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -833635479
   _ruleID: -379419316
   _tileName: Solid
@@ -2134,6 +2289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -1275594940
   _ruleID: -1
   _tileName: Cross
@@ -2260,6 +2422,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -2386,6 +2555,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -2461,6 +2637,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -833635479
   _ruleID: -1
   _tileName: Solid
@@ -2813,6 +2996,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -2939,6 +3129,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -3014,6 +3211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -943291725
   _ruleID: -1
   _tileName: Plank
@@ -3089,6 +3293,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: 47517870
   _ruleID: -1
   _tileName: Ladder
@@ -3215,6 +3426,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -3290,6 +3508,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: 47517870
   _ruleID: 1492984090
   _tileName: Ladder
@@ -4220,6 +4445,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -4400,6 +4632,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: 47517870
   _ruleID: -1
   _tileName: Ladder
@@ -4631,6 +4870,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -5035,6 +5281,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -5266,6 +5519,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -5414,7 +5674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12.97998, y: -9.600006}
+  m_AnchoredPosition: {x: 12.97998, y: -9.599976}
   m_SizeDelta: {x: 160.12, y: 370.1}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &630021703
@@ -5608,6 +5868,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -5734,6 +6001,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -5860,6 +6134,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -5986,6 +6267,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -6217,6 +6505,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -6395,6 +6690,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -6521,6 +6823,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -6870,6 +7179,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -6996,6 +7312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -7171,6 +7494,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -7297,6 +7627,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -7423,6 +7760,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -7549,6 +7893,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -7675,6 +8026,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -7801,6 +8159,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -7927,6 +8292,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -8053,6 +8425,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -8284,6 +8663,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -8410,6 +8796,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -8695,6 +9088,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: 28964398
   _ruleID: -1
   _tileName: Trap
@@ -8821,6 +9221,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -9067,6 +9474,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -9075,6 +9489,65 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 1}
   _isBaked: 0
   View: {fileID: 901741242}
+--- !u!1 &906975233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 906975234}
+  - component: {fileID: 906975236}
+  - component: {fileID: 906975235}
+  m_Layer: 0
+  m_Name: Player_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &906975234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906975233}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1650533017}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906975235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906975233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9363b6da460055408b9987582559276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &906975236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906975233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19415fb85fd484844abcc7db7261b608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNumber: 1
+  DebugMode: 0
 --- !u!1 &922730396
 GameObject:
   m_ObjectHideFlags: 0
@@ -9193,6 +9666,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -9217,7 +9697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &928499767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9377,6 +9857,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -9452,6 +9939,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -833635479
   _ruleID: -379419316
   _tileName: Solid
@@ -9972,6 +10466,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -10306,6 +10807,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -833635479
   _ruleID: -1
   _tileName: Solid
@@ -10432,6 +10940,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -10558,6 +11073,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -10715,6 +11237,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -943291725
   _ruleID: -1
   _tileName: Plank
@@ -10841,6 +11370,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -10967,6 +11503,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -11147,6 +11690,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -554100646
   _ruleID: -1
   _tileName: Fence
@@ -11429,6 +11979,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -11555,6 +12112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -11802,6 +12366,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -11928,6 +12499,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -12159,6 +12737,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -12285,6 +12870,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -12411,6 +13003,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -12538,6 +13137,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -554100646
   _ruleID: -1
   _tileName: Fence
@@ -12714,6 +13320,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -12789,6 +13402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -1275594940
   _ruleID: -1
   _tileName: Cross
@@ -13204,6 +13824,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -13330,6 +13957,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -13405,6 +14039,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -833635479
   _ruleID: -379419316
   _tileName: Solid
@@ -13531,6 +14172,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -13762,6 +14410,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -13770,6 +14425,39 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 1}
   _isBaked: 0
   View: {fileID: 1625570390}
+--- !u!1 &1650533016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1650533017}
+  m_Layer: 0
+  m_Name: Players
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1650533017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650533016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 210052615}
+  - {fileID: 906975234}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650843529
 GameObject:
   m_ObjectHideFlags: 0
@@ -13993,6 +14681,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -14119,6 +14814,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -14245,6 +14947,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -14476,6 +15185,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -14635,6 +15351,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -14710,6 +15433,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -833635479
   _ruleID: -379419316
   _tileName: Solid
@@ -14718,113 +15448,6 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 1}
   _isBaked: 0
   View: {fileID: 308798322}
---- !u!1 &1806690501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1806690505}
-  - component: {fileID: 1806690504}
-  - component: {fileID: 1806690503}
-  - component: {fileID: 1806690502}
-  m_Layer: 0
-  m_Name: Capsule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &1806690502
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806690501}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1806690503
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806690501}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1806690504
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806690501}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1806690505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806690501}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.11, y: 2.95, z: 3.15}
-  m_LocalScale: {x: 0.58457, y: 0.58457, z: 0.58457}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1821713003
 GameObject:
   m_ObjectHideFlags: 0
@@ -15354,6 +15977,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -15429,6 +16059,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: 1398795420
   _ruleID: 1351777877
   _tileName: Stairs
@@ -15612,6 +16249,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -15738,6 +16382,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -15813,6 +16464,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: 1398795420
   _ruleID: -1
   _tileName: Stairs
@@ -15939,6 +16597,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -16014,6 +16679,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -1275594940
   _ruleID: -1
   _tileName: Cross
@@ -16139,6 +16811,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -833635479
   _ruleID: -379419316
   _tileName: Solid
@@ -16265,6 +16944,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -16445,6 +17131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -554100646
   _ruleID: -1
   _tileName: Fence
@@ -16520,6 +17213,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -833635479
   _ruleID: -379419316
   _tileName: Solid
@@ -16751,6 +17451,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -17087,6 +17794,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -17372,6 +18086,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -1275594940
   _ruleID: -1
   _tileName: Cross
@@ -17498,6 +18219,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -17729,6 +18457,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -17855,6 +18590,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -17981,6 +18723,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _offsetCoord: {x: 0, y: 0}
+  MarkAsReachableFn: []
+  MarkAsPathFn: []
+  MarkAsHighlightedFn: []
+  UnMarkFn: []
+  IsTaken: 0
+  MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
   _tileName: RandomTile
@@ -17989,16 +18738,93 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 1}
   _isBaked: 0
   View: {fileID: 2146346963}
+--- !u!1001 &500240087225757617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5048561639265882979, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_Name
+      value: Grid (20x10x20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8126901280523917799, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5016973401563446711, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 230522704}
+    - targetCorrespondingSourceObject: {fileID: 5016973401563446711, guid: 365b0ba2cc9609844a30ba09d438c115,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 230522707}
+  m_SourcePrefab: {fileID: 100100000, guid: 365b0ba2cc9609844a30ba09d438c115, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 130004863}
   - {fileID: 643347788}
-  - {fileID: 1806690505}
   - {fileID: 1876339883}
   - {fileID: 533609524}
+  - {fileID: 1650533017}
   - {fileID: 680487370}
   - {fileID: 228064781}
+  - {fileID: 500240087225757617}
   - {fileID: 928499768}
   - {fileID: 1825229545}
