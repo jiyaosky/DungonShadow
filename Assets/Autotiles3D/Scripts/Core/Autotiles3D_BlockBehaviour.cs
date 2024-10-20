@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using System;
+using TbsFramework.Cells;
+
 #if UNITY_EDITOR
 using UnityEditorInternal;
 #endif
 
 namespace Autotiles3D
 {
-    public class Autotiles3D_BlockBehaviour : MonoBehaviour
+    public class Autotiles3D_BlockBehaviour : Square
     {
 
         [HideInInspector]
@@ -138,6 +140,11 @@ namespace Autotiles3D
 
             this.InternalPosition = node.InternalPosition;
             this.LocalRotation = node.LocalRotation;
+        }
+
+        public override Vector3 GetCellDimensions()
+        {
+            return GetComponent<Renderer>().bounds.size;
         }
     }
 
