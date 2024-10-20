@@ -10,6 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5548579e4c37e8e41a18fc96b9fd397b, type: 3}
-  m_Name: NewTileGroup
+  m_Name: BasicCell
   m_EditorClassIdentifier: 
-  Tiles: []
+  Tiles:
+  - _group: BasicCell
+    _tileID: -143799115
+    Default: {fileID: 5500408310019589977, guid: 6e24605ea74789c44a62944d2a54c2af,
+      type: 3}
+    Randoms: []
+    Random: 0
+    _name: BasicCell
+    Rules: []
