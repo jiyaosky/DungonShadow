@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 5537928091802948621}
   - component: {fileID: 8847580422033205299}
   m_Layer: 0
-  m_Name: HighLighter
+  m_Name: Highlighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
