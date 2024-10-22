@@ -29,10 +29,10 @@ namespace TbsFramework.Units
         // 当前攻击范围
         private int currentAttackRange;
 
-        public RealPlayer()
-        {
-            Initialize();
-        }
+        // public RealPlayer()
+        // {
+        //     Initialize();
+        // }
 
         public override void Initialize()
         {
