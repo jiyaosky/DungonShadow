@@ -15,7 +15,7 @@ namespace TbsFramework.Units
         [SerializeField]
         public float totalActionPoints;
         // 当前行动点数
-        private float currentActionPoints;
+        public float currentActionPoints;
         // 基础攻击力
         public int baseAttackFactor;
         // 当前攻击力
