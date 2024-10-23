@@ -924,6 +924,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thief
       objectReference: {fileID: 0}
+    - target: {fileID: 6886663423954690291, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886663423954690291, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886663423954690291, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8147387025575769662, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
       propertyPath: m_LocalPosition.x
