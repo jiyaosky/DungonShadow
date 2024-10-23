@@ -18,7 +18,7 @@ namespace TbsFramework.Units.Abilities
             }
 
             var enemyUnits = cellGrid.GetEnemyUnits(cellGrid.CurrentPlayer);
-            inRange = enemyUnits.FindAll(u => ((Player)UnitReference).IsUnitAttackable(u, cell));
+            inRange = enemyUnits.FindAll(u => ((RealPlayer)UnitReference).IsUnitAttackable(u, cell));
 
             inRange.ForEach(u => u.MarkAsReachableEnemy());
         }
@@ -27,7 +27,7 @@ namespace TbsFramework.Units.Abilities
         {
             inRange?.ForEach(u => u.UnMark());
             var enemyUnits = cellGrid.GetEnemyUnits(cellGrid.CurrentPlayer);
-            var inRangeLocal = enemyUnits.FindAll(u => ((Player)UnitReference).IsUnitAttackable(u, UnitReference.Cell));
+            var inRangeLocal = enemyUnits.FindAll(u => ((RealPlayer)UnitReference).IsUnitAttackable(u, UnitReference.Cell));
 
             inRangeLocal.ForEach(u => u.MarkAsReachableEnemy());
         }

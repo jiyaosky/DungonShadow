@@ -9,24 +9,35 @@ namespace TbsFramework.Units
         // 基础血量
         [SerializeField]
         public int baseHitPoints;
+
         // 当前血量
         private int currentHitPoints;
         // 总的行动点数上限
         [SerializeField]
         public float totalActionPoints;
+
         // 当前行动点数
+        [SerializeField]
         public float currentActionPoints;
+
         // 基础攻击力
         public int baseAttackFactor;
+
         // 当前攻击力
+        [SerializeField]
         private int currentAttackFactor;
+
         // 基础暗杀力
         public int baseAssassinationPower;
+
         // 当前暗杀力
+        [SerializeField]
         private int currentAssassinationPower;
+
         // 基础攻击范围
         public int baseAttackRange;
         // 当前攻击范围
+        [SerializeField]
         private int currentAttackRange;
 
         // public RealPlayer()
