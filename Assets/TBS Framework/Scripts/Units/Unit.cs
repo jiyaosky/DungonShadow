@@ -386,6 +386,7 @@ namespace TbsFramework.Units
             destinationCell.IsTaken = true;
             destinationCell.CurrentUnits.Add(this);
 
+            // 这里移动有速度就有动画
             if (MovementAnimationSpeed > 0)
             {
                 yield return MovementAnimation(path);
@@ -401,6 +402,10 @@ namespace TbsFramework.Units
                 UnitMoved.Invoke(this, new MovementEventArgs(Cell, destinationCell, path, this));
             }
         }
+        /// <summary>
+        /// Coroutine for moving the unit.
+        /// 要在RealPlayer中重写这个动画效果来支持人物移动
+        /// </summary>
         protected virtual IEnumerator MovementAnimation(IList<Cell> path)
         {
             for (int i = path.Count - 1; i >= 0; i--)

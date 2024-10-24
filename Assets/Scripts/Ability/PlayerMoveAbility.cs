@@ -20,8 +20,6 @@ namespace TbsFramework.Units.Abilities
         public override void Initialize()
         {
             Player = GetComponent<RealPlayer>();
-            Debug.Log("PlayerMoveAbility initialized");
-            Debug.Log(Player.currentActionPoints);
         }
 
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)

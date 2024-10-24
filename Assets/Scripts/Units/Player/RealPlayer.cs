@@ -56,6 +56,16 @@ namespace TbsFramework.Units
             base.Initialize();
         }
 
+        // 重写父类的方法，当回合结束时调用，重置行动点数，以及其他可能需要重置的属性
+        public override void OnTurnEnd()
+        {
+            base.OnTurnEnd();
+            // 这个属性可以理解为最大的可移动点数
+            MovementPoints = totalActionPoints;
+            // 这里可能还会重置一下ActionPoints
+            currentActionPoints = totalActionPoints;
+        }
+
         // 可以被外部调用以减少血量的方法
         public void TakeDamage(int damage)
         {
