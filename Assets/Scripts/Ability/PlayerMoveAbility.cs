@@ -5,6 +5,7 @@ using TbsFramework.Cells;
 using TbsFramework.Grid;
 using TbsFramework.Grid.GridStates;
 using TbsFramework.Units;
+using UnityEngine;
 
 namespace TbsFramework.Units.Abilities
 {
@@ -14,25 +15,35 @@ namespace TbsFramework.Units.Abilities
         private IList<Cell> currentPath;
         public HashSet<Cell> availableDestinations;
 
+        public RealPlayer Player { get; set; }
+
+        public override void Initialize()
+        {
+            Player = GetComponent<RealPlayer>();
+            Debug.Log("PlayerMoveAbility initialized");
+            Debug.Log(Player.currentActionPoints);
+        }
+
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
-            if (UnitReference.ActionPoints > 0 && availableDestinations.Contains(Destination))
+
+            if (Player.currentActionPoints > 0 && availableDestinations.Contains(Destination))
             {
-                var path = UnitReference.FindPath(cellGrid.Cells, Destination);
+                var path = Player.FindPath(cellGrid.Cells, Destination);
                 var totalMovementCost = path.Sum(c => c.MovementCost);
-                var unit = UnitReference as RealPlayer;
+                var unit = Player;
                 if (unit!= null)
                 {
                     unit.ConsumeActionPoints(totalMovementCost);
                 }
-                yield return UnitReference.Move(Destination, path);
+                yield return Player.Move(Destination, path);
             }
             yield return base.Act(cellGrid, isNetworkInvoked);
         }
 
         public override void Display(CellGrid cellGrid)
         {
-            if (UnitReference.ActionPoints > 0)
+            if (Player.currentActionPoints > 0)
             {
                 foreach (var cell in availableDestinations)
                 {
@@ -65,9 +76,9 @@ namespace TbsFramework.Units.Abilities
 
         public override void OnCellSelected(Cell cell, CellGrid cellGrid)
         {
-            if (UnitReference.ActionPoints > 0 && availableDestinations.Contains(cell))
+            if (Player.currentActionPoints > 0 && availableDestinations.Contains(cell))
             {
-                currentPath = UnitReference.FindPath(cellGrid.Cells, cell);
+                currentPath = Player.FindPath(cellGrid.Cells, cell);
                 foreach (var c in currentPath)
                 {
                     c.MarkAsPath();
@@ -77,7 +88,7 @@ namespace TbsFramework.Units.Abilities
 
         public override void OnCellDeselected(Cell cell, CellGrid cellGrid)
         {
-            if (UnitReference.ActionPoints > 0 && availableDestinations.Contains(cell))
+            if (Player.currentActionPoints > 0 && availableDestinations.Contains(cell))
             {
                 if (currentPath == null)
                 {
@@ -92,8 +103,8 @@ namespace TbsFramework.Units.Abilities
 
         public override void OnAbilitySelected(CellGrid cellGrid)
         {
-            UnitReference.CachePaths(cellGrid.Cells);
-            availableDestinations = UnitReference.GetAvailableDestinations(cellGrid.Cells);
+            Player.CachePaths(cellGrid.Cells);
+            availableDestinations = Player.GetAvailableDestinations(cellGrid.Cells);
         }
 
         public override void CleanUp(CellGrid cellGrid)
@@ -106,7 +117,7 @@ namespace TbsFramework.Units.Abilities
 
         public override bool CanPerform(CellGrid cellGrid)
         {
-            return UnitReference.ActionPoints > 0 && UnitReference.GetAvailableDestinations(cellGrid.Cells).Count > 0;
+            return Player.ActionPoints > 0 && Player.GetAvailableDestinations(cellGrid.Cells).Count > 0;
         }
 
         public override IDictionary<string, string> Encapsulate()

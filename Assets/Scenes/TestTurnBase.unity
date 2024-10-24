@@ -919,6 +919,11 @@ PrefabInstance:
       propertyPath: cell
       value: 
       objectReference: {fileID: 2117248224}
+    - target: {fileID: 767868654995508937, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: currentActionPoints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4783229825609753673, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
       propertyPath: m_Name

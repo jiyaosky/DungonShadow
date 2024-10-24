@@ -47,13 +47,13 @@ namespace TbsFramework.Units
 
         public override void Initialize()
         {
-            base.Initialize();
-
             currentHitPoints = baseHitPoints;
             currentActionPoints = totalActionPoints;
             currentAttackFactor = baseAttackFactor;
             currentAssassinationPower = baseAssassinationPower;
             currentAttackRange = baseAttackRange;
+            MovementPoints = currentActionPoints;
+            base.Initialize();
         }
 
         // 可以被外部调用以减少血量的方法

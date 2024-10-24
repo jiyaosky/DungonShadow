@@ -12,7 +12,7 @@ namespace TbsFramework.Units.Abilities
     public abstract class Ability : MonoBehaviour
     {
         public int AbilityID { get; set; }
-        public Unit UnitReference { get; internal set; }
+        public Unit UnitReference { get; set; }
 
         public event EventHandler<(bool isNetworkInvoked, IDictionary<string, string> actionParams)> AbilityUsed;
 
