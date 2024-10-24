@@ -53,6 +53,7 @@ namespace TbsFramework.Units
             currentAssassinationPower = baseAssassinationPower;
             currentAttackRange = baseAttackRange;
             MovementPoints = currentActionPoints;
+            ActionPoints = currentActionPoints;
             base.Initialize();
         }
 

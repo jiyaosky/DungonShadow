@@ -29,16 +29,23 @@ namespace TbsFramework.Units.Abilities
         private readonly int[] attackFactorBonuses = { 5, 10, 15 };
         private readonly int[] attackRanges = { 2, 3, 4 };
 
+        public RealPlayer Player { get; set; }
+
+        public override void Initialize()
+        {
+            Player = GetComponent<RealPlayer>();
+        }
+
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
-            if (CanPerform(cellGrid) && UnitReference.IsUnitAttackable(UnitToAttack, UnitReference.Cell))
+            if (CanPerform(cellGrid) && Player.IsUnitAttackable(UnitToAttack, Player.Cell))
             {
                 // 根据选择的攻击方式调整攻击力和攻击范围
-                int adjustedAttackFactor = ((RealPlayer)UnitReference).GetCurrentAttackFactor() + attackFactorBonuses[(int)SelectedAttackType];
+                int adjustedAttackFactor = Player.GetCurrentAttackFactor() + attackFactorBonuses[(int)SelectedAttackType];
                 int adjustedAttackRange = attackRanges[(int)SelectedAttackType];
 
                 // 执行攻击
-                UnitReference.AttackHandler(UnitToAttack);
+                Player.AttackHandler(UnitToAttack);
                 yield return new WaitForSeconds(0.5f);
             }
             yield return null;
@@ -47,13 +54,13 @@ namespace TbsFramework.Units.Abilities
         public override void Display(CellGrid cellGrid)
         {
             var enemyUnits = cellGrid.GetEnemyUnits(cellGrid.CurrentPlayer);
-            inAttackRange = enemyUnits.Where(u => UnitReference.IsUnitAttackable(u, UnitReference.Cell)).ToList();
+            inAttackRange = enemyUnits.Where(u => Player.IsUnitAttackable(u, Player.Cell)).ToList();
             inAttackRange.ForEach(u => u.MarkAsReachableEnemy());
         }
 
         public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
         {
-            if (UnitReference.IsUnitAttackable(unit, UnitReference.Cell))
+            if (Player.IsUnitAttackable(unit, Player.Cell))
             {
                 UnitToAttack = unit;
                 UnitToAttackID = UnitToAttack.UnitID;
@@ -85,17 +92,17 @@ namespace TbsFramework.Units.Abilities
 
         public override bool CanPerform(CellGrid cellGrid)
         {
-            if (UnitReference.ActionPoints <= 0)
+            if (Player.ActionPoints <= 0)
             {
                 return false;
             }
 
             var enemyUnits = cellGrid.GetEnemyUnits(cellGrid.CurrentPlayer);
-            inAttackRange = enemyUnits.Where(u => UnitReference.IsUnitAttackable(u, UnitReference.Cell)).ToList();
+            inAttackRange = enemyUnits.Where(u => Player.IsUnitAttackable(u, Player.Cell)).ToList();
 
             // 根据选择的攻击方式计算消耗的行动点数并判断是否可执行
             int attackCost = GetAttackCostForSelectedType();
-            return attackCost <= ((RealPlayer)UnitReference).currentActionPoints;
+            return attackCost <= Player.currentActionPoints;
         }
 
         private int GetAttackCostForSelectedType()
