@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using TbsFramework.Example1;
 using TbsFramework.Units.Abilities;
+using System;
+using TbsFramework.Cells;
 
 namespace TbsFramework.Units
 {
@@ -41,6 +43,8 @@ namespace TbsFramework.Units
         [SerializeField]
         private int currentAttackRange;
 
+        public PlayerAttackAbility PlayerAttackAbility { get; set; }
+
         // public RealPlayer()
         // {
         //     Initialize();
@@ -53,24 +57,54 @@ namespace TbsFramework.Units
             currentAttackFactor = baseAttackFactor;
             currentAssassinationPower = baseAssassinationPower;
             currentAttackRange = baseAttackRange;
-            MovementPoints = currentActionPoints;
+            // MovementPoints = currentActionPoints;
             ActionPoints = currentActionPoints;
+            PlayerAttackAbility = GetComponent<PlayerAttackAbility>();
             base.Initialize();
+        }
+
+        public override float MovementPoints
+        {
+            get
+            {
+                return currentActionPoints;
+            }
+            protected set
+            {
+                currentActionPoints = value;
+            }
         }
 
         // 重写父类的DealDamage
         protected override AttackAction DealDamage(Unit unitToAttack)
         {
-            return new AttackAction(currentAttackFactor, 1f);
+            return new AttackAction(currentAttackFactor, PlayerAttackAbility.AbilityCost);
         }
-        
+
+        // 重写父类的方法，当攻击动作完成时调用，减少行动点数
+        protected override void AttackActionPerformed(float actionCost)
+        {
+            currentActionPoints -= actionCost;
+        }
+
+        // 重写父类是否能击中敌人的方法
+        public override bool IsUnitAttackable(Unit other, Cell sourceCell)
+        {
+            return IsUnitAttackable(other, other.Cell, sourceCell);
+        }
+        public override bool IsUnitAttackable(Unit other, Cell otherCell, Cell sourceCell)
+        {
+            return sourceCell.GetDistance(otherCell) <= AttackRange
+                && other.PlayerNumber != PlayerNumber
+                && currentActionPoints >= 1;
+        }
 
         // 重写父类的方法，当回合结束时调用，重置行动点数，以及其他可能需要重置的属性
         public override void OnTurnEnd()
         {
             base.OnTurnEnd();
             // 这个属性可以理解为最大的可移动点数
-            MovementPoints = totalActionPoints;
+            // MovementPoints = totalActionPoints;
             // 这里可能还会重置一下ActionPoints
             currentActionPoints = totalActionPoints;
         }

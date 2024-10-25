@@ -15,19 +15,12 @@ namespace TbsFramework.Units.Abilities
 
         List<Unit> inAttackRange;
 
-        // 定义攻击方式枚举
-        public enum AttackType
-        {
-            Type1,
-            Type2,
-            Type3
-        }
+        // public List<Ability> PlayerAttackAbilities;
+        // public Ability CurrentSelectedAttackAbility;
 
-        public AttackType SelectedAttackType;
+        public int AbilityCost = 1;
 
         // 不同攻击方式的攻击力加成和攻击范围
-        private readonly int[] attackFactorBonuses = { 5, 10, 15 };
-        private readonly int[] attackRanges = { 2, 3, 4 };
 
         public RealPlayer Player { get; set; }
 
@@ -41,8 +34,9 @@ namespace TbsFramework.Units.Abilities
             if (CanPerform(cellGrid) && Player.IsUnitAttackable(UnitToAttack, Player.Cell))
             {
                 // 根据选择的攻击方式调整攻击力和攻击范围
-                int adjustedAttackFactor = Player.GetCurrentAttackFactor() + attackFactorBonuses[(int)SelectedAttackType];
-                int adjustedAttackRange = attackRanges[(int)SelectedAttackType];
+                // TODO:
+                // int adjustedAttackFactor = Player.GetCurrentAttackFactor() + attackFactorBonuses[(int)SelectedAttackType];
+                // int adjustedAttackRange = attackRanges[(int)SelectedAttackType];
 
                 // 执行攻击
                 Player.AttackHandler(UnitToAttack);
@@ -58,6 +52,8 @@ namespace TbsFramework.Units.Abilities
             inAttackRange.ForEach(u => u.MarkAsReachableEnemy());
         }
 
+        // unit 是敌人
+        // 
         public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
         {
             if (Player.IsUnitAttackable(unit, Player.Cell))
@@ -65,7 +61,8 @@ namespace TbsFramework.Units.Abilities
                 UnitToAttack = unit;
                 UnitToAttackID = UnitToAttack.UnitID;
                 // 这里可以添加逻辑让玩家选择攻击方式
-                SelectedAttackType = AttackType.Type1; // 默认选择第一种攻击方式，实际可以通过某种交互来让玩家选择
+                // TODO:
+                // CurrentSelectedAttackAbility = PlayerAttackAbilities[0]; // 默认选择第一种攻击方式，实际可以通过某种交互来让玩家选择
                 StartCoroutine(HumanExecute(cellGrid));
             }
             else if (cellGrid.GetCurrentPlayerUnits().Contains(unit))
@@ -109,27 +106,28 @@ namespace TbsFramework.Units.Abilities
         private int GetAttackCostForSelectedType()
         {
             // 根据选择的攻击方式确定消耗的行动点数，这里只是示例值，可以根据实际需求调整
-            return (int)SelectedAttackType;
+            return AbilityCost;
         }
 
         public override IDictionary<string, string> Encapsulate()
         {
             Dictionary<string, string> actionParameters = new Dictionary<string, string>();
             actionParameters.Add("target_id", UnitToAttackID.ToString());
-            actionParameters.Add("attack_type", ((int)SelectedAttackType).ToString());
+            actionParameters.Add("attack_type", AbilityCost.ToString());
 
             return actionParameters;
         }
 
-        public override IEnumerator Apply(CellGrid cellGrid, IDictionary<string, string> actionParams, bool isNetworkInvoked = false)
-        {
-            var targetID = int.Parse(actionParams["target_id"]);
-            var target = cellGrid.Units.Find(u => u.UnitID == targetID);
+        // public override IEnumerator Apply(CellGrid cellGrid, IDictionary<string, string> actionParams, bool isNetworkInvoked = false)
+        // {
+        //     var targetID = int.Parse(actionParams["target_id"]);
+        //     var target = cellGrid.Units.Find(u => u.UnitID == targetID);
 
-            UnitToAttack = target;
-            UnitToAttackID = targetID;
-            SelectedAttackType = (AttackType)int.Parse(actionParams["attack_type"]);
-            yield return StartCoroutine(RemoteExecute(cellGrid));
-        }
+        //     UnitToAttack = target;
+        //     UnitToAttackID = targetID;
+        //     // TODO:
+        //     SelectedAttackType = (AttackType)int.Parse(actionParams["attack_type"]);
+        //     yield return StartCoroutine(RemoteExecute(cellGrid));
+        // }
     }
 }

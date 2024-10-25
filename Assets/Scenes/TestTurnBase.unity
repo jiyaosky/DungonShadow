@@ -921,6 +921,11 @@ PrefabInstance:
       objectReference: {fileID: 2117248224}
     - target: {fileID: 767868654995508937, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
+      propertyPath: AttackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 767868654995508937, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
       propertyPath: currentActionPoints
       value: 0
       objectReference: {fileID: 0}
@@ -933,6 +938,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Thief
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118788275626238241, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: PlayerAttackAbilities.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6886663423954690291, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}

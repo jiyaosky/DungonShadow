@@ -28,12 +28,12 @@ namespace TbsFramework.Units.Abilities
             if (Player.currentActionPoints > 0 && availableDestinations.Contains(Destination))
             {
                 var path = Player.FindPath(cellGrid.Cells, Destination);
-                var totalMovementCost = path.Sum(c => c.MovementCost);
-                var unit = Player;
-                if (unit!= null)
-                {
-                    unit.ConsumeActionPoints(totalMovementCost);
-                }
+                // var totalMovementCost = path.Sum(c => c.MovementCost);
+                // var unit = Player;
+                // if (unit!= null)
+                // {
+                //     unit.ConsumeActionPoints(totalMovementCost);
+                // }
                 yield return Player.Move(Destination, path);
             }
             yield return base.Act(cellGrid, isNetworkInvoked);
