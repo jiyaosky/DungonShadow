@@ -90,6 +90,7 @@ namespace TbsFramework.Units.Abilities
             });
         }
 
+        // TODO: 这里要改一下判断条件，因为这里的逻辑是判断是否有行动点数，而不是判断是否可以攻击
         public override bool CanPerform(CellGrid cellGrid)
         {
             if (Player.ActionPoints <= 0)

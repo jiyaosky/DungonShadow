@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TbsFramework.Example1;
+using TbsFramework.Units.Abilities;
 
 namespace TbsFramework.Units
 {
@@ -56,6 +57,13 @@ namespace TbsFramework.Units
             ActionPoints = currentActionPoints;
             base.Initialize();
         }
+
+        // 重写父类的DealDamage
+        protected override AttackAction DealDamage(Unit unitToAttack)
+        {
+            return new AttackAction(currentAttackFactor, 1f);
+        }
+        
 
         // 重写父类的方法，当回合结束时调用，重置行动点数，以及其他可能需要重置的属性
         public override void OnTurnEnd()
@@ -117,6 +125,12 @@ namespace TbsFramework.Units
         public int GetCurrentAttackRange()
         {
             return currentAttackRange;
+        }
+
+        // 获取当前的攻击Ability
+        public Ability GetCurrentAttackAbility()
+        {
+            return GetComponent<PlayerAttackAbility>();
         }
     }
 }
