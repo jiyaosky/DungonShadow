@@ -4,6 +4,8 @@ using TbsFramework.Example1;
 using TbsFramework.Units.Abilities;
 using System;
 using TbsFramework.Cells;
+using System.Collections;
+using TbsFramework.Grid;
 
 namespace TbsFramework.Units
 {
@@ -43,6 +45,8 @@ namespace TbsFramework.Units
         [SerializeField]
         private int currentAttackRange;
 
+        private Animator playerAnimator;
+
         public PlayerAttackAbility PlayerAttackAbility { get; set; }
 
         // public RealPlayer()
@@ -52,6 +56,8 @@ namespace TbsFramework.Units
 
         public override void Initialize()
         {
+            playerAnimator = GetComponentInChildren<Animator>();
+
             currentHitPoints = baseHitPoints;
             currentActionPoints = totalActionPoints;
             currentAttackFactor = baseAttackFactor;
@@ -165,6 +171,28 @@ namespace TbsFramework.Units
         public Ability GetCurrentAttackAbility()
         {
             return GetComponent<PlayerAttackAbility>();
+        }
+
+
+        // 动画相关
+        // 重写父类的移动动画效果，添加了动画效果
+        protected override IEnumerator MovementAnimation(IList<Cell> path)
+        {
+            for (int i = path.Count - 1; i >= 0; i--)
+            {
+                var currentCell = path[i];
+                Vector3 destination_pos = FindObjectOfType<CellGrid>().Is2D ? new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, transform.localPosition.z) : new Vector3(currentCell.transform.localPosition.x, currentCell.transform.localPosition.y, currentCell.transform.localPosition.z);
+                while (transform.localPosition != destination_pos)
+                {
+                    transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination_pos, Time.deltaTime * MovementAnimationSpeed);
+                    if (playerAnimator != null)
+                    {
+                        playerAnimator.Play("Base Layer.RunForward", 0, Time.deltaTime * MovementAnimationSpeed);
+                    }
+                    yield return null;
+                }
+            }
+            OnMoveFinished();
         }
     }
 }
