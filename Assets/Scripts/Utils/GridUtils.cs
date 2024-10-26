@@ -11,6 +11,8 @@ public static class GridUtils
     private static readonly float[] RadialPatternRadii;
 
     static GridUtils(){
+        RadialPattern = new Vector2Int[10000];
+        RadialPatternRadii = new float[10000];
         List<Vector2Int> list = new List<Vector2Int>();
         for (int i = -60; i < 60; i++)
         {

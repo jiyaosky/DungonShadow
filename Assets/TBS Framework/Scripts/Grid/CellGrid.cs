@@ -250,6 +250,17 @@ namespace TbsFramework.Grid
             return GetCell((int)position.x, (int)position.y);
         }
 
+        public Vector2Int GetCellIndexInMap(Cell cell)
+        {
+            return new Vector2Int((int)(cell.OffsetCoord.x - MapMinX), (int)(cell.OffsetCoord.y - MapMinY));
+        }
+
+        public Vector2Int GetCellIndexInMap(int x, int y)
+        {
+            return new Vector2Int(x - MapMinX, y - MapMinY);
+        }
+
+
         /// <summary>
         /// Adds unit to the game
         /// </summary>
