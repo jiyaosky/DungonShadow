@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -9,9 +10,15 @@ public class DemoScene : MonoBehaviour
 
     private void Start()
     {
+        // Transform camT = Camera.main.transform;
+        // btn45.onClick.AddListener(() => SetXRotation(camT, 45f));
+        // btn90.onClick.AddListener(() => SetXRotation(camT, 90f));
+    }
+
+    private void Update()
+    {
         Transform camT = Camera.main.transform;
-        btn45.onClick.AddListener(() => SetXRotation(camT, 45f));
-        btn90.onClick.AddListener(() => SetXRotation(camT, 90f));
+        SetXRotation(camT, 45f);    
     }
 
     private void SetXRotation(Transform t, float angle)

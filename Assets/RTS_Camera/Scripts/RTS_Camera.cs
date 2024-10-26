@@ -68,6 +68,7 @@ namespace RTS_Cam
         public Transform targetFollow; //target to follow
         public Vector3 targetOffset;
 
+        private Transform defaultTargetFollow;
         /// <summary>
         /// are we following target
         /// </summary>
@@ -168,6 +169,7 @@ namespace RTS_Cam
         private void Start()
         {
             m_Transform = transform;
+            defaultTargetFollow = targetFollow;
         }
 
         private void Update()
@@ -322,7 +324,7 @@ namespace RTS_Cam
         /// </summary>
         public void ResetTarget()
         {
-            targetFollow = null;
+            targetFollow = defaultTargetFollow;
         }
 
         /// <summary>
