@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 8847580422033205299}
-  Color: {r: 0.92252076, g: 0.9622642, b: 0, a: 0}
-  PropertyName: _Color
+  Color: {r: 0.92252076, g: 0.9622642, b: 0, a: 1}
+  PropertyName: _TintColor
 --- !u!1 &1116701871596779331
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 8847580422033205299}
-  Color: {r: 1, g: 0, b: 0.14075136, a: 0}
-  PropertyName: _Color
+  Color: {r: 1, g: 0, b: 0.14075136, a: 1}
+  PropertyName: _TintColor
 --- !u!1 &1225626676757972930
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 8847580422033205299}
-  Color: {r: 1, g: 0, b: 0, a: 0}
-  PropertyName: _Color
+  Color: {r: 1, g: 0, b: 0, a: 1}
+  PropertyName: _TintColor
 --- !u!1 &2824356283033540913
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 8847580422033205299}
-  Color: {r: 0.5136409, g: 1, b: 0, a: 0}
-  PropertyName: _Color
+  Color: {r: 0.5136409, g: 1, b: 0, a: 1}
+  PropertyName: _TintColor
 --- !u!1 &4885230225698120602
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,13 +354,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5779130504037669438}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2387239543890505773}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &5537928091802948621
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5779130504037669438}
-  m_Mesh: {fileID: 4300000, guid: 0cff77bb9ac0b2f4d89c911fdef0c4b6, type: 3}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8847580422033205299
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0cff77bb9ac0b2f4d89c911fdef0c4b6, type: 3}
+  - {fileID: 2100000, guid: d520bff88911e79438225f760c363295, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -456,8 +456,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 8847580422033205299}
-  Color: {r: 1, g: 0, b: 0.9761739, a: 0}
-  PropertyName: _Color
+  Color: {r: 1, g: 0, b: 0.9761739, a: 1}
+  PropertyName: _TintColor
 --- !u!1 &7124248535682504662
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,8 +503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 8847580422033205299}
-  Color: {r: 1, g: 1, b: 1, a: 0}
-  PropertyName: _Color
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  PropertyName: _TintColor
 --- !u!1 &7628080524625670616
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,8 +636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 8847580422033205299}
-  Color: {r: 1, g: 0.3920043, b: 0, a: 0}
-  PropertyName: _Color
+  Color: {r: 1, g: 0.3920043, b: 0, a: 1}
+  PropertyName: _TintColor
 --- !u!1 &8765245579764904360
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +889,7 @@ MonoBehaviour:
   MovementAnimationSpeed: 7
   actionPoints: 1
   PlayerNumber: 0
+  currentForward: {x: 0, y: 0, z: 0}
   UnitName: Player
 --- !u!114 &2286067666559853030
 MonoBehaviour:
