@@ -94,6 +94,12 @@ namespace TbsFramework.Grid
         public List<Cell> Cells { get; private set; }
         public List<Unit> Units { get; private set; }
         private Func<List<Unit>> PlayableUnits = () => new List<Unit>();
+        public Cell[] Map { get; private set; }
+        public int Width { get; private set; }
+        public int Height { get; private set; }
+        public int MapMinX { get; private set; }
+        public int MapMinY { get; private set; }
+
 
         private void Start()
         {
@@ -127,6 +133,12 @@ namespace TbsFramework.Grid
             }
 
             Cells = new List<Cell>();
+            int minX = int.MaxValue;
+            int minY = int.MaxValue;
+
+            int maxX = int.MinValue;
+            int maxY = int.MinValue;
+
             for (int i = 0; i < transform.childCount; i++)
             {
                 var cell = transform.GetChild(i).gameObject.GetComponent<Cell>();
@@ -136,6 +148,11 @@ namespace TbsFramework.Grid
                     {
                         Cells.Add(cell);
                         cell.InitializeInternal(this);
+                        minX = Math.Min(minX, (int)cell.OffsetCoord.x);
+                        minY = Math.Min(minY, (int)cell.OffsetCoord.y);
+
+                        maxX = Math.Max(maxX, (int)cell.OffsetCoord.x);
+                        maxY = Math.Max(maxY, (int)cell.OffsetCoord.y);
                     }
                 }
                 else
@@ -144,12 +161,21 @@ namespace TbsFramework.Grid
                 }
             }
 
+            Width = maxX - minX + 1;
+            Height = maxY - minY + 1;
+            MapMinX = minX;
+            MapMinY = minY;
+
+            Map = new Cell[Width * Height];
+
             foreach (var cell in Cells)
             {
                 cell.CellClicked += OnCellClicked;
                 cell.CellHighlighted += OnCellHighlighted;
                 cell.CellDehighlighted += OnCellDehighlighted;
                 cell.GetComponent<Cell>().GetNeighbours(Cells);
+
+                Map[(int)(cell.OffsetCoord.x - MapMinX) + Width * (int)(cell.OffsetCoord.y - MapMinY)] = cell;
             }
 
             Units = new List<Unit>();
@@ -207,6 +233,21 @@ namespace TbsFramework.Grid
             e.Defender.UnitDestroyed -= OnUnitDestroyed;
             e.Defender.UnitMoved -= OnUnitMoved;
             CheckGameFinished();
+        }
+
+        public Cell GetCell(int x, int y)
+        {
+            if (x < MapMinX || x >= Width + MapMinX || y < MapMinY || y >= Height + MapMinY)
+            {
+                return null;
+            }
+
+            return Map[x - MapMinX + Width * (y - MapMinY)];
+        }
+
+        public Cell GetCell(Vector2 position)
+        {
+            return GetCell((int)position.x, (int)position.y);
         }
 
         /// <summary>
