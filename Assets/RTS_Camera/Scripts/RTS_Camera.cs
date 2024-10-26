@@ -34,10 +34,13 @@ namespace RTS_Cam
         public float keyboardMovementSpeed = 5f; //speed with keyboard movement
         public float screenEdgeMovementSpeed = 3f; //spee with screen edge movement
         public float followingSpeed = 5f; //speed when following a target
-        public float rotationSped = 3f;
         public float panningSpeed = 10f;
         public float mouseRotationSpeed = 10f;
 
+        private Quaternion targetRotation; // 目标旋转
+        private bool isRotating = false; // 标志位，表示是否正在旋转
+        public float rotationSpeed = 2f; // 旋转速度（可以根据需要调整）
+        
         #endregion
 
         #region Height
@@ -144,23 +147,7 @@ namespace RTS_Cam
                     return 0;
             }
         }
-
-        private int RotationDirection
-        {
-            get
-            {
-                bool rotateRight = Input.GetKey(rotateRightKey);
-                bool rotateLeft = Input.GetKey(rotateLeftKey);
-                if(rotateLeft && rotateRight)
-                    return 0;
-                else if(rotateLeft && !rotateRight)
-                    return -1;
-                else if(!rotateLeft && rotateRight)
-                    return 1;
-                else 
-                    return 0;
-            }
-        }
+        
 
         #endregion
 
@@ -276,16 +263,84 @@ namespace RTS_Cam
                 new Vector3(m_Transform.position.x, targetHeight + difference, m_Transform.position.z), Time.deltaTime * heightDampening);
         }
 
+
         /// <summary>
-        /// rotate camera
+        /// Rotate camera around followTarget by 90 degrees on key press
+        /// and keep the camera in a fixed position above and behind the target
         /// </summary>
         private void Rotation()
         {
-            if(useKeyboardRotation)
-                transform.Rotate(Vector3.up, RotationDirection * Time.deltaTime * rotationSped, Space.World);
+            if (targetFollow != null && useKeyboardRotation && !isRotating)
+            {
+                if (Input.GetKeyDown(rotateLeftKey))
+                {
+                    // Start rotating left (counterclockwise by 90 degrees)
+                    StartRotation(90f);
+                }
+                else if (Input.GetKeyDown(rotateRightKey))
+                {
+                    // Start rotating right (clockwise by 90 degrees)
+                    StartRotation(-90f);
+                }
+            }
 
-            if (useMouseRotation && Input.GetKey(mouseRotationKey))
-                m_Transform.Rotate(Vector3.up, -MouseAxis.x * Time.deltaTime * mouseRotationSpeed, Space.World);
+            // Ensure smooth rotation and update the camera position during the process
+            if (isRotating)
+            {
+                SmoothRotate();
+            }
+
+            // Ensure the camera stays in the correct position relative to the target
+            UpdateCameraPosition();
+        }
+
+        /// <summary>
+        /// Start rotating the camera around the target by a specified angle
+        /// </summary>
+        private void StartRotation(float angle)
+        {
+            // Set the target rotation by rotating around the Y axis
+            targetRotation = Quaternion.Euler(0f, angle, 0f) * m_Transform.rotation;
+            isRotating = true;
+        }
+
+        /// <summary>
+        /// Smoothly rotate the camera towards the target rotation
+        /// </summary>
+        private void SmoothRotate()
+        {
+            // Interpolate between the current rotation and the target rotation
+            m_Transform.rotation = Quaternion.Slerp(m_Transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+
+            // Stop rotating if we are close enough to the target rotation
+            if (Quaternion.Angle(m_Transform.rotation, targetRotation) < 0.1f)
+            {
+                m_Transform.rotation = targetRotation; // Snap to the target rotation
+                isRotating = false; // End the rotation
+            }
+        }
+        private void UpdateCameraPosition()
+        {
+            if (targetFollow != null)
+            {
+                // Define the offset (position the camera behind and above the target)
+                float heightOffset = 10f; // Height above the target
+                float distanceBehind = 10f; // Distance behind the target
+                float cameraAngle = 45f; // The desired camera angle in degrees
+
+                // Calculate the direction vector from the target, based on the camera's current rotation
+                Vector3 directionToCamera = Quaternion.Euler(cameraAngle, m_Transform.eulerAngles.y, 0) * Vector3.back;
+
+                // Calculate the new camera position
+                Vector3 targetPosition = targetFollow.position;
+                Vector3 cameraPosition = targetPosition + directionToCamera * distanceBehind + Vector3.up * heightOffset;
+
+                // Set the camera's position
+                m_Transform.position = cameraPosition;
+
+                // Ensure the camera is always looking at the target
+                m_Transform.LookAt(targetPosition);
+            }
         }
 
         /// <summary>
@@ -293,8 +348,8 @@ namespace RTS_Cam
         /// </summary>
         private void FollowTarget()
         {
-            Vector3 targetPos = new Vector3(targetFollow.position.x, m_Transform.position.y, targetFollow.position.z) + targetOffset;
-            m_Transform.position = Vector3.MoveTowards(m_Transform.position, targetPos, Time.deltaTime * followingSpeed);
+            // Vector3 targetPos = new Vector3(targetFollow.position.x, m_Transform.position.y, targetFollow.position.z) + targetOffset;
+            // m_Transform.position = Vector3.MoveTowards(m_Transform.position, targetPos, Time.deltaTime * followingSpeed);
         }
 
         /// <summary>

@@ -10,19 +10,17 @@ public class DemoScene : MonoBehaviour
 
     private void Start()
     {
-        // Transform camT = Camera.main.transform;
-        // btn45.onClick.AddListener(() => SetXRotation(camT, 45f));
-        // btn90.onClick.AddListener(() => SetXRotation(camT, 90f));
-    }
-
-    private void Update()
-    {
         Transform camT = Camera.main.transform;
         SetXRotation(camT, 45f);    
+        SetZRotation(camT, 45f);    
     }
 
     private void SetXRotation(Transform t, float angle)
     {
         t.localEulerAngles = new Vector3(angle, t.localEulerAngles.y, t.localEulerAngles.z);
+    }
+    private void SetZRotation(Transform t, float angle)
+    {
+        t.localEulerAngles = new Vector3(t.localEulerAngles.x, angle, t.localEulerAngles.z);
     }
 }
