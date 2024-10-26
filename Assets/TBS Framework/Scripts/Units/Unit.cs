@@ -178,8 +178,10 @@ namespace TbsFramework.Units
             TotalHitPoints = HitPoints;
             TotalMovementPoints = MovementPoints;
             TotalActionPoints = ActionPoints;
+            // 设置一下朝向
+            currentForward = transform.forward;
 
-            foreach(var ability in GetComponentsInChildren<Ability>())
+            foreach (var ability in GetComponentsInChildren<Ability>())
             {
                 RegisterAbility(ability);
                 ability.Initialize();
@@ -406,8 +408,10 @@ namespace TbsFramework.Units
         /// Coroutine for moving the unit.
         /// 要在RealPlayer中重写这个动画效果来支持人物移动
         /// </summary>
+        public Vector3 currentForward;
         protected virtual IEnumerator MovementAnimation(IList<Cell> path)
         {
+            Animator playerAnimator = GetComponentInChildren<Animator>();
             for (int i = path.Count - 1; i >= 0; i--)
             {
                 var currentCell = path[i];
@@ -415,11 +419,28 @@ namespace TbsFramework.Units
                 while (transform.localPosition != destination_pos)
                 {
                     transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination_pos, Time.deltaTime * MovementAnimationSpeed);
+                    // 角色转向！
+                    ChangeFoward(transform.position, destination_pos);
+                    if (playerAnimator != null)
+                    {
+                        playerAnimator.Play("Base Layer.RunForward", 0, Time.deltaTime * MovementAnimationSpeed);
+                    }
                     yield return null;
                 }
             }
 
             OnMoveFinished();
+        }
+
+        protected virtual void ChangeFoward(Vector3 current, Vector3 target)
+        {
+            float turnSpeed = 1000f;
+            Vector3 direction = target - current;
+            if (direction != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
+            }
         }
         /// <summary>
         /// Method called after movement animation has finished.
@@ -453,7 +474,7 @@ namespace TbsFramework.Units
             var availableDestinations = new HashSet<Cell>();
             foreach (var cell in cells.Where(c => IsCellMovableTo(c)))
             {
-                if(cachedPaths.TryGetValue(cell, out var path))
+                if (cachedPaths.TryGetValue(cell, out var path))
                 {
                     var pathCost = path.Sum(c => c.MovementCost);
                     if (pathCost <= MovementPoints)
@@ -493,7 +514,7 @@ namespace TbsFramework.Units
                     ret[cell] = new Dictionary<Cell, float>();
                     foreach (var neighbour in cell.GetNeighbours(cells))
                     {
-                        if(IsCellTraversable(neighbour) || IsCellMovableTo(neighbour))
+                        if (IsCellTraversable(neighbour) || IsCellMovableTo(neighbour))
                         {
                             ret[cell][neighbour] = neighbour.MovementCost;
                         }
@@ -597,14 +618,14 @@ namespace TbsFramework.Units
         [ExecuteInEditMode]
         public void OnDestroy()
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             if (Cell != null && !Application.isPlaying)
             {
                 Cell.IsTaken = false;
                 UnityEditor.EditorUtility.SetDirty(Cell);
                 UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
             }
-            #endif
+#endif
         }
 
         private void Reset()
