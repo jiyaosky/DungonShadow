@@ -328,13 +328,14 @@ MonoBehaviour:
   Obstructable: 1
   cell: {fileID: 0}
   HitPoints: 0
-  AttackRange: 0
+  AttackRange: 1
   AttackFactor: 0
   DefenceFactor: 0
   movementPoints: 0
-  MovementAnimationSpeed: 0
+  MovementAnimationSpeed: 7
   actionPoints: 0
   PlayerNumber: 0
+  currentForward: {x: 0, y: 0, z: 0}
   baseHitPoints: 100
   totalActionPoints: 20
   currentActionPoints: 0
