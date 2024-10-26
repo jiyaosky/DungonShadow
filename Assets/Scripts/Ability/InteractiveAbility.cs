@@ -10,20 +10,16 @@ namespace TbsFramework.Units.Abilities
     public class InteractiveAbility : Ability
     {
         bool isInteracted = false;
-        private Cell currentCell;
         public int Range = 1;
         private void Start()
         {
-            currentCell = GetComponent<Cell>();
             isInteracted = false;
         }
-        
-        
 
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
             var myUnits = cellGrid.GetCurrentPlayerUnits();
-            var unitsInRange = myUnits.Where(u => currentCell.GetDistance(UnitReference.Cell) <= Range);
+            var unitsInRange = myUnits.Where(u => u.Cell.GetDistance(UnitReference.Cell) <= Range);
 
             foreach (var unit in unitsInRange)
             {
@@ -44,6 +40,11 @@ namespace TbsFramework.Units.Abilities
                 // TODO:当玩家点击这个单元格的时候与其交互吧
                 Debug.Log("Interacted");
             }
+        }
+
+        public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
+        {
+            InterPlay();
         }
     }
 }
