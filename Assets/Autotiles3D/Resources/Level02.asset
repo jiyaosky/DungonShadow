@@ -15,7 +15,8 @@ MonoBehaviour:
   Tiles:
   - _group: Level02
     _tileID: 1190702652
-    Default: {fileID: 0}
+    Default: {fileID: 8615981822231433126, guid: dfac24671d237164fac22117dba26422,
+      type: 3}
     Randoms: []
     Random: 0
     _name: Ground
