@@ -6,6 +6,7 @@ using System;
 using TbsFramework.Cells;
 using System.Collections;
 using TbsFramework.Grid;
+using UnityEngine.UI;
 
 namespace TbsFramework.Units
 {
@@ -47,13 +48,59 @@ namespace TbsFramework.Units
 
         private Animator playerAnimator;
 
+        // 攻击能力
         public PlayerAttackAbility PlayerAttackAbility { get; set; }
+        // 交互能力
+        public InteractionAbility InteractionAbility { get; set; }
+        // 移动能力
+        public PlayerMoveAbility MovementAbility { get; set; }
 
-        // public RealPlayer()
-        // {
-        //     Initialize();
-        // }
+        // 选择的技能
+        public Button buttonAttackAbility; 
+        public Button buttonInteractionAbility;
+        public Button buttonScoutAbility;
+        public Button buttonAbility1;
+        public Button buttonAbility2;
+        public Button buttonAbility3;
+        public Ability SelectedAbility;
+        // 设置选择的技能
+        public void SetSelectedAbility(Ability ability)
+        {
+            SelectedAbility = ability;
+        }
 
+        public Ability SelectAbility()
+        {
+            if (SelectedAbility == null)
+            {
+                SelectedAbility = PlayerAttackAbility;
+            }
+
+            return SelectedAbility;
+        }
+
+
+
+        /// <summary>
+        /// Method is called when unit is selected.
+        /// 当单位被选择时调用的方法。
+        /// </summary>
+        public override void OnUnitSelected()
+        {
+
+            base.OnUnitSelected();
+        }
+        /// <summary>
+        /// Method is called when unit is deselected. 
+        /// 当单位被取消选择时调用的方法。
+        /// </summary>
+        public override void OnUnitDeselected()
+        {
+            SelectedAbility = null;
+            base.OnUnitDeselected();
+        }
+
+        // 初始化方法
         public override void Initialize()
         {
             playerAnimator = GetComponentInChildren<Animator>();
@@ -65,7 +112,16 @@ namespace TbsFramework.Units
             currentAttackRange = baseAttackRange;
             // MovementPoints = currentActionPoints;
             ActionPoints = currentActionPoints;
+            // 注册一下相关能力
             PlayerAttackAbility = GetComponent<PlayerAttackAbility>();
+            InteractionAbility = GetComponent<InteractionAbility>();
+            
+            // 初始化技能按钮
+            buttonAttackAbility.onClick.AddListener(() => SetSelectedAbility(PlayerAttackAbility));
+            buttonInteractionAbility.onClick.AddListener(() => SetSelectedAbility(InteractionAbility));
+            // buttonScoutAbility.onClick.AddListener(() => SetSelectedAbility(xxx));
+
+            
             base.Initialize();
         }
 
@@ -80,6 +136,7 @@ namespace TbsFramework.Units
                 currentActionPoints = value;
             }
         }
+
 
         // 重写父类的DealDamage
         protected override AttackAction DealDamage(Unit unitToAttack)

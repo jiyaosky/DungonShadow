@@ -15,7 +15,7 @@ public class CordSetup : MonoBehaviour
             Cell cell = child.GetComponent<Cell>();
             if(cell != null)
             {
-                cell.OffsetCoord = new Vector2(cell.transform.position.x, cell.transform.position.z);
+                cell.OffsetCoord = new Vector2(Mathf.RoundToInt(cell.transform.position.x), Mathf.RoundToInt(cell.transform.position.z));
             }
         }
     }
