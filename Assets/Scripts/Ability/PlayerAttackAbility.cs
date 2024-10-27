@@ -5,11 +5,13 @@ using TbsFramework.Cells;
 using TbsFramework.Grid;
 using TbsFramework.Grid.GridStates;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TbsFramework.Units.Abilities
 {
     public class PlayerAttackAbility : Ability
     {
+        
         public Unit UnitToAttack { get; set; }
         public int UnitToAttackID { get; set; }
 
@@ -18,7 +20,7 @@ namespace TbsFramework.Units.Abilities
         // public List<Ability> PlayerAttackAbilities;
         // public Ability CurrentSelectedAttackAbility;
 
-        public int AbilityCost = 1;
+        public int AbilityCost = 2;
 
         // 不同攻击方式的攻击力加成和攻击范围
 
@@ -44,12 +46,22 @@ namespace TbsFramework.Units.Abilities
             }
             yield return null;
         }
-
+        // 需要选择Attack攻击
+        public Button buttonAttackAbility; 
+        public Button cancelButton;
         public override void Display(CellGrid cellGrid)
         {
             var enemyUnits = cellGrid.GetEnemyUnits(cellGrid.CurrentPlayer);
             inAttackRange = enemyUnits.Where(u => Player.IsUnitAttackable(u, Player.Cell)).ToList();
             inAttackRange.ForEach(u => u.MarkAsReachableEnemy());
+            buttonAttackAbility.onClick.AddListener(() =>
+            {
+                if (Player.currentActionPoints >= AbilityCost)
+                {
+                    cancelButton.gameObject.SetActive(true);
+                    cellGrid.cellGridState = new CellGridStateAbilitySelected(cellGrid, UnitReference, new List<Ability>() { this });
+                }
+            });
         }
 
         // unit 是敌人

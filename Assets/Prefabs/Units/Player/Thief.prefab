@@ -281,6 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8147387025575769662}
   - component: {fileID: 767868654995508937}
+  - component: {fileID: 3016754959970862118}
   - component: {fileID: 6118788275626238241}
   - component: {fileID: 5928907015905916227}
   - component: {fileID: 3162735327542786226}
@@ -288,7 +289,7 @@ GameObject:
   - component: {fileID: 4401581563704049578}
   m_Layer: 0
   m_Name: Thief
-  m_TagString: Untagged
+  m_TagString: target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -339,12 +340,32 @@ MonoBehaviour:
   baseHitPoints: 100
   totalActionPoints: 20
   currentActionPoints: 0
-  baseAttackFactor: 1
+  baseAttackFactor: 30
   currentAttackFactor: 0
   baseAssassinationPower: 1
   currentAssassinationPower: 0
   baseAttackRange: 1
   currentAttackRange: 0
+  buttonAttackAbility: {fileID: 0}
+  buttonInteractionAbility: {fileID: 0}
+  buttonScoutAbility: {fileID: 0}
+  buttonAbility1: {fileID: 0}
+  buttonAbility2: {fileID: 0}
+  buttonAbility3: {fileID: 0}
+  SelectedAbility: {fileID: 0}
+--- !u!114 &3016754959970862118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783229825609753673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2848bdef227252a4d8ab2d5e7158faf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActivationButton: {fileID: 0}
 --- !u!114 &6118788275626238241
 MonoBehaviour:
   m_ObjectHideFlags: 0
