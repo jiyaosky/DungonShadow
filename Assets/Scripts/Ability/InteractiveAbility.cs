@@ -77,6 +77,9 @@ namespace TbsFramework.Units.Abilities
                     case "Door":
                         DoDoor();
                         break;
+                    case "NPC":
+                        DoNPC();
+                        break;
                     default:
                         Debug.Log("Invalid action number");
                         break;
@@ -115,6 +118,12 @@ namespace TbsFramework.Units.Abilities
                 closeDoor.gameObject.SetActive(true);
                 currentCell.IsTaken = true;
             }
+        }
+
+        public void DoNPC()
+        {
+            // 可以先做个动画
+            // 然后弹出商店界面
         }
     }
 }

@@ -12,6 +12,12 @@ namespace TbsFramework.Gui
         public CellGrid CellGrid;
         public Button EndTurnButton;
 
+
+
+        public int currentRound = 0;
+
+        public int totalRound = 10;
+
         void Awake()
         {
             CellGrid.LevelLoading += OnLevelLoading;
