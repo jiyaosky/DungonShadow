@@ -62,16 +62,6 @@ namespace TbsFramework.Units
         {
             SelectedAbility = ability;
         }
-
-        public Ability SelectAbility()
-        {
-            if (SelectedAbility == null)
-            {
-                SelectedAbility = PlayerAttackAbility;
-            }
-
-            return SelectedAbility;
-        }
         
         // <summary>
         // 重写OnMouseDown方法，这里大概梳理一下逻辑：
@@ -98,6 +88,7 @@ namespace TbsFramework.Units
         /// </summary>
         public override void OnUnitSelected()
         {
+            SelectedAbility = MovementAbility;
             base.OnUnitSelected();
         }
         /// <summary>
