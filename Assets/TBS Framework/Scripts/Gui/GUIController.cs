@@ -12,6 +12,9 @@ namespace TbsFramework.Gui
         public CellGrid CellGrid;
         public Button EndTurnButton;
 
+        public Text currentRoundText;
+
+        public Text totalRoundText;
 
 
         public int currentRound = 0;
@@ -25,6 +28,7 @@ namespace TbsFramework.Gui
             CellGrid.GameEnded += OnGameEnded;
             CellGrid.TurnEnded += OnTurnEnded;
             CellGrid.GameStarted += OnGameStarted;
+            totalRoundText.text = totalRound.ToString();
         }
 
         private void OnGameStarted(object sender, EventArgs e)
@@ -40,6 +44,8 @@ namespace TbsFramework.Gui
             if (EndTurnButton != null)
             {
                 EndTurnButton.interactable = CellGrid.CurrentPlayer is HumanPlayer;
+                currentRound++;
+                currentRoundText.text = currentRound.ToString();
             }
         }
 
@@ -75,5 +81,7 @@ namespace TbsFramework.Gui
         {
             CellGrid.EndTurn();
         }
+
+        
     }
 }
