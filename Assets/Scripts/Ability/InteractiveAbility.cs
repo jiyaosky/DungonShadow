@@ -3,48 +3,118 @@ using System.Collections.Generic;
 using System.Linq;
 using TbsFramework.Cells;
 using TbsFramework.Grid;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TbsFramework.Units.Abilities
 {
     public class InteractiveAbility : Ability
     {
+        public string AbilityName = "";
+        // 是否为单次交互
+        bool isOnceInteract = false;
+        // 是否已经交互
         bool isInteracted = false;
+        // 交互范围
         public int Range = 1;
+
         private void Start()
         {
             isInteracted = false;
         }
 
-        public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
+        // 在当前Chest Unit的Range范围内搜索是否有包含Component<RealPlayer>();的Unit
+        public bool isPlayerInRange(CellGrid cellGrid)
         {
-            var myUnits = cellGrid.GetCurrentPlayerUnits();
-            var unitsInRange = myUnits.Where(u => u.Cell.GetDistance(UnitReference.Cell) <= Range);
-
-            foreach (var unit in unitsInRange)
+            var currentCell = UnitReference.Cell;
+            // 获取当前currentCell的周围List<Cell>
+            List<Cell> cellsInRange = FindCellsInRange(cellGrid, currentCell, Range);
+            // 获取当前RealPlayer的Unit
+            var realPlayer = cellGrid.Units.Find(unit => unit.GetComponent<RealPlayer>() != null);
+            // realPlayer的Cell
+            var realPlayerCell = realPlayer.Cell;
+            // 如果realPlayer的Cell在cellsInRange中，则返回true
+            if (cellsInRange.Contains(realPlayerCell))
             {
-                // TODO:当玩家进入这个范围的时候可以做些什么（例如提示 or UI显示）
-                Debug.Log("Unit in range");
-                // 先设置为可交互状态吧
-                isInteracted = true;
+                Debug.Log("Player is in range");
+                return true;
             }
-
-            yield return null;
+            Debug.Log("Player is not in range");
+            return false;
         }
 
-
-        public virtual void InterPlay()
+        public List<Cell> FindCellsInRange(CellGrid cellgrid, Cell centerCell, float range)
         {
-            if (isInteracted)
+            var centerCellOffsetCoord = centerCell.OffsetCoord;
+            List<Cell> cellsInRange = new List<Cell>();
+
+            for (int x = (int)(centerCellOffsetCoord.x - range); x <= centerCellOffsetCoord.x + range; x++)
+            {
+                for (int y = (int)(centerCellOffsetCoord.y - range); y <= centerCellOffsetCoord.y + range; y++)
+                {
+                    Cell cell = cellgrid.GetCell(x, y);
+                    if (centerCell.GetDistance(cell) <= range)
+                    {
+                        cellsInRange.Add(cell);
+                    }
+                }
+            }
+
+            return cellsInRange;
+        }
+
+        public void InterPlay(string abilityName)
+        {
+            if (!isInteracted)
             {
                 // TODO:当玩家点击这个单元格的时候与其交互吧
-                Debug.Log("Interacted");
+                switch (abilityName)
+                {
+                    case "Chest":
+                        // Debug.Log("Chest");
+                        DoChest();
+                        break;
+                    case "Door":
+                        DoDoor();
+                        break;
+                    default:
+                        Debug.Log("Invalid action number");
+                        break;
+                }
             }
         }
 
-        public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
+        public void DoChest()
         {
-            InterPlay();
+            // GameObject currentGameObject = this.gameObject;
+            var openChest = transform.Find("Chest3A");
+            var closeChest = transform.Find("Chest3B");
+            openChest.gameObject.SetActive(true);
+            closeChest.gameObject.SetActive(false);
+
+            isInteracted = true;
+        }
+        
+        public void DoDoor()
+        {
+            // GameObject currentGameObject = this.gameObject;
+            var openDoor = transform.Find("DoorOpen");
+            var closeDoor = transform.Find("DoorClose");
+
+            var currentCell = UnitReference.Cell;
+            bool taken = currentCell.IsTaken; 
+            if (taken)
+            {
+                openDoor.gameObject.SetActive(true);
+                closeDoor.gameObject.SetActive(false);
+                currentCell.IsTaken = false;
+            }
+            else
+            {
+                openDoor.gameObject.SetActive(false);
+                closeDoor.gameObject.SetActive(true);
+                currentCell.IsTaken = true;
+            }
         }
     }
 }

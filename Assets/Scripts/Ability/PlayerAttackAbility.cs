@@ -56,6 +56,12 @@ namespace TbsFramework.Units.Abilities
         // 
         public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
         {
+            // 检测当前Unit如果是可交互的则返回空
+            if (unit.GetComponent<InteractiveAbility>() != null)
+            {
+                // Debug.Log("Unit is interactive");
+                return;
+            }
             if (Player.IsUnitAttackable(unit, Player.Cell))
             {
                 UnitToAttack = unit;

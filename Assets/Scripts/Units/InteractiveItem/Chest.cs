@@ -5,5 +5,6 @@ using UnityEngine;
 
 public class Chest : Unit
 {
+    bool invincible = true;
     
 }
