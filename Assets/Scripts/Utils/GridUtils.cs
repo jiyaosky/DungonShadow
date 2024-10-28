@@ -10,6 +10,9 @@ public static class GridUtils
     public static readonly Vector2Int[] RadialPattern;
     private static readonly float[] RadialPatternRadii;
 
+    /// <summary>
+    /// 构建距离场
+    /// </summary>
     static GridUtils(){
         RadialPattern = new Vector2Int[10000];
         RadialPatternRadii = new float[10000];
@@ -39,6 +42,15 @@ public static class GridUtils
         }
     }
 
+    /// <summary>
+    /// 获取视野内所有格子
+    /// </summary>
+    /// <param name="grids">地图</param>
+    /// <param name="output">结果</param>
+    /// <param name="position">中心位置
+    /// <param name="range">半径</param>
+    /// <param name="direcion">朝向(y轴旋转)
+    /// <param name="angle">视野角度</param>
     public static void GetCellsInsight(this CellGrid grids, List<Cell> output, Vector2 position, float range,float direcion, float angle)
     {
         output.Clear();
@@ -66,12 +78,24 @@ public static class GridUtils
         }
     }
 
+    /// <summary>
+    /// 获取角度对应的方向
+    /// </summary>
+    /// <param name="angleY">角度</param>
+    /// <returns></returns>
     public static Vector2 GetDirectionByAngle(float angleY)
     {
         float angle = angleY * Mathf.Deg2Rad;
         return new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
     }
 
+    /// <summary>
+    /// 获取两点之间的所有格子
+    /// </summary>
+    /// <param name="grids">地图</param>
+    /// <param name="output">结果</param>
+    /// <param name="start">起点</param>
+    /// <param name="end">终点</param>
     public static void GetCellsBetween(this CellGrid grids, List<Cell> output, Vector2 start, Vector2 end)
     {
         List<Vector2Int> listPos = new List<Vector2Int>();
@@ -88,6 +112,15 @@ public static class GridUtils
             }
         }
     }
+
+    /// <summary>
+    /// 获取两点之间的所有格子坐标
+    /// </summary>
+    /// <param name="output"></param>
+    /// <param name="startX"></param>
+    /// <param name="startY"></param>
+    /// <param name="endX"></param>
+    /// <param name="endY"></param>
     public static void BresenhamCellsBetween(List<Vector2Int> output, int startX, int startY, int endX, int endY)
     {
         output.Clear();
@@ -124,6 +157,14 @@ public static class GridUtils
         }
     }
 
+    /// <summary>
+    /// 两点直接视线是否遮挡
+    /// </summary>
+    /// <param name="start">起点</param>
+    /// <param name="end">终点</param>
+    /// <param name="map">地图</param>
+    /// <param name="validator"></param>
+    /// <returns></returns>
     public static bool IsLineOfSight(Vector2Int start, Vector2Int end, CellGrid map, Func<Vector2Int, bool> validator = null)
     {
         RectInt startRect = new RectInt(start.x, start.y, 1, 1);
