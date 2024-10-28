@@ -39,23 +39,55 @@ public static class GridUtils
         }
     }
 
-    public static void GetCellsInsight(this CellGrid grids,List<Cell> output, Vector2 position, float range)
+    public static void GetCellsInsight(this CellGrid grids, List<Cell> output, Vector2 position, float range,float direcion, float angle)
     {
         output.Clear();
         int numCellsInRadius = NumCellsInRadius(range);
         Vector2Int positionInt = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
+
+
+
         for (int i = 0; i < numCellsInRadius; i++)
         {
             Vector2Int vector2Int = RadialPattern[i];
             Vector2Int vector2Int2 = new Vector2Int(Mathf.RoundToInt(position.x) + vector2Int.x, Mathf.RoundToInt(position.y) + vector2Int.y);
             Cell cell = grids.GetCell(vector2Int2);
-            if (cell != null && IsLineOfSight(positionInt, vector2Int2, grids, null))
+            Vector2 vectDirection = new Vector2(vector2Int.x, vector2Int.y);
+            //rotate the vector by 90 degrees
+            //Vector2 vectDirectionRotated = new Vector2(vectDirection.y, -vectDirection.x);
+
+            if (cell != null &&
+            IsLineOfSight(positionInt, vector2Int2, grids, null) &&
+            Vector2.Angle(new Vector2(vector2Int.x, vector2Int.y), GetDirectionByAngle(direcion)) <= angle)
+            {
+                output.Add(cell);
+            }
+
+        }
+    }
+
+    public static Vector2 GetDirectionByAngle(float angleY)
+    {
+        float angle = angleY * Mathf.Deg2Rad;
+        return new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
+    }
+
+    public static void GetCellsBetween(this CellGrid grids, List<Cell> output, Vector2 start, Vector2 end)
+    {
+        List<Vector2Int> listPos = new List<Vector2Int>();
+        Vector2Int startInt = new Vector2Int(Mathf.RoundToInt(start.x), Mathf.RoundToInt(start.y));
+        Vector2Int endInt = new Vector2Int(Mathf.RoundToInt(end.x), Mathf.RoundToInt(end.y));
+        BresenhamCellsBetween(listPos, startInt.x, startInt.y, endInt.x, endInt.y);
+        output.Clear();
+        foreach (var pos in listPos)
+        {
+            Cell cell = grids.GetCell(pos);
+            if (cell != null)
             {
                 output.Add(cell);
             }
         }
     }
-
     public static void BresenhamCellsBetween(List<Vector2Int> output, int startX, int startY, int endX, int endY)
     {
         output.Clear();

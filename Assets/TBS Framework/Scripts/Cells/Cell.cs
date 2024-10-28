@@ -33,6 +33,9 @@ namespace TbsFramework.Cells
         /// </summary>
         public bool IsTaken;
 
+        /// <summary>
+        /// If the cell block sight.
+        /// </summary>
         public bool IsSightObstructed;
 
         /// <summary>

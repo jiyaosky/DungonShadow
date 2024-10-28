@@ -61,7 +61,7 @@ public class Fog : MonoBehaviour
     {
         SetAllDark();
         List<Cell> cells = new List<Cell>();
-        CellGrid.GetCellsInsight(cells, position, radius);
+        CellGrid.GetCellsInsight(cells, position, radius, PlayerTransform.rotation.eulerAngles.y, 45);
         foreach (var cell in cells)
         {
             Vector2Int cellIndex = CellGrid.GetCellIndexInMap(cell);
