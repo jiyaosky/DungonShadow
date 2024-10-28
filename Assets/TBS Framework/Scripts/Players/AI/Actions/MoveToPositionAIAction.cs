@@ -207,5 +207,18 @@ namespace TbsFramework.Players.AI.Actions
             sb.AppendFormat("sum: {0}ms", sum.ToString().PadLeft(4));
             UnityEngine.Debug.Log(sb.ToString());
         }
+        
+        public void MoveRandomlyBetweenCells(CellGrid cellGrid, Cell startCell, Cell endCell, Unit unit)
+        {
+            IList<Cell> path = unit.FindPath(cellGrid.Cells, endCell);
+            float remainingMovementPoints = unit.MovementPoints;
+            while (remainingMovementPoints > 0 && path.Count > 0)
+            {
+                int randomPointsToSpend = (int)UnityEngine.Random.Range(1, remainingMovementPoints + 1);
+                // MoveAbility.Move(this, path[0], randomPointsToSpend);
+                remainingMovementPoints -= randomPointsToSpend;
+                path.RemoveAt(0);
+            }
+        }
     }
 }

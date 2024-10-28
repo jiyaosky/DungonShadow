@@ -1,5 +1,9 @@
-﻿using TbsFramework.Cells;
+﻿using System.Collections.Generic;
+using System.Linq;
+using TbsFramework.Cells;
+using TbsFramework;
 using TbsFramework.Units;
+using UnityEngine.UI;
 
 namespace TbsFramework.Grid
 {
@@ -80,6 +84,10 @@ namespace TbsFramework.Grid
             /// <param name="isNetworkInvoked">Indicates if the turn end is invoked by a remote action</param>
             public virtual void EndTurn(bool isNetworkInvoked)
             {
+                foreach (var cell in _cellGrid.Cells)
+                {
+                    cell.UnMark();
+                }
                 _cellGrid.EndTurnExecute(isNetworkInvoked);
             }
 
@@ -91,6 +99,12 @@ namespace TbsFramework.Grid
                 foreach (var cell in _cellGrid.Cells)
                 {
                     cell.UnMark();
+                }
+                // 这里mark敌人视野
+                List<Unit> enemies = _cellGrid.GetAIEnemies();
+                foreach (var enemy in enemies)
+                {
+                    enemy.MaskAsAISight();
                 }
             }
 

@@ -10,6 +10,7 @@ using TbsFramework.Players;
 using TbsFramework.Units;
 using TbsFramework.Units.Abilities;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TbsFramework.Grid
 {
@@ -399,6 +400,11 @@ namespace TbsFramework.Grid
         public List<Unit> GetPlayerUnits(Player player)
         {
             return Units.FindAll(u => u.PlayerNumber == player.PlayerNumber);
+        }
+
+        public List<Unit> GetAIEnemies()
+        {
+            return Units.FindAll(u => u.PlayerNumber == 1);
         }
 
         public bool CheckGameFinished()

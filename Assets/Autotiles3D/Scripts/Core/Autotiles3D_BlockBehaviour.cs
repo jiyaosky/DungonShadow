@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using System;
 using TbsFramework.Cells;
+using TbsFramework.Cells.Highlighters;
 
 #if UNITY_EDITOR
 using UnityEditorInternal;
@@ -146,6 +147,33 @@ namespace Autotiles3D
         {
             return GetComponent<Renderer>().bounds.size;
         }
+        
+        public CellHighlighter MaskAISight;
+        // public CellHighlighter UnMaskAISight;
+        public void MaskAsAISight()
+        {
+            var cell = this.transform.Find("Inline");
+            if (cell != null)
+            {
+                this.transform.Find("Inline").gameObject.SetActive(true);
+                MaskAISight.Apply(this);
+            }
+        }
+
+        // public void UnmaskAISight()
+        // {
+        //     var cell = this.transform.Find("Inline");
+        //     if (cell != null)
+        //     {
+        //         this.transform.Find("Inline").gameObject.SetActive(false);
+        //         // UnMaskAISight.Apply(this);
+        //     }
+        // }
+        // public override void UnMark()
+        // {
+        //     UnmaskAISight();
+        //     base.UnMark();
+        // }
     }
 
 }

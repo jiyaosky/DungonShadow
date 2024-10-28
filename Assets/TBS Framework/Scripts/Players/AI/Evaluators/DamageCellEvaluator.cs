@@ -37,7 +37,7 @@ namespace TbsFramework.Players.AI.Evaluators
             damage = new Dictionary<Unit, float>();
             maxPossibleDamage = 0f;
 
-            enemyUnits = cellGrid.GetEnemyUnits(currentPlayer);
+            enemyUnits = AIGetEnemyUnits(cellGrid);
             foreach (var enemy in enemyUnits)
             {
                 var realDamage = evaluatingUnit.DryAttack(enemy);
@@ -48,6 +48,13 @@ namespace TbsFramework.Players.AI.Evaluators
                     maxPossibleDamage = realDamage;
                 }
             }
+        }
+        
+        // 只找玩家就行
+        public List<Unit> AIGetEnemyUnits(CellGrid cellGrid)
+        {
+            // 先发现玩家再返回玩家，
+            return cellGrid.Units.FindAll(u => u.PlayerNumber == 0);
         }
     }
 }

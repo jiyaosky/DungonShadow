@@ -421,6 +421,8 @@ namespace TbsFramework.Units
                     transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination_pos, Time.deltaTime * MovementAnimationSpeed);
                     // 角色转向！
                     ChangeFoward(transform.position, destination_pos);
+                    
+                    MaskAsAISight();
                     if (playerAnimator != null)
                     {
                         playerAnimator.Play("Base Layer.RunForward", 0, Time.deltaTime * MovementAnimationSpeed);
@@ -522,6 +524,11 @@ namespace TbsFramework.Units
                 }
             }
             return ret;
+        }
+        
+        // 在视野内的特殊处理
+        public virtual void MaskAsAISight()
+        {
         }
 
         /// <summary>
