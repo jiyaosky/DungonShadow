@@ -21,3 +21,11 @@ MonoBehaviour:
     Random: 0
     _name: TestWallCell
     Rules: []
+  - _group: TestTile
+    _tileID: -385920543
+    Default: {fileID: 3902721885301074465, guid: 214c6375b80a95649bbd77ca7c01c808,
+      type: 3}
+    Randoms: []
+    Random: 0
+    _name: BasicCellTest
+    Rules: []

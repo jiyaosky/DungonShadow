@@ -104,7 +104,7 @@ namespace TbsFramework.Grid
                 List<Unit> enemies = _cellGrid.GetAIEnemies();
                 foreach (var enemy in enemies)
                 {
-                    enemy.MaskAsAISight();
+                    // enemy.MaskAsAISight();
                 }
             }
 

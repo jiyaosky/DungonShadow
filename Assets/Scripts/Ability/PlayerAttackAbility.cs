@@ -69,7 +69,7 @@ namespace TbsFramework.Units.Abilities
         // 
         public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
         {
-            if (Player.SelectedAbility is not PlayerAttackAbility) return;
+            // if (Player.SelectedAbility is not PlayerAttackAbility) return;
             // 检测当前Unit如果是可交互的则返回空
             if (unit.GetComponent<InteractiveAbility>() != null)
             {
