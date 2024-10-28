@@ -43,16 +43,111 @@ public static class GridUtils
     {
         output.Clear();
         int numCellsInRadius = NumCellsInRadius(range);
+        Vector2Int positionInt = new Vector2Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y));
         for (int i = 0; i < numCellsInRadius; i++)
         {
             Vector2Int vector2Int = RadialPattern[i];
             Vector2Int vector2Int2 = new Vector2Int(Mathf.RoundToInt(position.x) + vector2Int.x, Mathf.RoundToInt(position.y) + vector2Int.y);
             Cell cell = grids.GetCell(vector2Int2);
-            if (cell != null)
+            if (cell != null && IsLineOfSight(positionInt, vector2Int2, grids, null))
             {
                 output.Add(cell);
             }
         }
+    }
+
+    public static void BresenhamCellsBetween(List<Vector2Int> output, int startX, int startY, int endX, int endY)
+    {
+        output.Clear();
+        int intervalX = Mathf.Abs(endX - startX);
+        int signX = (startX < endX) ? 1 : (-1);
+        int minusIntevalY = -Mathf.Abs(endY - startY);
+        int signY = (startY < endY) ? 1 : (-1);
+        int value = intervalX + minusIntevalY;
+        int maxIteration = 1000;
+        while (true)
+        {
+            output.Add(new Vector2Int(startX, startY));
+            if (startX == endX && startY == endY)
+            {
+                break;
+            }
+            int num = 2 * value;
+            if (num >= minusIntevalY)
+            {
+                value += minusIntevalY;
+                startX += signX;
+            }
+            if (num <= intervalX)
+            {
+                value += intervalX;
+                startY += signY;
+            }
+            maxIteration--;
+            if (maxIteration <= 0)
+            {
+
+                break;
+            }
+        }
+    }
+
+    public static bool IsLineOfSight(Vector2Int start, Vector2Int end, CellGrid map, Func<Vector2Int, bool> validator = null)
+    {
+        RectInt startRect = new RectInt(start.x, start.y, 1, 1);
+        RectInt endRect = new RectInt(end.x, end.y, 1, 1);
+        return IsLineOfSight(start, end, map, startRect, endRect, validator);
+    }
+
+    public static bool IsLineOfSight(Vector2Int start, Vector2Int end, CellGrid map, RectInt startRect, RectInt endRect, Func<Vector2Int, bool> validator = null)
+    {
+        bool flag = (start.x != end.x) ? (start.x < end.x) : (start.y < end.y);
+        int intervalX = Mathf.Abs(end.x - start.x);
+        int intervalY = Mathf.Abs(end.y - start.y);
+        int startX = start.x;
+        int startY = start.y;
+        int length = 1 + intervalX + intervalY;
+        int signX = (end.x > start.x) ? 1 : (-1);
+        int signY = (end.y > start.y) ? 1 : (-1);
+        int interval = intervalX - intervalY;
+        intervalX *= 2;
+        intervalY *= 2;
+        Vector2Int intVec = default;
+        while (length > 1)
+        {
+            intVec.x = startX;
+            intVec.y = startY;
+            if (endRect.Contains(intVec))
+            {
+                return true;
+            }
+            if (!startRect.Contains(intVec))
+            {
+                // todo: check if cell is obsetacle
+                Cell cell = map.GetCell(intVec);
+                if (cell != null && cell.IsSightObstructed)
+                {
+                    return false;
+                }
+
+                if (validator != null && !validator(intVec))
+                {
+                    return false;
+                }
+            }
+            if (interval > 0 || (interval == 0 && flag))
+            {
+                startX += signX;
+                interval -= intervalY;
+            }
+            else
+            {
+                startY += signY;
+                interval += intervalX;
+            }
+            length--;
+        }
+        return true;
     }
 
     public static int NumCellsInRadius(float radius)
@@ -72,6 +167,5 @@ public static class GridUtils
         }
         return 10000;
     }
-
 
 }

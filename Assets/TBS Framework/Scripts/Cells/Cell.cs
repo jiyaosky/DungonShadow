@@ -32,6 +32,9 @@ namespace TbsFramework.Cells
         /// Indicates if something is occupying the cell.
         /// </summary>
         public bool IsTaken;
+
+        public bool IsSightObstructed;
+
         /// <summary>
         /// Cost of moving through the cell.
         /// </summary>

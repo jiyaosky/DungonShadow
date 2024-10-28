@@ -98,8 +98,8 @@ namespace TbsFramework.Grid
         public Cell[] Map { get; private set; }
         public int Width { get; private set; }
         public int Height { get; private set; }
-        public int MapMinX { get; private set; }
-        public int MapMinY { get; private set; }
+        // public int MapMinX { get; private set; }
+        // public int MapMinY { get; private set; }
 
 
         private void Start()
@@ -164,8 +164,9 @@ namespace TbsFramework.Grid
 
             Width = maxX - minX + 1;
             Height = maxY - minY + 1;
-            MapMinX = minX;
-            MapMinY = minY;
+            // MapMinX = minX;
+            // MapMinY = minY;
+
 
             Map = new Cell[Width * Height];
 
@@ -176,7 +177,8 @@ namespace TbsFramework.Grid
                 cell.CellDehighlighted += OnCellDehighlighted;
                 cell.GetComponent<Cell>().GetNeighbours(Cells);
 
-                Map[(int)(cell.OffsetCoord.x - MapMinX) + Width * (int)(cell.OffsetCoord.y - MapMinY)] = cell;
+                //Map[Mathf.RoundToInt(cell.OffsetCoord.x - MapMinX) + Width * Mathf.RoundToInt(cell.OffsetCoord.y - MapMinY)] = cell;
+                Map[Mathf.RoundToInt(cell.OffsetCoord.x) + Width * Mathf.RoundToInt(cell.OffsetCoord.y)] = cell;
             }
 
             Units = new List<Unit>();
@@ -238,12 +240,17 @@ namespace TbsFramework.Grid
 
         public Cell GetCell(int x, int y)
         {
-            if (x < MapMinX || x >= Width + MapMinX || y < MapMinY || y >= Height + MapMinY)
+            // if (x < MapMinX || x >= Width + MapMinX || y < MapMinY || y >= Height + MapMinY)
+            // {
+            //     return null;
+            // }
+
+            // return Map[x - MapMinX + Width * (y - MapMinY)];
+            if (x < 0 || x >= Width || y < 0 || y >= Height)
             {
                 return null;
             }
-
-            return Map[x - MapMinX + Width * (y - MapMinY)];
+            return Map[x + Width * y];
         }
 
         public Cell GetCell(Vector2 position)
@@ -253,12 +260,14 @@ namespace TbsFramework.Grid
 
         public Vector2Int GetCellIndexInMap(Cell cell)
         {
-            return new Vector2Int((int)(cell.OffsetCoord.x - MapMinX), (int)(cell.OffsetCoord.y - MapMinY));
+            //return new Vector2Int((int)(cell.OffsetCoord.x - MapMinX), (int)(cell.OffsetCoord.y - MapMinY));
+            return new Vector2Int(Mathf.RoundToInt(cell.OffsetCoord.x), Mathf.RoundToInt(cell.OffsetCoord.y));
         }
 
         public Vector2Int GetCellIndexInMap(int x, int y)
         {
-            return new Vector2Int(x - MapMinX, y - MapMinY);
+            // return new Vector2Int(x - MapMinX, y - MapMinY);
+            return new Vector2Int(x, y);
         }
 
 

@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8162863408691997244
 Transform:
@@ -124,6 +124,7 @@ MonoBehaviour:
   MarkAsHighlightedFn: []
   UnMarkFn: []
   IsTaken: 1
+  IsSightObstructed: 1
   MovementCost: 1
   _tileID: -1
   _ruleID: 0
@@ -133,3 +134,4 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 0}
   _isBaked: 0
   View: {fileID: 7810535217616900040}
+  MaskAISight: {fileID: 0}
