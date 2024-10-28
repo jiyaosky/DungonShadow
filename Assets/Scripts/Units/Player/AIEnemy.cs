@@ -16,11 +16,11 @@ namespace TbsFramework.Units
         private Quaternion facingRotation;
         // 0 ->0
         // 
-        public override void MaskAsAISight()
-        {
-            // facingDirection = transform.rotation.eulerAngles.y;
-            Check();
-        }
+        // public override void MaskAsAISight()
+        // {
+        //     // facingDirection = transform.rotation.eulerAngles.y;
+        //     Check();
+        // }
         public void Check()
         {
             List<Cell> cells = GetVisibleCells(FindObjectOfType<CellGrid>());
