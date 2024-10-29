@@ -9,7 +9,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler
 
     void Start()
     {
-        dialog_box = this.gameObject.transform.FindChild("DialogBox").gameObject;
+        dialog_box = this.gameObject.transform.Find("DialogBox").gameObject;
         Debug.Log("Start");
     }
     
