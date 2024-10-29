@@ -41,7 +41,7 @@ namespace TbsFramework.Players
 
             foreach (var unit in myUnits.OrderByDescending(u => u.Cell.GetNeighbours(_cellGrid.Cells).FindAll(u.IsCellTraversable).Count))
             {
-                var enemyUnits = _cellGrid.GetEnemyUnits(this);
+                var enemyUnits = _cellGrid.AIGetEnemyUnits();
                 var unitsInRange = new List<Unit>();
                 foreach (var enemyUnit in enemyUnits)
                 {

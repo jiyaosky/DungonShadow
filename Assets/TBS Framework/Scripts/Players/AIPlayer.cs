@@ -3,6 +3,7 @@ using TbsFramework.Grid;
 using TbsFramework.Grid.GridStates;
 using TbsFramework.Players.AI;
 using TbsFramework.Players.AI.Actions;
+using TbsFramework.Units;
 using UnityEngine;
 
 namespace TbsFramework.Players
@@ -39,7 +40,22 @@ namespace TbsFramework.Players
                         yield return null;
                     }
                 }
+                
+                // 判断当前AI状态，如果是0则巡逻，1则跑到目标位置，
+                if (unit.AIState == 0)
+                {
+                    unit.NatureBehaviour();
+                    continue;
+                }
 
+                if (unit.AIState == 1)
+                {
+                    unit.GuardBehaviour();
+                    continue;
+                }
+                
+                
+                //2则进行下面的操作
                 var AIActions = unit.GetComponentsInChildren<AIAction>();
                 foreach (var aiAction in AIActions)
                 {

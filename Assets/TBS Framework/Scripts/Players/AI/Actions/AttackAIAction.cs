@@ -36,7 +36,7 @@ namespace TbsFramework.Players.AI.Actions
                 return false;
             }
 
-            var enemyUnits = AIGetEnemyUnits(cellGrid);
+            var enemyUnits = cellGrid.AIGetEnemyUnits();
             var isEnemyinRange = enemyUnits.Select(u => unit.IsUnitAttackable(u, unit.Cell))
                                            .Aggregate((result, next) => result || next);
 
@@ -44,7 +44,7 @@ namespace TbsFramework.Players.AI.Actions
         }
         public override void Precalculate(Player player, Unit unit, CellGrid cellGrid)
         {
-            var enemyUnits = AIGetEnemyUnits(cellGrid);
+            var enemyUnits = cellGrid.AIGetEnemyUnits();
             var enemiesInRange = enemyUnits.Where(e => unit.IsUnitAttackable(e, unit.Cell))
                                            .ToList();
 
@@ -98,7 +98,7 @@ namespace TbsFramework.Players.AI.Actions
         }
         public override void CleanUp(Player player, Unit unit, CellGrid cellGrid)
         {
-            foreach (var enemy in AIGetEnemyUnits(cellGrid))
+            foreach (var enemy in cellGrid.AIGetEnemyUnits())
             {
                 enemy.UnMark();
             }
@@ -147,13 +147,6 @@ namespace TbsFramework.Players.AI.Actions
             sb.AppendFormat("sum: {0}ms", sum.ToString().PadLeft(4));
             UnityEngine.Debug.Log(sb.ToString());
 
-        }
-
-        // 只找玩家就行
-        public List<Unit> AIGetEnemyUnits(CellGrid cellGrid)
-        {
-            // 先发现玩家再返回玩家，
-            return cellGrid.Units.FindAll(u => u.PlayerNumber == 0);
         }
     }
 }

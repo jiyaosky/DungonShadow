@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 using System;
 using TbsFramework.Cells;
 using TbsFramework.Cells.Highlighters;
+using TbsFramework.Grid;
 
 #if UNITY_EDITOR
 using UnityEditorInternal;

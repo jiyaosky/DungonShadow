@@ -62,6 +62,18 @@ namespace TbsFramework.Units
 
         public UnitHighlighterAggregator UnitHighlighterAggregator;
 
+
+        public int AIState = 0; // 0=未发现玩家的自然状态，1=警戒状态， 2=发现玩家的状态
+        public virtual void NatureBehaviour()
+        {
+            // return false;
+        }
+        
+        public virtual void GuardBehaviour()
+        {
+            // return false;
+        }
+
         private int AbilityID = 0;
 
         public List<Ability> Abilities { get; private set; } = new List<Ability>();
@@ -497,6 +509,10 @@ namespace TbsFramework.Units
 
         public IList<Cell> FindPath(List<Cell> cells, Cell destination)
         {
+            // if (cachedPaths == null)
+            // {
+            //     CachePaths(cells);
+            // }
             if (cachedPaths.TryGetValue(destination, out var path))
             {
                 return path;

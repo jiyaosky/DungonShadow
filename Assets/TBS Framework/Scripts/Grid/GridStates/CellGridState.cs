@@ -100,12 +100,6 @@ namespace TbsFramework.Grid
                 {
                     cell.UnMark();
                 }
-                // 这里mark敌人视野
-                List<Unit> enemies = _cellGrid.GetAIEnemies();
-                foreach (var enemy in enemies)
-                {
-                    // enemy.MaskAsAISight();
-                }
             }
 
             /// <summary>
