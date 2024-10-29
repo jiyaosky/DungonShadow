@@ -13,7 +13,6 @@ namespace TbsFramework.Units
 {
     public class AIEnemy : MyUnit
     {
-        private Quaternion facingRotation;
         // 0 ->0
         // 
         // public override void MaskAsAISight()
@@ -21,7 +20,16 @@ namespace TbsFramework.Units
         //     // facingDirection = transform.rotation.eulerAngles.y;
         //     Check();
         // }
-        public void Check()
+        public override void MaskAsAISight()
+        {
+            foreach (var cell in insightCells)
+            {
+                cell.transform.Find("Inline").gameObject.SetActive(false);
+            }
+            CheckAISight();
+        }
+
+        public void CheckAISight()
         {
             List<Cell> cells = GetVisibleCells(FindObjectOfType<CellGrid>());
             for (int i = 0; i < cells.Count; i++)
@@ -31,37 +39,20 @@ namespace TbsFramework.Units
                 cell.MaskAsAISight();
             }
         }
+        
+        public float sightRange = 3f;
+        public float sightAngle = 45f;
+        private List<Cell> insightCells = new List<Cell>();
 
         // 获取视野范围内的所有单元格
         public List<Cell> GetVisibleCells(CellGrid cellGrid)
         {
-            List<Cell> visibleCells = new List<Cell>();
-            Cell currentCell = this.Cell;
-            int range = 3;
-
-            var ox = currentCell.OffsetCoord.x;
-            var oy = currentCell.OffsetCoord.y;
-            
-            for (int x = (int)ox - range; x <= currentCell.OffsetCoord.x + range; x++)
-            {
-                for (int y = (int)oy - range; y <= currentCell.OffsetCoord.y + range; y++)
-                {
-                    Cell cell = cellGrid.GetCell(x,y);
-                    if (cell != null)
-                    {
-                        int dx = x - (int)ox;
-                        int dy = y - (int)oy;
-                        Vector3 direction = new Vector3(dx, 0, dy).normalized;
-                        float angle = Vector3.Angle(direction, facingRotation * Vector3.forward);
-                        if (angle <= 90)
-                        {
-                            visibleCells.Add(cell);
-                        }
-                    }
-                }
-            }
-
-            return visibleCells;
+            GridUtils.GetCellsInsight(cellGrid, insightCells,
+                new Vector2Int(Mathf.RoundToInt(this.Cell.OffsetCoord.x), Mathf.RoundToInt(this.Cell.OffsetCoord.y)),
+                sightRange,
+                transform.rotation.eulerAngles.y,
+                sightAngle);
+            return insightCells;
         }
 
     }
