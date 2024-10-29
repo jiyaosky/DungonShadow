@@ -406,6 +406,12 @@ namespace TbsFramework.Grid
         {
             return Units.FindAll(u => u.PlayerNumber != player.PlayerNumber);
         }
+        
+        public List<Unit> AIGetEnemyUnits()
+        {
+            // 先发现玩家再返回玩家，
+            return Units.FindAll(u => u.PlayerNumber == 0);
+        }
         public List<Unit> GetPlayerUnits(Player player)
         {
             return Units.FindAll(u => u.PlayerNumber == player.PlayerNumber);

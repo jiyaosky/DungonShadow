@@ -9232,13 +9232,24 @@ PrefabInstance:
       propertyPath: sightRange
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: AICellEndCell
+      value: 
+      objectReference: {fileID: 1494193902}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: AICellStartCell
+      value: 
+      objectReference: {fileID: 1657371413}
     - target: {fileID: 8752843893159305562, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
       propertyPath: m_Name
       value: Cowboy_RIO Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8796548979190367953, guid: 0329a5050d59c354eaf1a90716a196a5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0329a5050d59c354eaf1a90716a196a5, type: 3}
@@ -13417,7 +13428,7 @@ PrefabInstance:
     - target: {fileID: 5500408310019589977, guid: 6e24605ea74789c44a62944d2a54c2af,
         type: 3}
       propertyPath: m_Name
-      value: BasicCell
+      value: BasicCell2
       objectReference: {fileID: 0}
     - target: {fileID: 9164604221774929800, guid: 6e24605ea74789c44a62944d2a54c2af,
         type: 3}
@@ -14459,7 +14470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 787404225}
-  - component: {fileID: 787404227}
+  - component: {fileID: 787404228}
   - component: {fileID: 787404226}
   m_Layer: 0
   m_Name: AI_Player_1
@@ -14495,7 +14506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9363b6da460055408b9987582559276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &787404227
+--- !u!114 &787404228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24300,11 +24311,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386857474}
+  - component: {fileID: 1386857475}
   - component: {fileID: 1386857470}
   - component: {fileID: 1386857473}
   - component: {fileID: 1386857472}
   - component: {fileID: 1386857471}
-  - component: {fileID: 1386857475}
   m_Layer: 0
   m_Name: CellGrid
   m_TagString: Untagged
@@ -26768,6 +26779,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1493229348}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1494193902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9164604221774929800, guid: 6e24605ea74789c44a62944d2a54c2af,
+    type: 3}
+  m_PrefabInstance: {fileID: 729278674}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04309525ffc43d4594a3116dea8b6bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1497640416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28919,7 +28942,7 @@ PrefabInstance:
     - target: {fileID: 5500408310019589977, guid: 6e24605ea74789c44a62944d2a54c2af,
         type: 3}
       propertyPath: m_Name
-      value: BasicCell
+      value: BasicCell1
       objectReference: {fileID: 0}
     - target: {fileID: 9164604221774929800, guid: 6e24605ea74789c44a62944d2a54c2af,
         type: 3}
