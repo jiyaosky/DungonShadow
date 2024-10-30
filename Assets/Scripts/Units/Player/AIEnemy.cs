@@ -23,12 +23,22 @@ namespace TbsFramework.Units
 
         public override void Initialize()
         {
-            var Directon2D = GridUtils.GetDirectionByAngle(transform.rotation.eulerAngles.y);
-            currentForward = new Vector3(Directon2D.x, 0, Directon2D.y);
+            SetNewCurrentForward();
             base.Initialize();
         }
-        
-        
+
+        public void SetNewCurrentForward()
+        {
+            var Directon2D = GridUtils.GetDirectionV3ByAngleY(transform.rotation.eulerAngles.y);
+            currentForward = new Vector3(Directon2D.x, 0, Directon2D.z);
+        }
+
+        public override void ChangeFoward(Vector3 current, Vector3 target)
+        {
+            SetNewCurrentForward();
+            base.ChangeFoward(current, target);
+        }
+
         public override void MaskAsAISight()
         {
             foreach (var cell in insightCells)

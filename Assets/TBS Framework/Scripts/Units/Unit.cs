@@ -445,7 +445,7 @@ namespace TbsFramework.Units
             OnMoveFinished();
         }
 
-        protected virtual void ChangeFoward(Vector3 current, Vector3 target)
+        public virtual void ChangeFoward(Vector3 current, Vector3 target)
         {
             float turnSpeed = 1000f;
             Vector3 direction = target - current;
@@ -458,9 +458,11 @@ namespace TbsFramework.Units
         
         public bool IsBehindAnotherUnit(Unit otherUnit)
         {
-            Vector3 directionToOtherUnit = (otherUnit.transform.position - this.transform.position).normalized;
-            float dotProduct = Vector3.Dot(directionToOtherUnit, new Vector3(this.currentForward.x, 0, this.currentForward.z).normalized);
-            return dotProduct < -0.5f; // 一个经验值，可根据实际情况调整阈值，这里假设小于 -0.5 就认为在背面
+            Vector3 directionToTarget = (otherUnit.transform.position - transform.position).normalized;
+            Vector3 targetForward = otherUnit.currentForward.normalized;
+
+            float dotProduct = Vector3.Dot(directionToTarget, targetForward);
+            return dotProduct > 0f;
         }
         /// <summary>
         /// Method called after movement animation has finished.

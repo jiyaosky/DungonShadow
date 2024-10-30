@@ -116,8 +116,7 @@ namespace TbsFramework.Units
             // 注册一下相关能力
             PlayerAttackAbility = GetComponent<PlayerAttackAbility>();
             InteractionAbility = GetComponent<InteractionAbility>();
-            var Directon2D = GridUtils.GetDirectionByAngle(transform.rotation.eulerAngles.y);
-            currentForward = new Vector3(Directon2D.x, 0, Directon2D.y);
+            SetNewCurrentForward();
             
             base.Initialize();
         }
@@ -132,6 +131,18 @@ namespace TbsFramework.Units
             {
                 currentActionPoints = value;
             }
+        }
+        
+        public void SetNewCurrentForward()
+        {
+            var Directon2D = GridUtils.GetDirectionV3ByAngleY(transform.rotation.eulerAngles.y);
+            currentForward = new Vector3(Directon2D.x, 0, Directon2D.z);
+        }
+
+        public override void ChangeFoward(Vector3 current, Vector3 target)
+        {
+            SetNewCurrentForward();
+            base.ChangeFoward(current, target);
         }
 
 
