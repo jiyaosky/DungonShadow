@@ -89,6 +89,31 @@ public static class GridUtils
         return new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
     }
 
+    public static Vector3 GetDirectionV3ByAngleY(float angleY)
+    {
+        if (angleY == 0)
+        {
+            return new Vector3(0, 0, 1);
+        }
+
+        if (angleY == 180)
+        {
+            return new Vector3(0, 0, -1);
+        }
+
+        if (angleY == 90)
+        {
+            return new Vector3(1, 0, 0);
+        }
+
+        if (angleY == -90)
+        {
+            return new Vector3(-1, 0, 0);
+        }
+
+        return new Vector3(0, 0, 0);
+    }
+
     /// <summary>
     /// 获取两点之间的所有格子
     /// </summary>
