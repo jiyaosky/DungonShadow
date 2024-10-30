@@ -7,7 +7,7 @@ public class CordSetup : MonoBehaviour
 {
     
 
-    void Awake()
+    void Start()
     {
         var allChild = GetComponentsInChildren<Transform>();
         foreach (var child in allChild)

@@ -116,8 +116,7 @@ namespace TbsFramework.Units
             // 注册一下相关能力
             PlayerAttackAbility = GetComponent<PlayerAttackAbility>();
             InteractionAbility = GetComponent<InteractionAbility>();
-            var Directon2D = GridUtils.GetDirectionByAngle(transform.rotation.eulerAngles.y);
-            currentForward = new Vector3(Directon2D.x, 0, Directon2D.y);
+
             
             base.Initialize();
         }
@@ -138,13 +137,7 @@ namespace TbsFramework.Units
         // 重写父类的DealDamage
         protected override AttackAction DealDamage(Unit unitToAttack)
         {
-            var damage = currentAttackFactor;
-            if (IsBehindAnotherUnit(unitToAttack))
-            {
-                Debug.Log("刺杀");
-                damage = currentAttackFactor + currentAssassinationPower;
-            }
-            return new AttackAction(damage, PlayerAttackAbility.AbilityCost);
+            return new AttackAction(currentAttackFactor, PlayerAttackAbility.AbilityCost);
         }
 
         // 重写父类的方法，当攻击动作完成时调用，减少行动点数

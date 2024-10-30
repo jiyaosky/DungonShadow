@@ -9229,11 +9229,6 @@ PrefabInstance:
       objectReference: {fileID: 1657371413}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
-      propertyPath: HitPoints
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
-        type: 3}
       propertyPath: sightRange
       value: 5
       objectReference: {fileID: 0}
@@ -25979,12 +25974,12 @@ PrefabInstance:
     - target: {fileID: 767868654995508937, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
       propertyPath: HitPoints
-      value: 3
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 767868654995508937, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
       propertyPath: AttackRange
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 767868654995508937, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}

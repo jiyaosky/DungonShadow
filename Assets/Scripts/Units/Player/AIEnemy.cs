@@ -20,13 +20,6 @@ namespace TbsFramework.Units
         //     // facingDirection = transform.rotation.eulerAngles.y;
         //     Check();
         // }
-
-        public override void Initialize()
-        {
-            var Directon2D = GridUtils.GetDirectionByAngle(transform.rotation.eulerAngles.y);
-            currentForward = new Vector3(Directon2D.x, 0, Directon2D.y);
-            base.Initialize();
-        }
         
         
         public override void MaskAsAISight()
@@ -40,23 +33,13 @@ namespace TbsFramework.Units
 
         public void CheckAISight()
         {
-            var _cellGrid = FindObjectOfType<CellGrid>();
-            var readPlayer = _cellGrid.AIGetEnemyUnits()[0];
-            
-            List<Cell> cells = GetVisibleCells(_cellGrid);
+            List<Cell> cells = GetVisibleCells(FindObjectOfType<CellGrid>());
             for (int i = 0; i < cells.Count; i++)
             {
                 // (Autotiles3D_BlockBehaviour)cells[i].MaskAsAISight();
                 Autotiles3D_BlockBehaviour cell = cells[i].GetComponent<Autotiles3D_BlockBehaviour>();
                 cell.MaskAsAISight();
-                
-                // 发现玩家
-                if (cells[i].Equals(readPlayer.Cell))
-                {
-                    AIState = 2;
-                }
             }
-            
         }
         
         public float sightRange = 3f;
@@ -91,7 +74,6 @@ namespace TbsFramework.Units
             }
         }
         
-        // 巡逻相关
         private Cell AITargetCell;
         public void AIPatrol(Cell startCell, Cell endCell)
         {
