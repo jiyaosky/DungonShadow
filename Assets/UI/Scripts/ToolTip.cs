@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ToolTip : MonoBehaviour, IPointerEnterHandler
+public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private GameObject dialog_box;
 
     void Start()
     {
-        dialog_box = this.gameObject.transform.FindChild("DialogBox").gameObject;
-        Debug.Log("Start");
+        dialog_box = this.gameObject.transform.GetChild(0).gameObject;
     }
     
 
@@ -25,7 +24,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         dialog_box.SetActive(false);
-        //Debug.Log("The cursor entered the selectable UI element.");
+        Debug.Log("The cursor entered the selectable UI element.");
     }
 
 
