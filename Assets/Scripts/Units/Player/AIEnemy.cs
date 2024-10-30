@@ -162,5 +162,11 @@ namespace TbsFramework.Units
             selectedPath.Reverse();
             return selectedPath;
         }
+
+        protected override void DefenceActionPerformed()
+        {
+            AIState = 2;
+            base.DefenceActionPerformed();
+        }
     }
 }

@@ -5,16 +5,14 @@ using UnityEngine;
 
 namespace TbsFramework.Units.Abilities
 {
-    public class DaggerAttack : Ability
+    public class DartAttack : Ability
     {
-        
+
         public PlayerAttackAbility AttackAbility;
-        
+
         public override void Initialize()
         {
             AttackAbility = GetComponent<PlayerAttackAbility>();
         }
-
-
     }
 }

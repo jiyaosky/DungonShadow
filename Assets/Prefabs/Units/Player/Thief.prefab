@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 3162735327542786226}
   - component: {fileID: 4667782450105433162}
   - component: {fileID: 4401581563704049578}
+  - component: {fileID: 3076718961830759668}
   m_Layer: 0
   m_Name: Thief
   m_TagString: target
@@ -326,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitHighlighterAggregator: {fileID: 4667782450105433162}
+  AIState: 0
   Obstructable: 1
   cell: {fileID: 0}
   HitPoints: 0
@@ -337,21 +339,11 @@ MonoBehaviour:
   actionPoints: 0
   PlayerNumber: 0
   currentForward: {x: 0, y: 0, z: 0}
-  baseHitPoints: 100
+  MaxHP: 10
   totalActionPoints: 20
   currentActionPoints: 0
-  baseAttackFactor: 30
   currentAttackFactor: 0
-  baseAssassinationPower: 1
   currentAssassinationPower: 0
-  baseAttackRange: 1
-  currentAttackRange: 0
-  buttonAttackAbility: {fileID: 0}
-  buttonInteractionAbility: {fileID: 0}
-  buttonScoutAbility: {fileID: 0}
-  buttonAbility1: {fileID: 0}
-  buttonAbility2: {fileID: 0}
-  buttonAbility3: {fileID: 0}
   SelectedAbility: {fileID: 0}
 --- !u!114 &3016754959970862118
 MonoBehaviour:
@@ -379,6 +371,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityCost: 1
+  AbilityRange: 1
+  AbilityDamage: 1
+  AssassinationPower: 1
+  currentWeaponAbility: {fileID: 0}
+  buttonAttackAbility: {fileID: 0}
+  cancelButton: {fileID: 0}
 --- !u!114 &5928907015905916227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +451,19 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!114 &3076718961830759668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783229825609753673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4092043733121c142a4f96cbeb6d95af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuffList: []
 --- !u!1 &4946307662997777423
 GameObject:
   m_ObjectHideFlags: 0

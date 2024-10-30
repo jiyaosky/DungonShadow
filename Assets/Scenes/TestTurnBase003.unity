@@ -9230,7 +9230,7 @@ PrefabInstance:
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
       propertyPath: HitPoints
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
@@ -26026,6 +26026,26 @@ PrefabInstance:
       propertyPath: buttonAttackAbility
       value: 
       objectReference: {fileID: 1856643339}
+    - target: {fileID: 6118788275626238241, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: AttackAbilityList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118788275626238241, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: AttackAbilityList.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118788275626238241, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: AttackAbilityList.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118788275626238241, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: AttackAbilityList.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8147387025575769662, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26076,7 +26096,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4985965161449751817, guid: 1e3ae5c8d17e14f4fb62b726a6912663, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -21,7 +21,55 @@ namespace TbsFramework.Units.Abilities
         // public Ability CurrentSelectedAttackAbility;
 
         public int AbilityCost = 2;
+        
+        public int AbilityRange = 1;
+        
+        public int AbilityDamage = 1;
 
+        public int AssassinationPower = 1;
+
+        public Ability currentWeaponAbility;
+        public void SetCurrentAttackAbility(RealPlayer unit ,int abilityID)
+        {
+            if (currentWeaponAbility != null)
+            {
+                return;
+            }
+            switch (abilityID)
+            {
+                // Dagger
+                case 1:
+                    AbilityCost = 2;
+                    AbilityRange = 1;
+                    AbilityDamage = 1;
+                    AssassinationPower = 2;
+                    currentWeaponAbility = gameObject.AddComponent<DaggerAttack>();
+                    
+                    break;
+                // Broadsword
+                case 2:
+                    AbilityCost = 2;
+                    AbilityRange = 1;
+                    AbilityDamage = 1;
+                    AssassinationPower = 1;
+                    currentWeaponAbility = gameObject.AddComponent<BroadswordAttack>();
+                    break;
+                // Dart
+                case 3:
+                    AbilityCost = 2;
+                    AbilityRange = 3;
+                    AbilityDamage = 1;
+                    AssassinationPower = 1;
+                    currentWeaponAbility = gameObject.AddComponent<DartAttack>();
+                    break;
+                default:
+                    break;
+            }
+            currentWeaponAbility.Initialize();
+            unit.UpdateAttackFactor(AbilityDamage);
+            unit.UpdateAssassinationPower(AssassinationPower);
+            unit.AttackRange = AbilityRange;
+        }
         // 不同攻击方式的攻击力加成和攻击范围
 
         public RealPlayer Player { get; set; }
@@ -29,6 +77,7 @@ namespace TbsFramework.Units.Abilities
         public override void Initialize()
         {
             Player = GetComponent<RealPlayer>();
+            SetCurrentAttackAbility(Player, 3);
         }
 
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
@@ -119,14 +168,14 @@ namespace TbsFramework.Units.Abilities
             inAttackRange = enemyUnits.Where(u => Player.IsUnitAttackable(u, Player.Cell)).ToList();
 
             // 根据选择的攻击方式计算消耗的行动点数并判断是否可执行
-            int attackCost = GetAttackCostForSelectedType();
+            int attackCost = GetAttackCostForSelectedType(AbilityCost);
             return attackCost <= Player.currentActionPoints;
         }
 
-        private int GetAttackCostForSelectedType()
+        private int GetAttackCostForSelectedType(int cost)
         {
             // 根据选择的攻击方式确定消耗的行动点数，这里只是示例值，可以根据实际需求调整
-            return AbilityCost;
+            return cost;
         }
 
         public override IDictionary<string, string> Encapsulate()

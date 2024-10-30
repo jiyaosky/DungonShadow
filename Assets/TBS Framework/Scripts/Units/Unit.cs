@@ -346,7 +346,6 @@ namespace TbsFramework.Units
             int damageTaken = Defend(aggressor, damage);
             HitPoints -= damageTaken;
             DefenceActionPerformed();
-
             if (UnitAttacked != null)
             {
                 UnitAttacked.Invoke(this, new AttackEventArgs(aggressor, this, damage));

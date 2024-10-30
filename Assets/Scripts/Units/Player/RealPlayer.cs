@@ -14,37 +14,21 @@ namespace TbsFramework.Units
     {
         // 基础血量
         [SerializeField]
-        public int baseHitPoints;
-
-        // 当前血量
-        private int currentHitPoints;
+        public int MaxHP = 10;
         // 总的行动点数上限
         [SerializeField]
         public float totalActionPoints;
-
         // 当前行动点数
         [SerializeField]
         public float currentActionPoints;
-
-        // 基础攻击力
-        public int baseAttackFactor;
-
+        
         // 当前攻击力
         [SerializeField]
         private int currentAttackFactor;
 
-        // 基础暗杀力
-        public int baseAssassinationPower;
-
         // 当前暗杀力
         [SerializeField]
         private int currentAssassinationPower;
-
-        // 基础攻击范围
-        public int baseAttackRange;
-        // 当前攻击范围
-        [SerializeField]
-        private int currentAttackRange;
 
         private Animator playerAnimator;
 
@@ -62,6 +46,8 @@ namespace TbsFramework.Units
         {
             SelectedAbility = ability;
         }
+        
+        // 
         
         // <summary>
         // 重写OnMouseDown方法，这里大概梳理一下逻辑：
@@ -105,21 +91,18 @@ namespace TbsFramework.Units
         public override void Initialize()
         {
             playerAnimator = GetComponentInChildren<Animator>();
-
-            currentHitPoints = baseHitPoints;
             currentActionPoints = totalActionPoints;
-            currentAttackFactor = baseAttackFactor;
-            currentAssassinationPower = baseAssassinationPower;
-            currentAttackRange = baseAttackRange;
-            // MovementPoints = currentActionPoints;
             ActionPoints = currentActionPoints;
             // 注册一下相关能力
             PlayerAttackAbility = GetComponent<PlayerAttackAbility>();
+            currentAttackFactor = PlayerAttackAbility.AbilityDamage;
+            currentAssassinationPower = PlayerAttackAbility.AssassinationPower;
+            AttackRange = PlayerAttackAbility.AbilityRange;
             InteractionAbility = GetComponent<InteractionAbility>();
             SetNewCurrentForward();
-            
             base.Initialize();
         }
+        
 
         public override float MovementPoints
         {
@@ -185,17 +168,7 @@ namespace TbsFramework.Units
             // 这里可能还会重置一下ActionPoints
             currentActionPoints = totalActionPoints;
         }
-
-        // 可以被外部调用以减少血量的方法
-        public void TakeDamage(int damage)
-        {
-            currentHitPoints -= damage;
-            if (currentHitPoints <= 0)
-            {
-                OnDestroyed();
-            }
-        }
-
+        
         // 减少行动点数的方法
         public void ConsumeActionPoints(float points)
         {
@@ -213,13 +186,7 @@ namespace TbsFramework.Units
         {
             currentAssassinationPower = newPower;
         }
-
-        // 更新攻击范围的方法，可以在受到 buff 影响时调用
-        public void UpdateAttackRange(int newRange)
-        {
-            currentAttackRange = newRange;
-        }
-
+        
         // 获取当前攻击力
         public int GetCurrentAttackFactor()
         {
@@ -230,12 +197,6 @@ namespace TbsFramework.Units
         public int GetCurrentAssassinationPower()
         {
             return currentAssassinationPower;
-        }
-
-        // 获取当前攻击范围
-        public int GetCurrentAttackRange()
-        {
-            return currentAttackRange;
         }
 
         // 获取当前的攻击Ability
