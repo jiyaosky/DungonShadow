@@ -26011,6 +26011,17 @@ PrefabInstance:
       propertyPath: currentActionPoints
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3076718961830759668, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: BuffList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076718961830759668, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: BuffList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 569cc7ab2ea08eb4caf20cc297105510,
+        type: 2}
     - target: {fileID: 4783229825609753673, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
       propertyPath: m_Name

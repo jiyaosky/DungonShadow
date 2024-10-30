@@ -159,8 +159,10 @@ namespace TbsFramework.Units.Abilities
         // TODO: 这里要改一下判断条件，因为这里的逻辑是判断是否有行动点数，而不是判断是否可以攻击
         public override bool CanPerform(CellGrid cellGrid)
         {
-            if (Player.ActionPoints <= 0)
+            if (Player.ActionPoints <= 0 || Player.attackLimit == 0)
             {
+                Debug.Log("Player.ActionPoints：" + Player.ActionPoints);
+                Debug.Log("Player.attackLimit：" + Player.attackLimit);
                 return false;
             }
 
@@ -198,5 +200,6 @@ namespace TbsFramework.Units.Abilities
         //     SelectedAttackType = (AttackType)int.Parse(actionParams["attack_type"]);
         //     yield return StartCoroutine(RemoteExecute(cellGrid));
         // }
+        
     }
 }

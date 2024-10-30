@@ -13,7 +13,7 @@ namespace TbsFramework.Units.Abilities
     {
         public int AbilityID { get; set; }
         public Unit UnitReference { get; set; }
-
+        
         public event EventHandler<(bool isNetworkInvoked, IDictionary<string, string> actionParams)> AbilityUsed;
 
 

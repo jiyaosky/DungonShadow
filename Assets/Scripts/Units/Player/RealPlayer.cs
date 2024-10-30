@@ -26,6 +26,9 @@ namespace TbsFramework.Units
         [SerializeField]
         private int currentAttackFactor;
 
+        public int attackLimit = 1;
+        
+
         // 当前暗杀力
         [SerializeField]
         private int currentAssassinationPower;
@@ -67,7 +70,7 @@ namespace TbsFramework.Units
         {
             base.OnMouseDown();
         }
-
+        
         /// <summary>
         /// Method is called when unit is selected.
         /// 当单位被选择时调用的方法。
@@ -145,6 +148,7 @@ namespace TbsFramework.Units
         protected override void AttackActionPerformed(float actionCost)
         {
             currentActionPoints -= actionCost;
+            attackLimit--;
         }
 
         // 重写父类是否能击中敌人的方法
@@ -162,6 +166,7 @@ namespace TbsFramework.Units
         // 重写父类的方法，当回合结束时调用，重置行动点数，以及其他可能需要重置的属性
         public override void OnTurnEnd()
         {
+            attackLimit = 1;
             base.OnTurnEnd();
             // 这个属性可以理解为最大的可移动点数
             // MovementPoints = totalActionPoints;
