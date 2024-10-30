@@ -51,7 +51,7 @@ public static class GridUtils
     /// <param name="range">半径</param>
     /// <param name="direcion">朝向(y轴旋转)
     /// <param name="angle">视野角度</param>
-    public static void GetCellsInsight(this CellGrid grids, List<Cell> output, Vector2 position, float range,float direcion, float angle)
+    public static void GetCellsInsight(this CellGrid grids, List<Cell> output, Vector2 position, float range,float direcion, float angle, bool through)
     {
         output.Clear();
         int numCellsInRadius = NumCellsInRadius(range);
@@ -68,13 +68,23 @@ public static class GridUtils
             //rotate the vector by 90 degrees
             //Vector2 vectDirectionRotated = new Vector2(vectDirection.y, -vectDirection.x);
 
-            if (cell != null &&
-            IsLineOfSight(positionInt, vector2Int2, grids, null) &&
-            Vector2.Angle(new Vector2(vector2Int.x, vector2Int.y), GetDirectionByAngle(direcion)) <= angle)
+            if (through)
             {
-                output.Add(cell);
+                if (cell != null &&
+                    Vector2.Angle(new Vector2(vector2Int.x, vector2Int.y), GetDirectionByAngle(direcion)) <= angle)
+                {
+                    output.Add(cell);
+                }
             }
-
+            else
+            {
+                if (cell != null &&
+                    IsLineOfSight(positionInt, vector2Int2, grids, null) &&
+                    Vector2.Angle(new Vector2(vector2Int.x, vector2Int.y), GetDirectionByAngle(direcion)) <= angle)
+                {
+                    output.Add(cell);
+                }
+            }
         }
     }
 

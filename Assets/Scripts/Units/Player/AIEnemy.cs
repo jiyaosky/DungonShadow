@@ -80,7 +80,7 @@ namespace TbsFramework.Units
                 new Vector2Int(Mathf.RoundToInt(this.Cell.OffsetCoord.x), Mathf.RoundToInt(this.Cell.OffsetCoord.y)),
                 sightRange,
                 transform.rotation.eulerAngles.y,
-                sightAngle);
+                sightAngle, false);
             return insightCells;
         }
         

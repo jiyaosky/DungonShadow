@@ -44,5 +44,10 @@ namespace TbsFramework.Units.Abilities
             // TODO: 实现获取目标敌人的逻辑
             return enemy;
         }
+
+        public override void Activate()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

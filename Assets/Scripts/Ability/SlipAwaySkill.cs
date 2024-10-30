@@ -12,26 +12,42 @@ namespace TbsFramework.Units.Abilities
 
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
-            // UnitReference.currentActionPoints += AddActionPoint;
-            // UnitReference.attackLimit = 0;
+            var realPlayer = UnitReference as RealPlayer;
+            realPlayer.currentActionPoints += AddActionPoint;
+            realPlayer.attackLimit = 0;
+            IsActive = false;
             yield return null;
         }
 
-        public override IDictionary<string, string> Encapsulate()
+        public override void Activate()
         {
-            var dict = new Dictionary<string, string>();
-            dict.Add("ability_type", "SlipAway");
-            dict.Add("add_action_point", AddActionPoint.ToString());
-            return dict;
+            var cellGrid = FindObjectOfType<CellGrid>();
+            if (CanPerform(cellGrid))
+            {
+                StartCoroutine(HumanExecute(cellGrid));
+            }
         }
-
-        public override IEnumerator Apply(CellGrid cellGrid, IDictionary<string, string> actionParams,
-            bool isNetworkInvoked = true)
+        
+        // 选中的时候啥也不做就行了
+        public override void OnAbilitySelected(CellGrid cellGrid)
         {
-            int addActionPoint = int.Parse(actionParams["add_action_point"]);
-            // UnitReference.currentActionPoints += addActionPoint;
-            // UnitReference.attackLimit = 0;
-            yield return null;
+            base.OnAbilitySelected(cellGrid);
+        }
+        
+        // 能否执行脚底抹油
+        public override bool CanPerform(CellGrid cellGrid)
+        {
+            if (IsActive)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        // 清理一下
+        public override void CleanUp(CellGrid cellGrid)
+        {
+
         }
     }
 }

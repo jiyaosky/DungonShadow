@@ -27,5 +27,10 @@ namespace TbsFramework.Units.Abilities
             // UnitReference.attackHasCD = false;
             yield return null;
         }
+
+        public override void Activate()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

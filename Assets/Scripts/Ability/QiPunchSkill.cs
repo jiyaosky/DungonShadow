@@ -49,5 +49,10 @@ namespace TbsFramework.Units.Abilities
         {
             // TODO: 实现击退逻辑
         }
+
+        public override void Activate()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

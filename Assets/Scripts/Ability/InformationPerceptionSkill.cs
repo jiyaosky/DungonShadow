@@ -8,26 +8,55 @@ namespace TbsFramework.Units.Abilities
 // 信息感知技能类
     public class InformationPerceptionSkill : SkillAbility
     {
+        public int AddSightRange = 1;
+        
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
-            // UnitReference.hasPenetratingVision = true;
-            // UnitReference.visionRange++;
+            var fog =  FindObjectOfType<Fog>();
+
+            fog.Radius += AddSightRange;
+            fog.through = true;
+            
+            IsActive = false;
             yield return null;
         }
-
-        public override IDictionary<string, string> Encapsulate()
+        
+        public override void Activate()
         {
-            var dict = new Dictionary<string, string>();
-            dict.Add("ability_type", "InformationPerception");
-            return dict;
+            var cellGrid = FindObjectOfType<CellGrid>();
+            if (CanPerform(cellGrid))
+            {
+                StartCoroutine(HumanExecute(cellGrid));
+            }
+        }
+        
+        // 选中的时候啥也不做就行了
+        public override void OnAbilitySelected(CellGrid cellGrid)
+        {
+            base.OnAbilitySelected(cellGrid);
+        }
+        
+        // 能否执行脚底抹油
+        public override bool CanPerform(CellGrid cellGrid)
+        {
+            if (IsActive)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        // 清理一下
+        public override void CleanUp(CellGrid cellGrid)
+        {
+
         }
 
-        public override IEnumerator Apply(CellGrid cellGrid, IDictionary<string, string> actionParams,
-            bool isNetworkInvoked = true)
+        public override void OnTurnEnd(CellGrid cellGrid)
         {
-            // UnitReference.hasPenetratingVision = true;
-            // UnitReference.visionRange++;
-            yield return null;
+            var fog =  FindObjectOfType<Fog>();
+            fog.Radius -= AddSightRange;
+            fog.through = false;
         }
     }
 }

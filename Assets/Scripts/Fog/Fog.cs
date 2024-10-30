@@ -15,6 +15,7 @@ public class Fog : MonoBehaviour
     public Material Material;
     public float Radius = 5;
     public Transform PlayerTransform;
+    public bool through = false;
 
     private Texture2D _fogTexture;
     private Color[] _fogColors;
@@ -57,11 +58,11 @@ public class Fog : MonoBehaviour
         }
     }
 
-    public void LightUpRadius(Vector2 position, float radius)
+    public void LightUpRadius(Vector2 position, float radius, bool through)
     {
         SetAllDark();
         List<Cell> cells = new List<Cell>();
-        CellGrid.GetCellsInsight(cells, position, radius, PlayerTransform.rotation.eulerAngles.y, 45);
+        CellGrid.GetCellsInsight(cells, position, radius, PlayerTransform.rotation.eulerAngles.y, 45, through);
         foreach (var cell in cells)
         {
             Vector2Int cellIndex = CellGrid.GetCellIndexInMap(cell);
@@ -98,7 +99,7 @@ public class Fog : MonoBehaviour
         Vector2Int playerIndex = CellGrid.GetCellIndexInMap((int)playerPosition.x, (int)playerPosition.y);
         if (playerIndex.x != _lastPlayerX || playerIndex.y != _lastPlayerY)
         {
-            LightUpRadius(playerPosition, Radius);
+            LightUpRadius(playerPosition, Radius, through);
             _lastPlayerX = playerIndex.x;
             _lastPlayerY = playerIndex.y;
         }
