@@ -190,8 +190,6 @@ namespace TbsFramework.Units
             TotalHitPoints = HitPoints;
             TotalMovementPoints = MovementPoints;
             TotalActionPoints = ActionPoints;
-            // 设置一下朝向
-            currentForward = transform.forward;
 
             foreach (var ability in GetComponentsInChildren<Ability>())
             {
@@ -314,6 +312,7 @@ namespace TbsFramework.Units
         /// </summary>
         public void AttackHandler(Unit unitToAttack)
         {
+            ChangeFoward(transform.position, unitToAttack.transform.position);
             AttackAction attackAction = DealDamage(unitToAttack);
             MarkAsAttacking(unitToAttack);
             unitToAttack.DefendHandler(this, attackAction.Damage);
@@ -455,6 +454,13 @@ namespace TbsFramework.Units
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
             }
+        }
+        
+        public bool IsBehindAnotherUnit(Unit otherUnit)
+        {
+            Vector3 directionToOtherUnit = (otherUnit.transform.position - this.transform.position).normalized;
+            float dotProduct = Vector3.Dot(directionToOtherUnit, new Vector3(this.currentForward.x, 0, this.currentForward.z).normalized);
+            return dotProduct < -0.5f; // 一个经验值，可根据实际情况调整阈值，这里假设小于 -0.5 就认为在背面
         }
         /// <summary>
         /// Method called after movement animation has finished.
