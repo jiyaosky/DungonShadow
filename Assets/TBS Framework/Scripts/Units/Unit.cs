@@ -310,10 +310,10 @@ namespace TbsFramework.Units
         /// <summary>
         /// Method performs an attack on given unit.
         /// </summary>
-        public void AttackHandler(Unit unitToAttack)
+        public void AttackHandler(Unit unitToAttack, int cost)
         {
             ChangeFoward(transform.position, unitToAttack.transform.position);
-            AttackAction attackAction = DealDamage(unitToAttack);
+            AttackAction attackAction = DealDamage(unitToAttack, cost);
             MarkAsAttacking(unitToAttack);
             unitToAttack.DefendHandler(this, attackAction.Damage);
             AttackActionPerformed(attackAction.ActionCost);
@@ -322,7 +322,7 @@ namespace TbsFramework.Units
         /// Method for calculating damage and action points cost of attacking given unit
         /// </summary>
         /// <returns></returns>
-        protected virtual AttackAction DealDamage(Unit unitToAttack)
+        protected virtual AttackAction DealDamage(Unit unitToAttack, int cost)
         {
             return new AttackAction(AttackFactor, 1f);
         }
@@ -376,7 +376,7 @@ namespace TbsFramework.Units
 
         public int DryAttack(Unit other)
         {
-            int damage = DealDamage(other).Damage;
+            int damage = DealDamage(other, 1).Damage;
             int realDamage = other.Defend(this, damage);
 
             return realDamage;

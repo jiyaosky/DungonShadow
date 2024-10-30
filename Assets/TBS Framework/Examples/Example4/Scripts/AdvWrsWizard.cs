@@ -6,16 +6,16 @@ namespace TbsFramework.Example4
     {
         public int RangedAttackFactor;
 
-        protected override AttackAction DealDamage(Unit other)
+        protected override AttackAction DealDamage(Unit other, int cost)
         {
             int distance = Cell.GetDistance(other.Cell);
             if (distance == 1)
             {
-                return new AttackAction(AttackFactor, 1);
+                return new AttackAction(AttackFactor, cost);
             }
             else
             {
-                return new AttackAction(RangedAttackFactor, 1);
+                return new AttackAction(RangedAttackFactor, cost);
             }
         }
     }

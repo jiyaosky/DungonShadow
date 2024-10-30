@@ -90,7 +90,7 @@ namespace TbsFramework.Units.Abilities
                 // int adjustedAttackRange = attackRanges[(int)SelectedAttackType];
 
                 // 执行攻击
-                Player.AttackHandler(UnitToAttack);
+                Player.AttackHandler(UnitToAttack, AbilityCost);
                 yield return new WaitForSeconds(0.5f);
             }
             yield return null;

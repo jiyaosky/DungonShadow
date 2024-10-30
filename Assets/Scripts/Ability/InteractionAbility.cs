@@ -37,7 +37,7 @@ namespace TbsFramework.Units.Abilities
             if (CanPerform(cellGrid))
             {
                 // TODO：也许交互会有消耗，那么消耗的应该是玩家的currentActionPoints
-                var interactiveCost = 0;
+                var interactiveCost = 2;
 
                 // ready to interact
                 Debug.Log("Ready to interact");

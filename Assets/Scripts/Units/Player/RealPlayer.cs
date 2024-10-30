@@ -133,7 +133,7 @@ namespace TbsFramework.Units
 
 
         // 重写父类的DealDamage
-        protected override AttackAction DealDamage(Unit unitToAttack)
+        protected override AttackAction DealDamage(Unit unitToAttack, int cost)
         {
             var damage = currentAttackFactor;
             if (IsBehindAnotherUnit(unitToAttack))

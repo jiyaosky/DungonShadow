@@ -24917,6 +24917,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1387017831}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1388128138 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5978126873448242146, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+    type: 3}
+  m_PrefabInstance: {fileID: 1458385234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f05465515f21344a762834fdf391fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1393044645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26201,6 +26213,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5978126873448242146, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6118788275626238241, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
       propertyPath: cancelButton
@@ -26285,6 +26302,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630603257680826434, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630603257680826434, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630603257680826434, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1388128138}
+    - target: {fileID: 7630603257680826434, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630603257680826434, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Activate
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630603257680826434, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TbsFramework.Units.Abilities.CircularSlashSkill, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630603257680826434, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8078392623750625610, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}

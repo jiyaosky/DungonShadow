@@ -12,7 +12,7 @@ namespace TbsFramework.Units.Abilities
         
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
-            var fog =  FindObjectOfType<Fog>();
+            var fog = FindObjectOfType<Fog>();
 
             fog.Radius += AddSightRange;
             fog.through = true;
@@ -55,7 +55,7 @@ namespace TbsFramework.Units.Abilities
         public override void OnTurnEnd(CellGrid cellGrid)
         {
             var fog =  FindObjectOfType<Fog>();
-            fog.Radius -= AddSightRange;
+            fog.Radius = 5;
             fog.through = false;
         }
     }

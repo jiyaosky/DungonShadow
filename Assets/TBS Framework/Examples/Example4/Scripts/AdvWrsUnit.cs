@@ -29,9 +29,9 @@ namespace TbsFramework.Example4
             return damage - (Cell as AdvWrsSquare).DefenceBoost;
         }
 
-        protected override AttackAction DealDamage(Unit unitToAttack)
+        protected override AttackAction DealDamage(Unit unitToAttack, int cost)
         {
-            var baseVal = base.DealDamage(unitToAttack);
+            var baseVal = base.DealDamage(unitToAttack, cost);
             var newDmg = TotalHitPoints == 0 ? 0 : (int)Mathf.Ceil(baseVal.Damage * ((float)HitPoints / TotalHitPoints));
 
             return new AttackAction(newDmg, baseVal.ActionCost);

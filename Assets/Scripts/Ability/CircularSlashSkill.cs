@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TbsFramework.Cells;
 using TbsFramework.Grid;
 using UnityEngine;
 
@@ -13,41 +14,51 @@ namespace TbsFramework.Units.Abilities
             List<Unit> enemiesAround = GetEnemiesAround(UnitReference);
             foreach (var enemy in enemiesAround)
             {
-                // enemy.TakeDamage(UnitReference.attackPower);
+                UnitReference.AttackHandler(enemy, APCost);
             }
 
             yield return null;
         }
-
-        public override IDictionary<string, string> Encapsulate()
-        {
-            var dict = new Dictionary<string, string>();
-            dict.Add("ability_type", "CircularSlash");
-            return dict;
-        }
-
-        public override IEnumerator Apply(CellGrid cellGrid, IDictionary<string, string> actionParams,
-            bool isNetworkInvoked = true)
-        {
-            List<Unit> enemiesAround = GetEnemiesAround(UnitReference);
-            foreach (var enemy in enemiesAround)
-            {
-                // enemy.TakeDamage(UnitReference.attackPower);
-            }
-
-            yield return null;
-        }
-
+        
         private List<Unit> GetEnemiesAround(Unit unit)
         {
+            var cellGrid = FindObjectOfType<CellGrid>();
+            var allEnemy = cellGrid.AIGetEnemyUnits();
             List<Unit> enemies = new List<Unit>();
             // TODO: 实现获取周围一格敌人的逻辑
+            List<Cell> neighboursCells = unit.Cell.GetNeighbours(cellGrid.Cells);
+
+            foreach (var e in allEnemy)
+            {
+                foreach (var cell in neighboursCells)
+                {
+                    if (cell.Equals(e.Cell))
+                    { 
+                        enemies.Add(e);
+                    }
+                }
+            }
+            
             return enemies;
         }
+        
+        public override bool CanPerform(CellGrid cellGrid)
+        {
+            if (IsActive)
+            {
+                return true;
+            }
+            return false;
+        }
+        
 
         public override void Activate()
         {
-            throw new System.NotImplementedException();
+            var cellGrid = FindObjectOfType<CellGrid>();
+            if (CanPerform(cellGrid))
+            {
+                StartCoroutine(HumanExecute(cellGrid));
+            }
         }
     }
 }
