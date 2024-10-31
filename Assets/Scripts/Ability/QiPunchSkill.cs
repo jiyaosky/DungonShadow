@@ -18,39 +18,28 @@ namespace TbsFramework.Units.Abilities
         // 可以添加特定于 Skill 的属性和方法
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
-            var enemies = cellGrid.GetAIEnemies();
-            var unitsInRange = enemies.Where(u => u.Cell.GetDistance(UnitReference.Cell) <= Range);
-            foreach (var enemy in unitsInRange)
+            var realPlayer = UnitReference as RealPlayer;
+            realPlayer.AttackHandler(UnitToAttack, APCost, false);
+            // 获取气功拳推到的目标点
+            Cell pushTarget = UnitToAttack.Cell;
+            IList<Cell> path = new List<Cell>();
+            path.Add(pushTarget);
+            Vector2 unitDirection = new Vector3(realPlayer.currentForward.x, realPlayer.currentForward.z);
+            for (int i = 1; i <= pushRange; i++)
             {
-                UnitReference.ChangeFoward(UnitReference.transform.position,enemy.transform.position);
-                UnitReference.AttackHandler(enemy, APCost, false);
-                
-                // 获取气功拳推到的目标点
-                Cell pushTarget = enemy.Cell;
-                IList<Cell> path = new List<Cell>();
-                path.Add(pushTarget);
-                Vector2 unitDirection = new Vector3(UnitReference.currentForward.x, UnitReference.currentForward.z);
-                for (int i = 1; i <= pushRange; i++)
+                Vector2 targetPosition = realPlayer.Cell.OffsetCoord + unitDirection * i;
+                Cell targetCell = cellGrid.GetCell(targetPosition);
+                if (!targetCell.IsTaken)
                 {
-                    
-                    Vector2 targetPosition = UnitReference.Cell.OffsetCoord + unitDirection * i;
-                    Cell targetCell = cellGrid.GetCell(targetPosition);
-                    pushTarget = targetCell;
-                    if (pushTarget == null)
-                    {
-                        
-                    }
-                    if (targetCell.IsTaken && !targetCell.Equals(pushTarget))
-                    {
-                        break;
-                    }
+                    path.Add(targetCell);
                 }
-                
-                
-                yield return enemy.Move(pushTarget, path);
+
+                pushTarget = targetCell;
             }
 
-            yield return null;
+            path.Reverse();
+            yield return UnitToAttack.Move(pushTarget, path);
+                
         }
         
         public override bool CanPerform(CellGrid cellGrid)
@@ -90,13 +79,6 @@ namespace TbsFramework.Units.Abilities
         // private int UnitToAttackID;
         public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
         {
-            // if (Player.SelectedAbility is not PlayerAttackAbility) return;
-            // 检测当前Unit如果是可交互的则返回空
-            if (unit.GetComponent<InteractiveAbility>() != null)
-            {
-                // Debug.Log("Unit is interactive");
-                return;
-            }
             if (UnitReference.IsUnitAttackable(unit, UnitReference.Cell))
             {
                 UnitToAttack = unit;

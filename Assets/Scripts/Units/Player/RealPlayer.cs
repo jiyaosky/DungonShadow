@@ -127,8 +127,8 @@ namespace TbsFramework.Units
 
         public override void ChangeFoward(Vector3 current, Vector3 target)
         {
-            SetNewCurrentForward();
             base.ChangeFoward(current, target);
+            SetNewCurrentForward();
         }
 
 
