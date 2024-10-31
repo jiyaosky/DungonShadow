@@ -145,10 +145,13 @@ namespace TbsFramework.Units
         }
 
         // 重写父类的方法，当攻击动作完成时调用，减少行动点数
-        protected override void AttackActionPerformed(float actionCost)
+        protected override void AttackActionPerformed(float actionCost, bool isSpendAttackLimit)
         {
+            if (isSpendAttackLimit)
+            {
+                attackLimit--;
+            }
             currentActionPoints -= actionCost;
-            attackLimit--;
         }
 
         // 重写父类是否能击中敌人的方法

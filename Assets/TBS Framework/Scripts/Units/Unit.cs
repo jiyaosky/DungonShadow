@@ -196,6 +196,7 @@ namespace TbsFramework.Units
                 RegisterAbility(ability);
                 ability.Initialize();
             }
+            MaskAsAISight();
         }
 
         public virtual void OnMouseDown()
@@ -310,13 +311,13 @@ namespace TbsFramework.Units
         /// <summary>
         /// Method performs an attack on given unit.
         /// </summary>
-        public void AttackHandler(Unit unitToAttack, int cost)
+        public void AttackHandler(Unit unitToAttack, int cost, bool isSpendAttackLimit = true)
         {
             ChangeFoward(transform.position, unitToAttack.transform.position);
             AttackAction attackAction = DealDamage(unitToAttack, cost);
             MarkAsAttacking(unitToAttack);
             unitToAttack.DefendHandler(this, attackAction.Damage);
-            AttackActionPerformed(attackAction.ActionCost);
+            AttackActionPerformed(attackAction.ActionCost, isSpendAttackLimit);
         }
         /// <summary>
         /// Method for calculating damage and action points cost of attacking given unit
@@ -330,7 +331,7 @@ namespace TbsFramework.Units
         /// Method called after unit performed an attack.
         /// </summary>
         /// <param name="actionCost">Action point cost of performed attack</param>
-        protected virtual void AttackActionPerformed(float actionCost)
+        protected virtual void AttackActionPerformed(float actionCost, bool isSpendAttackLimit)
         {
             ActionPoints -= actionCost;
         }

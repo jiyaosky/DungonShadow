@@ -96,22 +96,22 @@ namespace TbsFramework.Units.Abilities
             yield return null;
         }
         // 需要选择Attack攻击
-        public Button buttonAttackAbility; 
-        public Button cancelButton;
+        // public Button buttonAttackAbility; 
+        // public Button cancelButton;
         public override void Display(CellGrid cellGrid)
         {
             var enemyUnits = cellGrid.GetEnemyUnits(cellGrid.CurrentPlayer);
             inAttackRange = enemyUnits.Where(u => Player.IsUnitAttackable(u, Player.Cell)).ToList();
             inAttackRange.ForEach(u => u.MarkAsReachableEnemy());
-            buttonAttackAbility.onClick.AddListener(() =>
-            {
-                Player.SetSelectedAbility(this);
-                if (Player.currentActionPoints >= AbilityCost)
-                {
-                    cancelButton.gameObject.SetActive(true);
-                    cellGrid.cellGridState = new CellGridStateAbilitySelected(cellGrid, UnitReference, new List<Ability>() { this });
-                }
-            });
+            // buttonAttackAbility.onClick.AddListener(() =>
+            // {
+            //     Player.SetSelectedAbility(this);
+            //     if (Player.currentActionPoints >= AbilityCost)
+            //     {
+            //         cancelButton.gameObject.SetActive(true);
+            //         cellGrid.cellGridState = new CellGridStateAbilitySelected(cellGrid, UnitReference, new List<Ability>() { this });
+            //     }
+            // });
         }
 
         // unit 是敌人
