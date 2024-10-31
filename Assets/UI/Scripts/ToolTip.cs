@@ -9,8 +9,8 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     void Start()
     {
-        dialog_box = this.gameObject.transform.Find("DialogBox").gameObject;
-        Debug.Log("Start");
+        dialog_box = this.gameObject.transform.GetChild(0).gameObject;
+        //Debug.Log("Start");
     }
     
 
