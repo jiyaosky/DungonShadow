@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TbsFramework.Cells;
 using TbsFramework.Grid;
 using UnityEngine;
@@ -11,35 +12,14 @@ namespace TbsFramework.Units.Abilities
     {
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
-            List<Unit> enemiesAround = GetEnemiesAround(UnitReference);
-            foreach (var enemy in enemiesAround)
+            var enemies = cellGrid.GetAIEnemies();
+            var unitsInRange = enemies.Where(u => u.Cell.GetDistance(UnitReference.Cell) <= 2);
+            foreach (var enemy in unitsInRange)
             {
                 UnitReference.AttackHandler(enemy, APCost);
             }
 
             yield return null;
-        }
-        
-        private List<Unit> GetEnemiesAround(Unit unit)
-        {
-            var cellGrid = FindObjectOfType<CellGrid>();
-            var allEnemy = cellGrid.AIGetEnemyUnits();
-            List<Unit> enemies = new List<Unit>();
-            // TODO: 实现获取周围一格敌人的逻辑
-            List<Cell> neighboursCells = unit.Cell.GetNeighbours(cellGrid.Cells);
-
-            foreach (var e in allEnemy)
-            {
-                foreach (var cell in neighboursCells)
-                {
-                    if (cell.Equals(e.Cell))
-                    { 
-                        enemies.Add(e);
-                    }
-                }
-            }
-            
-            return enemies;
         }
         
         public override bool CanPerform(CellGrid cellGrid)
