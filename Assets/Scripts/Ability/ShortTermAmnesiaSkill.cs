@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TbsFramework.Grid;
+using TbsFramework.Grid.GridStates;
 using UnityEngine;
 
 namespace TbsFramework.Units.Abilities
@@ -8,46 +10,68 @@ namespace TbsFramework.Units.Abilities
 // 短暂失忆技能类
     public class ShortTermAmnesiaSkill : SkillAbility
     {
+        private int originAttackRange;
+        // 可以添加特定于 Skill 的属性和方法
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
-            Unit targetEnemy = GetTargetEnemy(UnitReference);
-            if (targetEnemy != null)
-            {
-                // targetEnemy.SetToPatrolState();
-            }
-
+            // UnitReference.AttackHandler(UnitToAttack, APCost, false);
+            UnitToAttack.AIState = 0;
             yield return null;
         }
-
-        public override IDictionary<string, string> Encapsulate()
+        
+        public override bool CanPerform(CellGrid cellGrid)
         {
-            var dict = new Dictionary<string, string>();
-            dict.Add("ability_type", "ShortTermAmnesia");
-            return dict;
-        }
-
-        public override IEnumerator Apply(CellGrid cellGrid, IDictionary<string, string> actionParams,
-            bool isNetworkInvoked = true)
-        {
-            Unit targetEnemy = GetTargetEnemy(UnitReference);
-            if (targetEnemy != null)
+            if (IsActive)
             {
-                // targetEnemy.SetToPatrolState();
+                return true;
             }
-
-            yield return null;
-        }
-
-        private Unit GetTargetEnemy(Unit unit)
-        {
-            Unit enemy = null;
-            // TODO: 实现获取目标敌人的逻辑
-            return enemy;
+            return false;
         }
 
         public override void Activate()
         {
-            throw new System.NotImplementedException();
+            var cellGrid = FindObjectOfType<CellGrid>();
+            if (CanPerform(cellGrid))
+            {
+                // StartCoroutine(HumanExecute(cellGrid));
+                cellGrid.cellGridState = new CellGridStateAbilitySelected(cellGrid, UnitReference, new List<Ability>() { this });
+            }
+
+            // UnitReference.AttackRange = originAttackRange;
+        }
+
+        public override void OnAbilitySelected(CellGrid cellGrid)
+        {
+            originAttackRange = (UnitReference as RealPlayer).AttackRange;
+            (UnitReference as RealPlayer).AttackRange = Range;
+        }
+
+        public override void OnAbilityDeselected(CellGrid cellGrid)
+        {
+            (UnitReference as RealPlayer).AttackRange = originAttackRange;
+        }
+
+        List<Unit> inAttackRange;
+        public override void Display(CellGrid cellGrid)
+        {
+            var enemyUnits = cellGrid.GetEnemyUnits(cellGrid.CurrentPlayer);
+            inAttackRange = enemyUnits.Where(u => UnitReference.IsUnitAttackable(u, UnitReference.Cell)).ToList();
+            inAttackRange.ForEach(u => u.MarkAsReachableEnemy());
+        }
+
+        // 选择目标时候执行
+        private Unit UnitToAttack;
+        public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
+        {
+            if (UnitReference.IsUnitAttackable(unit, UnitReference.Cell))
+            {
+                UnitToAttack = unit;
+                StartCoroutine(HumanExecute(cellGrid));
+            }
+            else if (cellGrid.GetCurrentPlayerUnits().Contains(unit))
+            {
+                cellGrid.cellGridState = new CellGridStateAbilitySelected(cellGrid, unit, unit.GetComponents<Ability>().ToList());
+            }
         }
     }
 }

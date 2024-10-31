@@ -24,14 +24,14 @@ namespace TbsFramework.Units
         
         // 当前攻击力
         [SerializeField]
-        private int currentAttackFactor;
+        public int currentAttackFactor;
 
         public int attackLimit = 1;
         
 
         // 当前暗杀力
         [SerializeField]
-        private int currentAssassinationPower;
+        public int currentAssassinationPower;
 
         private Animator playerAnimator;
 
@@ -113,7 +113,7 @@ namespace TbsFramework.Units
             {
                 return currentActionPoints;
             }
-            protected set
+            set
             {
                 currentActionPoints = value;
             }

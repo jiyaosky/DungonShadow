@@ -57,7 +57,7 @@ public class ShopManager : MonoBehaviour
         buyButton3 = abilityPanel.transform.GetChild(5).GetComponent<Button>();
 
         //Leave button
-        leaveButton = this.gameObject.transform.FindChild("LeaveButton").GetComponent<Button>();
+        leaveButton = this.gameObject.transform.Find("LeaveButton").GetComponent<Button>();
         leaveButton.onClick.AddListener(() => { 
             this.gameObject.SetActive(false);
             skill1.SetActive(false);
