@@ -64,11 +64,21 @@ namespace TbsFramework.Units.Abilities
             // UnitReference.AttackRange = originAttackRange;
         }
 
+        private int originAttackRange;
+        public override void OnAbilitySelected(CellGrid cellGrid)
+        {
+            originAttackRange = (UnitReference as RealPlayer).AttackRange;
+            (UnitReference as RealPlayer).AttackRange = Range;
+        }
+
+        public override void OnAbilityDeselected(CellGrid cellGrid)
+        {
+            (UnitReference as RealPlayer).AttackRange = originAttackRange;
+        }
+
         List<Unit> inAttackRange;
         public override void Display(CellGrid cellGrid)
         {
-            // originAttackRange = UnitReference.AttackRange;
-            UnitReference.AttackRange = Range;
             var enemyUnits = cellGrid.GetEnemyUnits(cellGrid.CurrentPlayer);
             inAttackRange = enemyUnits.Where(u => UnitReference.IsUnitAttackable(u, UnitReference.Cell)).ToList();
             inAttackRange.ForEach(u => u.MarkAsReachableEnemy());
@@ -76,16 +86,11 @@ namespace TbsFramework.Units.Abilities
 
         // 选择目标时候执行
         private Unit UnitToAttack;
-        // private int UnitToAttackID;
         public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
         {
             if (UnitReference.IsUnitAttackable(unit, UnitReference.Cell))
             {
                 UnitToAttack = unit;
-                // UnitToAttackID = UnitToAttack.UnitID;
-                // 这里可以添加逻辑让玩家选择攻击方式
-                // TODO:
-                // CurrentSelectedAttackAbility = PlayerAttackAbilities[0]; // 默认选择第一种攻击方式，实际可以通过某种交互来让玩家选择
                 StartCoroutine(HumanExecute(cellGrid));
             }
             else if (cellGrid.GetCurrentPlayerUnits().Contains(unit))
