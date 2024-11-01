@@ -13,10 +13,12 @@ namespace TbsFramework.Units.Abilities
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
             var enemies = cellGrid.GetAIEnemies();
-            var unitsInRange = enemies.Where(u => u.Cell.GetDistance(UnitReference.Cell) <= 2);
+            var unitsInRange = enemies.Where(u => u.Cell.GetDistance(UnitReference.Cell) <= Range);
+            var costAp = APCost;
             foreach (var enemy in unitsInRange)
             {
-                UnitReference.AttackHandler(enemy, APCost);
+                UnitReference.AttackHandler(enemy, costAp,false);
+                costAp = 0;
             }
 
             yield return null;

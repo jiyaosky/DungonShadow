@@ -538,9 +538,9 @@ MonoBehaviour:
   Description: 
   IsActive: 1
   Range: 0
-  APCost: 0
-  CoolDown: 0
-  Price: 0
+  APCost: 1
+  CoolDown: 2
+  Price: 8
   AddSightRange: 1
 --- !u!1 &1528536274790738152
 GameObject:
@@ -672,11 +672,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillName: 
   Description: 
-  IsActive: 0
+  IsActive: 1
   Range: 0
-  APCost: 0
-  CoolDown: 0
-  Price: 0
+  APCost: 3
+  CoolDown: 3
+  Price: 20
 --- !u!1 &1731952199455311866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,10 +1956,10 @@ MonoBehaviour:
   SkillName: 
   Description: 
   IsActive: 1
-  Range: 0
-  APCost: 0
+  Range: 2
+  APCost: 4
   CoolDown: 0
-  Price: 0
+  Price: 12
 --- !u!1 &6193351921819808870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,9 +2473,9 @@ MonoBehaviour:
   Description: 
   IsActive: 1
   Range: 0
-  APCost: 0
+  APCost: 1
   CoolDown: 0
-  Price: 0
+  Price: 8
   AddActionPoint: 2
 --- !u!1 &7406192825140061721
 GameObject:
@@ -3136,8 +3136,8 @@ MonoBehaviour:
   IsActive: 1
   Range: 1
   APCost: 3
-  CoolDown: 0
-  Price: 0
+  CoolDown: 2
+  Price: 12
   pushRange: 3
 --- !u!1 &8251138708998186253
 GameObject:

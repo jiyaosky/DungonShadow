@@ -109,7 +109,7 @@ namespace TbsFramework.Units
 
         public int TotalHitPoints { get; private set; }
         public float TotalMovementPoints { get; private set; }
-        public float TotalActionPoints { get; private set; }
+        public float TotalActionPoints { get; set; }
 
         /// <summary>
         /// Cell that the unit is currently occupying.
