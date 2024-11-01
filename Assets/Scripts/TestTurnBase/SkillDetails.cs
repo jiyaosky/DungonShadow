@@ -12,12 +12,12 @@ namespace TbsFramework
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            DescriptionText.text = Skill.name;
+            //DescriptionText.text = Skill.name;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            DescriptionText.text = "";
+            //DescriptionText.text = "";
         }
     }
 }

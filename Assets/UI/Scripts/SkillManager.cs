@@ -14,7 +14,8 @@ public class SkillManager : MonoBehaviour
     private GameObject skillSlot;
 
     //Read the Skill List
-    private GameObject allSkills;
+    [SerializeField]
+    public GameObject allSkills;
 
     private GameObject changeSkill;
 
@@ -24,7 +25,8 @@ public class SkillManager : MonoBehaviour
         skillCount = 0;
 
         //Get all skills
-        allSkills = GameObject.Find("Canvas/AbilitySelect/Panel");
+        //allSkills = GameObject.FindChild("Canvas/AbilitySet");
+        //allSkills = GameObject.Find("Units/Thief/Canvas/AbilitySelect/Panel");
 
     }
 

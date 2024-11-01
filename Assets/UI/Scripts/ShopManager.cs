@@ -27,19 +27,21 @@ public class ShopManager : MonoBehaviour
     private GameObject skill2;
     private GameObject skill3;
 
-    private GameObject allSkills;
+    [SerializeField]
+    public GameObject allSkills;
     private int skillSize;
 
     // Call SkillManager
-    //private GameObject skillManager;
     private SkillManager skillManager;
 
+    [SerializeField]
     private Button leaveButton;
 
     void Start()
     {
         //Get all skills
-        allSkills = GameObject.Find("Canvas/AbilitySet");
+        //allSkills = GameObject.FindChild("Canvas/AbilitySet");
+        //allSkills = GameObject.Find("Units/Thief/Canvas/AbilitySelect/Panel");
         skillSize = allSkills.transform.childCount;
 
         skillManager = GameObject.Find("Canvas/ActionPanel/SkillManager").GetComponent<SkillManager>();
@@ -57,12 +59,26 @@ public class ShopManager : MonoBehaviour
         buyButton3 = abilityPanel.transform.GetChild(5).GetComponent<Button>();
 
         //Leave button
-        leaveButton = this.gameObject.transform.Find("LeaveButton").GetComponent<Button>();
+        //leaveButton = this.gameObject.transform.Find("LeaveButton").GetComponent<Button>();
+        //Removeall
         leaveButton.onClick.AddListener(() => { 
             this.gameObject.SetActive(false);
-            skill1.SetActive(false);
-            skill2.SetActive(false);
-            skill3.SetActive(false);
+            
+            
+            if (buyButton1.interactable == true) {
+                skill1.SetActive(false);
+            }
+
+            if (buyButton2.interactable == true)
+            {
+                skill2.SetActive(false);
+            }
+
+            if (buyButton3.interactable == true)
+            {
+                skill3.SetActive(false);
+            }
+
         });
 
         Refresh();
@@ -102,15 +118,18 @@ public class ShopManager : MonoBehaviour
         //Set buy button
         buyButton1.onClick.AddListener(() => {
             skillManager.getSkill(index1);
-            skill1.SetActive(false);
+            //skill1.SetActive(false);
+            buyButton1.interactable = false;
         });
         buyButton2.onClick.AddListener(() => {
             skillManager.getSkill(index2);
-            skill2.SetActive(false);
+            //skill2.SetActive(false);
+            buyButton2.interactable = false;
         });
         buyButton3.onClick.AddListener(() => {
             skillManager.getSkill(index3);
-            skill3.SetActive(false);
+            //skill3.SetActive(false);
+            buyButton3.interactable = false;
         });
     }   
 
