@@ -10,6 +10,7 @@ namespace TbsFramework.Units.Abilities
 {
     public class InteractiveAbility : Ability
     {
+        
         public string AbilityName = "";
         // 是否为单次交互
         bool isOnceInteract = false;
@@ -18,9 +19,17 @@ namespace TbsFramework.Units.Abilities
         // 交互范围
         public int Range = 1;
 
+        public GameObject shopPanel;
+
+        public ShopManager shopManager;
+
         private void Start()
         {
             isInteracted = false;
+
+            //Shop related
+            shopPanel = GameObject.Find("Canvas/ShopPanel");
+            shopManager = shopPanel.GetComponent<ShopManager>();
         }
 
         // 在当前Chest Unit的Range范围内搜索是否有包含Component<RealPlayer>();的Unit
@@ -122,8 +131,8 @@ namespace TbsFramework.Units.Abilities
 
         public void DoNPC()
         {
-            // 可以先做个动画
-            // 然后弹出商店界面
+            //Shop related
+            shopPanel.SetActive(true);
         }
     }
 }

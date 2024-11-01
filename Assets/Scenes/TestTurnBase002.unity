@@ -20438,7 +20438,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047038884}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e8b0c3b79f56a4499372e2e63a86191, type: 3}
   m_Name: 
@@ -39527,6 +39527,11 @@ PrefabInstance:
       propertyPath: Skill
       value: 
       objectReference: {fileID: 526988563}
+    - target: {fileID: 1515853571439285478, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1703683811626720442, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -39627,6 +39632,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2284786759225272513, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2331657015222577850, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: Skill
@@ -39637,6 +39647,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1851784331}
+    - target: {fileID: 3293059456052816292, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3694484653252108448, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: Skill
@@ -39652,6 +39667,11 @@ PrefabInstance:
       propertyPath: Skill
       value: 
       objectReference: {fileID: 1642734084}
+    - target: {fileID: 5502256175985174422, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5941077411627930407, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -39687,6 +39707,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6718841276675942194, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7232904350559954843, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: m_Name
@@ -39697,6 +39722,16 @@ PrefabInstance:
       propertyPath: skill
       value: 
       objectReference: {fileID: 1315671108}
+    - target: {fileID: 7988939125647230749, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761956657948467207, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8764266716664551287, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: Skill

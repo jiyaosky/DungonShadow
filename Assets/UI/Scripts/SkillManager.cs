@@ -18,6 +18,9 @@ public class SkillManager : MonoBehaviour
     [SerializeField]
     public GameObject allSkills;
 
+    [SerializeField]
+    public GameObject tempHolder;
+
     private GameObject changeSkill;
 
     void Start()
@@ -33,22 +36,28 @@ public class SkillManager : MonoBehaviour
 
     public void getSkill(int index) {
 
-        
+
         //Changing the next empty skill slot into a skill button
-        
-        skillSlot = this.gameObject.transform.GetChild(skillCount).gameObject;
-        changeSkill = allSkills.transform.GetChild(index).gameObject;
-        // 设置一下这个技能已经启用
-        var skill =  changeSkill.GetComponent<SkillDetails>().Skill;
-        skill.IsActive = true;
-        changeSkill.SetActive(true);
-        changeSkill.transform.position = skillSlot.transform.position;
-        skillSlot.SetActive(false);
+        if (skillCount <= 3)
+        {
 
-        //Debug.Log("Changing skills" + this.gameObject.transform.GetChild(skillCount).gameObject.name);
+            skillSlot = this.gameObject.transform.GetChild(skillCount).gameObject;
+            changeSkill = allSkills.transform.GetChild(index).gameObject;
 
-        skillCount++;
+            // 设置一下这个技能已经启用
+            var skill = changeSkill.GetComponent<SkillDetails>().Skill;
+            skill.IsActive = true;
+            changeSkill.SetActive(true);
+            changeSkill.transform.position = skillSlot.transform.position;
+            skillSlot.SetActive(false);
 
+            //Debug.Log("Changing skills" + this.gameObject.transform.GetChild(skillCount).gameObject.name);
+
+            skillCount++;
+
+        }
+
+        else return;
     }
 
 
