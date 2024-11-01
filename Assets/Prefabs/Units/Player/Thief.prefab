@@ -538,9 +538,9 @@ MonoBehaviour:
   Description: 
   IsActive: 1
   Range: 0
-  APCost: 0
-  CoolDown: 0
-  Price: 0
+  APCost: 1
+  CoolDown: 2
+  Price: 8
   AddSightRange: 1
 --- !u!1 &1528536274790738152
 GameObject:
@@ -672,11 +672,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillName: 
   Description: 
-  IsActive: 0
+  IsActive: 1
   Range: 0
-  APCost: 0
-  CoolDown: 0
-  Price: 0
+  APCost: 3
+  CoolDown: 3
+  Price: 20
 --- !u!1 &1731952199455311866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1244,7 @@ GameObject:
   - component: {fileID: 4667782450105433162}
   - component: {fileID: 4401581563704049578}
   - component: {fileID: 4144398527110873686}
+  - component: {fileID: 1922656424491592198}
   m_Layer: 0
   m_Name: Thief
   m_TagString: target
@@ -1439,6 +1440,19 @@ MonoBehaviour:
   - {fileID: 6509322776202404668}
   - {fileID: 4242868611598391603}
   - {fileID: 4948968941290533934}
+--- !u!114 &1922656424491592198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783229825609753673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4092043733121c142a4f96cbeb6d95af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuffList: []
 --- !u!1 &4946307662997777423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,19 +1813,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1377711557180240873}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3234633776716818678}
-        m_TargetAssemblyTypeName: TbsFramework.Units.Abilities.QiPunchSkill, Assembly-CSharp
-        m_MethodName: Activate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5972935763672101053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,10 +1958,10 @@ MonoBehaviour:
   SkillName: 
   Description: 
   IsActive: 1
-  Range: 0
-  APCost: 0
+  Range: 2
+  APCost: 4
   CoolDown: 0
-  Price: 0
+  Price: 12
 --- !u!1 &6193351921819808870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,9 +2475,9 @@ MonoBehaviour:
   Description: 
   IsActive: 1
   Range: 0
-  APCost: 0
+  APCost: 1
   CoolDown: 0
-  Price: 0
+  Price: 8
   AddActionPoint: 2
 --- !u!1 &7406192825140061721
 GameObject:
@@ -3039,7 +3041,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5212744019872711847}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 928766233548591228}
+        m_TargetAssemblyTypeName: TbsFramework.Units.Abilities.FrenzySkill, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8097314774765027894
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,8 +3150,8 @@ MonoBehaviour:
   IsActive: 1
   Range: 1
   APCost: 3
-  CoolDown: 0
-  Price: 0
+  CoolDown: 2
+  Price: 12
   pushRange: 3
 --- !u!1 &8251138708998186253
 GameObject:
