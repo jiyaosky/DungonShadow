@@ -6484,29 +6484,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 7232904350559954843, guid: 83304d973bd44ed42bf4114c782232d6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7265770870127589997, guid: 83304d973bd44ed42bf4114c782232d6,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 191
-      objectReference: {fileID: 0}
-    - target: {fileID: 7265770870127589997, guid: 83304d973bd44ed42bf4114c782232d6,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -203
-      objectReference: {fileID: 0}
-    - target: {fileID: 7388312905165086916, guid: 83304d973bd44ed42bf4114c782232d6,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-=======
->>>>>>> origin/main
     - target: {fileID: 7577268950723697146, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -6608,22 +6585,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-<<<<<<< HEAD
-    m_RemovedGameObjects:
-    - {fileID: 353900702068215685, guid: 83304d973bd44ed42bf4114c782232d6, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1703683811626720442, guid: 83304d973bd44ed42bf4114c782232d6,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1650715910}
-    - targetCorrespondingSourceObject: {fileID: 1188430191882427940, guid: 83304d973bd44ed42bf4114c782232d6,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1271097670}
-=======
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
->>>>>>> origin/main
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83304d973bd44ed42bf4114c782232d6, type: 3}
 --- !u!1001 &295714609
