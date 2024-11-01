@@ -91,7 +91,7 @@ public class ShopManager : MonoBehaviour
         //Removeall
         leaveButton.onClick.AddListener(() => { 
             this.gameObject.SetActive(false);
-            
+            Clear();
             
             if (buyButton1.interactable == true) {
                 skill1.SetActive(false);
@@ -126,15 +126,19 @@ public class ShopManager : MonoBehaviour
         index3 = Random.Range(0, skillPool.Count);
 
 
-        //get actually shop index
-        index1 = skillPool[index1];
-        index2 = skillPool[index2];
-        index3 = skillPool[index3];
 
         //Remove Dupolicate
         while (index2 == index1) { index2 = Random.Range(0, skillSize); }
         while (index3 == index1 || index3 == index2) { index3 = Random.Range(0, skillSize); }
         //Debug.Log("Duplication Check" + index1 + index2 + index3);
+
+        Debug.Log("Select Item " + index1 + index2 + index3);
+
+        //get actually shop index
+        index1 = skillPool[index1];
+        index2 = skillPool[index2];
+        index3 = skillPool[index3];
+
 
         //Load Skills
         /*
@@ -178,6 +182,8 @@ public class ShopManager : MonoBehaviour
             //remove item from the pool
             skillPool.Remove(index1);
 
+            //Debug.Log("Remove item " + index1);
+
         });
         buyButton2.onClick.AddListener(() => {
             skillManager.getSkill(index2);
@@ -186,6 +192,9 @@ public class ShopManager : MonoBehaviour
 
             //remove item from the pool
             skillPool.Remove(index2);
+
+            //Debug.Log("Remove item " + index2);
+
         });
         buyButton3.onClick.AddListener(() => {
             skillManager.getSkill(index3);
@@ -194,6 +203,9 @@ public class ShopManager : MonoBehaviour
 
             //remove item from the pool
             skillPool.Remove(index3);
+
+            //Debug.Log("Remove item " + index3);
+
         });
 
         //Load Relics, Relics come with button
@@ -217,11 +229,20 @@ public class ShopManager : MonoBehaviour
 
     public void Clear() {
 
-        if (skill1 != null) { skill1.SetActive(false); }
-        if (skill2 != null) { skill2.SetActive(false); }
-        if (skill3 != null) { skill3.SetActive(false); }
-        if (relic1 != null) { relic1.SetActive(false); }
-        if (relic2 != null) { relic2.SetActive(false); }
+        if (index1 != null)
+        {
+            allSkills.transform.GetChild(index1).gameObject.SetActive(false);
+        }
+        if (index2 != null)
+        {
+            allSkills.transform.GetChild(index2).gameObject.SetActive(false);
+        }
+        if (index3 != null)
+        {
+            allSkills.transform.GetChild(index3).gameObject.SetActive(false);
+        }
+        //relic1.SetActive(false);
+        //relic2.SetActive(false);
 
     }
 }
