@@ -2,15 +2,19 @@
 using TbsFramework.Grid;
 using TbsFramework.Grid.GridStates;
 using TbsFramework.Players;
+using TbsFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TbsFramework.Gui
+namespace TbsFramework
 {
     public class GUIController : MonoBehaviour
     {
         public CellGrid CellGrid;
         public Button EndTurnButton;
+
+        public GameObject realPlayer;
+        public GameObject Canvas;
 
         // public Text currentRoundText;
         //
@@ -29,6 +33,11 @@ namespace TbsFramework.Gui
             CellGrid.TurnEnded += OnTurnEnded;
             CellGrid.GameStarted += OnGameStarted;
             // totalRoundText.text = totalRound.ToString();
+        }
+
+        void Start()
+        {
+            // Canvas.transform.Find("AbilitySet").GetComponentsInChildren<ToolTip>();
         }
 
         private void OnGameStarted(object sender, EventArgs e)
