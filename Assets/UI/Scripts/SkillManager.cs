@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TbsFramework;
 using UnityEngine;
 
 
@@ -37,6 +38,9 @@ public class SkillManager : MonoBehaviour
         
         skillSlot = this.gameObject.transform.GetChild(skillCount).gameObject;
         changeSkill = allSkills.transform.GetChild(index).gameObject;
+        // 设置一下这个技能已经启用
+        var skill =  changeSkill.GetComponent<SkillDetails>().Skill;
+        skill.IsActive = true;
         changeSkill.SetActive(true);
         changeSkill.transform.position = skillSlot.transform.position;
         skillSlot.SetActive(false);
