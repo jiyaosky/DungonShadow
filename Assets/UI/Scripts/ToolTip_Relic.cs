@@ -34,22 +34,23 @@ public class ToolTip_Relic : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     // Start is called before the first frame update
     void Start()
     {
+
         goldController = goldManager.GetComponent<GoldController>();
         
-        if (goldController.GetValue(0) < price) {
-            buyButton.onClick.RemoveAllListeners();
+        //Debug.Log("Gold" + goldController.GetValue(0) + "Price" + price);
 
-            buyButton.onClick.AddListener(() => {
-                messagePanel.SetActive(true);
-                messagePopUp.text = "Not Enough Gold";
-            });
+        if (goldController.GetValue(0) < price) {
+
+                buyButton.interactable = false;
+                //messagePanel.SetActive(true);
+                //messagePopUp.text = "Not Enough Gold";
+
         }
 
         else {
             buyButton.onClick.AddListener(() => {
 
-                    price = 0 - price;
-                    goldController.UpdateValue(0,price);
+                    goldController.UpdateValue(0, (0 - price));
             
             });
         }

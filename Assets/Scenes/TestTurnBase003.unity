@@ -10646,7 +10646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold_text: {fileID: 1407213515}
-  StartingAmount: 5
+  StartingAmount: 100
 --- !u!1001 &523933405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12889,7 +12889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &655761822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12963,7 +12963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldManager: {fileID: 518945693}
   buyButton: {fileID: 1625910725}
-  price: 18
+  price: 10
   dialog_box: {fileID: 1676475373}
   messagePanel: {fileID: 1827287366}
   messagePopUp: {fileID: 1179763475}
@@ -28282,7 +28282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 18
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -29221,7 +29221,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508864451}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31204,9 +31204,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1508864452}
   - {fileID: 2059218880}
   - {fileID: 655761822}
+  - {fileID: 1508864452}
   m_Father: {fileID: 1724304295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1652178677
