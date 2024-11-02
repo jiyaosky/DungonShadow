@@ -4625,6 +4625,7 @@ MonoBehaviour:
   MarkAsHighlightedFn: []
   UnMarkFn: []
   IsTaken: 0
+  IsSightObstructed: 0
   MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
@@ -4634,6 +4635,7 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 1}
   _isBaked: 0
   View: {fileID: 6388482747835296697}
+  MaskAISight: {fileID: 0}
 --- !u!1001 &1269687435928708341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54275,6 +54277,7 @@ MonoBehaviour:
   MarkAsHighlightedFn: []
   UnMarkFn: []
   IsTaken: 0
+  IsSightObstructed: 0
   MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
@@ -54284,6 +54287,7 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 1}
   _isBaked: 0
   View: {fileID: 1761922382826549420}
+  MaskAISight: {fileID: 0}
 --- !u!4 &6460866078045367655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 611211003238295772, guid: 003d505afdae4694eb10761707009716,
@@ -57642,6 +57646,7 @@ MonoBehaviour:
   MarkAsHighlightedFn: []
   UnMarkFn: []
   IsTaken: 0
+  IsSightObstructed: 0
   MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
@@ -57651,6 +57656,7 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 1}
   _isBaked: 0
   View: {fileID: 6261118863560376122}
+  MaskAISight: {fileID: 0}
 --- !u!1001 &6862410335029694914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63582,6 +63588,7 @@ MonoBehaviour:
   MarkAsHighlightedFn: []
   UnMarkFn: []
   IsTaken: 0
+  IsSightObstructed: 0
   MovementCost: 1
   _tileID: -983634425
   _ruleID: -1
@@ -63591,6 +63598,7 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 1}
   _isBaked: 0
   View: {fileID: 4088920371425100179}
+  MaskAISight: {fileID: 0}
 --- !u!4 &8747330832983301208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 611211003238295772, guid: 003d505afdae4694eb10761707009716,

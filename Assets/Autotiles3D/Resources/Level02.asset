@@ -60,3 +60,11 @@ MonoBehaviour:
     Random: 0
     _name: wall4
     Rules: []
+  - _group: Level02
+    _tileID: -1929790373
+    Default: {fileID: 6724369939058496659, guid: 2dba3d4a17de77446ae1fe06a5d29ed5,
+      type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall5
+    Rules: []
