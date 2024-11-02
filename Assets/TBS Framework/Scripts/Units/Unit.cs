@@ -254,15 +254,23 @@ namespace TbsFramework.Units
 
             SetState(new UnitStateNormal(this));
         }
+
         /// <summary>
         /// Method is called when units HP drops below 1.
         /// </summary>
+        private IEnumerator WaitAndDestroyed()
+        {
+            yield return new WaitForSeconds(1f);
+            Destroy(gameObject);
+        }
+
         protected virtual void OnDestroyed()
         {
+            SetAnimation("Base Layer.Death",Time.deltaTime * MovementAnimationSpeed);
+            StartCoroutine(WaitAndDestroyed());
             Cell.IsTaken = false;
             Cell.CurrentUnits.Remove(this);
             MarkAsDestroyed();
-            Destroy(gameObject);
         }
 
         /// <summary>

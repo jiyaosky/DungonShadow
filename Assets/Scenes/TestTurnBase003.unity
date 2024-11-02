@@ -10558,8 +10558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ab24266c7c67f4b833edf5e15da744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold_text: {fileID: 2069819133}
-  StartingAmount: 5
 --- !u!1001 &523933405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27787,7 +27785,7 @@ PrefabInstance:
     - target: {fileID: 1922656424491592198, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
       propertyPath: BuffList.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1922656424491592198, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
@@ -38584,18 +38582,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2063712856}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2069819133 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6841996898096076634, guid: 83304d973bd44ed42bf4114c782232d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 291916365}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2070876681
 PrefabInstance:
   m_ObjectHideFlags: 0

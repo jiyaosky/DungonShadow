@@ -32,7 +32,7 @@ namespace Autotiles3D
         {
             _grid.GridSize = (LevelSize)EditorGUILayout.EnumPopup("Grid Size", _grid.GridSize);
             _grid.Height = EditorGUILayout.IntSlider("Height", _grid.Height, 1, 50);
-            _grid.Width = EditorGUILayout.IntSlider("Width", _grid.Width, 1, 50);
+            _grid.Width = EditorGUILayout.IntSlider("Width", _grid.Width, 1, 100);
             var scale = EditorGUILayout.Slider("Unit Scale", _grid.Unit, 0.1f, 10f);
             if (scale != _grid.Unit)
             {

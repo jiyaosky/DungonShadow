@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TbsFramework.Grid;
 using TbsFramework.Units;
 using TbsFramework.Units.Abilities;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace TbsFramework
@@ -17,6 +18,7 @@ namespace TbsFramework
             {
                 UnitReference.AddBuff(buff);
                 // 可以设置动画效果
+                UnitReference.SetAnimation("Base Layer.Buff", Time.deltaTime * UnitReference.MovementAnimationSpeed);
             }
             yield return null;
         }
@@ -38,6 +40,7 @@ namespace TbsFramework
         public void AddToBuffList(Buff buff)
         {
             BuffList.Add(buff);
+            UnitReference.SetAnimation("Base Layer.Buff", Time.deltaTime * UnitReference.MovementAnimationSpeed);
         }
     }
 }

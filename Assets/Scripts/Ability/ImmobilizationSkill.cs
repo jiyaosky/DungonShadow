@@ -18,6 +18,7 @@ namespace TbsFramework.Units.Abilities
         {
             // UnitReference.AttackHandler(UnitToAttack, APCost, false);
             UnitToAttack.AddBuff(immobilizationBuff);
+            UnitToAttack.SetAnimation("Base Layer.StunnedLoop", Time.deltaTime * UnitReference.MovementAnimationSpeed);
             yield return null;
         }
         

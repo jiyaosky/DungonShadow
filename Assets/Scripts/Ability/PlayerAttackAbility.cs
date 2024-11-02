@@ -29,7 +29,7 @@ namespace TbsFramework.Units.Abilities
         public int AssassinationPower = 1;
 
         public Ability currentWeaponAbility;
-        public void SetCurrentAttackAbility(RealPlayer unit ,int abilityID)
+        public void SetCurrentAttackAbility(int abilityID)
         {
             if (currentWeaponAbility != null)
             {
@@ -66,9 +66,9 @@ namespace TbsFramework.Units.Abilities
                     break;
             }
             currentWeaponAbility.Initialize();
-            unit.UpdateAttackFactor(AbilityDamage);
-            unit.UpdateAssassinationPower(AssassinationPower);
-            unit.AttackRange = AbilityRange;
+            Player.UpdateAttackFactor(AbilityDamage);
+            Player.UpdateAssassinationPower(AssassinationPower);
+            Player.AttackRange = AbilityRange;
         }
         // 不同攻击方式的攻击力加成和攻击范围
 
@@ -77,7 +77,7 @@ namespace TbsFramework.Units.Abilities
         public override void Initialize()
         {
             Player = GetComponent<RealPlayer>();
-            SetCurrentAttackAbility(Player, 1);
+            SetCurrentAttackAbility( 1);
         }
 
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)

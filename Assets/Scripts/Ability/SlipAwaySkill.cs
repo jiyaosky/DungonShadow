@@ -12,6 +12,7 @@ namespace TbsFramework.Units.Abilities
 
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
+            UnitReference.SetAnimation("Base Layer.Buff", Time.deltaTime * UnitReference.MovementAnimationSpeed);
             var realPlayer = UnitReference as RealPlayer;
             realPlayer.currentActionPoints += AddActionPoint;
             realPlayer.attackLimit = 0;
