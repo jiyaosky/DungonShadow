@@ -29,3 +29,34 @@ MonoBehaviour:
     Random: 0
     _name: New Tile
     Rules: []
+  - _group: Level02
+    _tileID: -417540028
+    Default: {fileID: 667472779567719665, guid: 007f3494a965bed4cab78bcbe2048274,
+      type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall2
+    Rules: []
+  - _group: Level02
+    _tileID: -1906996776
+    Default: {fileID: 4050367190929841837, guid: c94e9c5997f594b4bb398a72879dd3e3,
+      type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall3
+    Rules:
+    - IsActive: 1
+      Object: {fileID: 0}
+      Random: 0
+      Randoms: []
+      Relations: 010000000000000001000000000000000000000000000000010000000000000001000000010000000000000001000000000000000000000000000000010000000000000001000000010000000000000001000000000000000000000000000000010000000000000001000000
+      AllowRotation: 000000
+      _ruleID: 1416191611
+  - _group: Level02
+    _tileID: 1445885819
+    Default: {fileID: 3223049210915199458, guid: 1158c1cf68c4348489948975867065b0,
+      type: 3}
+    Randoms: []
+    Random: 0
+    _name: wall4
+    Rules: []
