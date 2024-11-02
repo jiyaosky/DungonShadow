@@ -19,6 +19,9 @@ public class ToolTip_Relic : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private Button buyButton;
     
     [SerializeField]
+    private Button fakeBuyButton;
+
+    [SerializeField]
     public int price;
 
     [SerializeField]
@@ -30,31 +33,25 @@ public class ToolTip_Relic : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField]
     private TextMeshProUGUI messagePopUp;
 
+    public int gold;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
         goldController = goldManager.GetComponent<GoldController>();
-        
-        //Debug.Log("Gold" + goldController.GetValue(0) + "Price" + price);
+        gold = goldController.GetValue(0);
+        Refresh();   
+    }
 
-        if (goldController.GetValue(0) < price) {
-
-                buyButton.interactable = false;
-                //messagePanel.SetActive(true);
-                //messagePopUp.text = "Not Enough Gold";
-
-        }
-
-        else {
-            buyButton.onClick.AddListener(() => {
-
-                    goldController.UpdateValue(0, (0 - price));
-            
-            });
+    void Update()
+    {
+        if (gold != goldController.GetValue(0)) {
+            gold = goldController.GetValue(0);
+            Refresh();
         }
     }
+
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -66,6 +63,35 @@ public class ToolTip_Relic : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         dialog_box.SetActive(false);
         //Debug.Log("The cursor entered the selectable UI element.");
+    }
+
+    public void Refresh(){
+        
+
+        fakeBuyButton.onClick.AddListener(() => {
+              messagePanel.SetActive(true);
+              messagePopUp.text = "Not Enough Gold";  
+        });
+
+        buyButton.onClick.AddListener(() => {
+            goldController.UpdateValue(0, (0 - price));   
+        });
+        
+        //Debug.Log("Gold" + goldController.GetValue(0) + "Price" + price);
+
+        if (goldController.GetValue(0) < price) {
+
+                buyButton.gameObject.SetActive(false);
+                fakeBuyButton.gameObject.SetActive(true);
+                //messagePanel.SetActive(true);
+                //messagePopUp.text = "Not Enough Gold";
+
+        }
+
+        else {
+                buyButton.gameObject.SetActive(true);
+                fakeBuyButton.gameObject.SetActive(false);
+        }
     }
 
 }
