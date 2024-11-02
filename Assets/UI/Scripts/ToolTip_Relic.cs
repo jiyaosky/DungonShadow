@@ -24,15 +24,35 @@ public class ToolTip_Relic : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField]
     private GameObject dialog_box;
 
+    
+    [SerializeField]
+    private GameObject messagePanel;
+    [SerializeField]
+    private TextMeshProUGUI messagePopUp;
+
+
     // Start is called before the first frame update
     void Start()
     {
         goldController = goldManager.GetComponent<GoldController>();
-        price = 0 - price;
+        
+        if (goldController.GetValue(0) < price) {
+            buyButton.onClick.RemoveAllListeners();
 
-        buyButton.onClick.AddListener(() => {
-            goldController.UpdateValue(0,price);
-        });
+            buyButton.onClick.AddListener(() => {
+                messagePanel.SetActive(true);
+                messagePopUp.text = "Not Enough Gold";
+            });
+        }
+
+        else {
+            buyButton.onClick.AddListener(() => {
+
+                    price = 0 - price;
+                    goldController.UpdateValue(0,price);
+            
+            });
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
