@@ -137,7 +137,7 @@ namespace TbsFramework.Units.Abilities
         public void DoNPC()
         {
             //Shop related
-            shopPanel = GameObject.Find("Canvas/ShopPanel
+            shopPanel = GameObject.Find("Canvas/ShopPanel");
             shopPanel.SetActive(true);
             shopManager = shopPanel.GetComponent<ShopManager>();
             shopManager.Refresh();

@@ -18,10 +18,14 @@ namespace TbsFramework
         public int StartingAmount = 5;
         // public int realPlayerGold = ;
         
-        public void Awake()
+        public void Initialize()
         {
             FindObjectOfType<CellGrid>().GameStarted += OnGameStarted;
+        }
 
+        
+        public void Awake()
+        {
             //text update
             gold_text.text = "" + StartingAmount;
         }

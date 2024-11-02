@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 
     public void InstantiateLevel()
     {
-        
+        levels[0].SetActive(true);
     }
     
     public void NextLevel()
