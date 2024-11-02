@@ -10165,7 +10165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnController: {fileID: 0}
-  guiController: {fileID: 0}
+  guiController: {fileID: 931209187}
   totleRound: 0
   currentRound: 0
 --- !u!1001 &493585379
@@ -10595,8 +10595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ab24266c7c67f4b833edf5e15da744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold_text: {fileID: 0}
-  StartingAmount: 5
 --- !u!1001 &523933405
 PrefabInstance:
   m_ObjectHideFlags: 0

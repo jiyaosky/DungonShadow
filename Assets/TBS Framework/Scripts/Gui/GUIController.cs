@@ -64,8 +64,6 @@ namespace TbsFramework
             if (EndTurnButton != null)
             {
                 EndTurnButton.interactable = CellGrid.CurrentPlayer is HumanPlayer;
-                currentRound++;
-                // currentRoundText.text = currentRound.ToString();
             }
         }
 
@@ -103,6 +101,8 @@ namespace TbsFramework
 
         public void EndTurn()
         {
+            currentRound++;
+            Debug.Log("currentRound:"+currentRound+".TotalRound:"+totalRound);
             CellGrid.EndTurn();
         }
 
