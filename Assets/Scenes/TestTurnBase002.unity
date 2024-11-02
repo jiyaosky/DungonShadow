@@ -39630,6 +39630,17 @@ PrefabInstance:
       propertyPath: Skill
       value: 
       objectReference: {fileID: 1642734084}
+    - target: {fileID: 5266557360585463513, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 06b54290bbba6437bbe1ce3d2767fdb1,
+        type: 2}
+    - target: {fileID: 5266557360585463513, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5502256175985174422, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: m_Enabled

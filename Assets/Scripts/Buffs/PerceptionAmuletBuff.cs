@@ -8,6 +8,7 @@ namespace TbsFramework
     [CreateAssetMenu]
     public class PerceptionAmulet : Buff
     {
+        public int Price = 12;
         private int originSightRange;
         public int addSightRange = 1;
         public override void Apply(Unit unit)

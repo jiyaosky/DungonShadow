@@ -9,6 +9,7 @@ namespace TbsFramework
     public class BreadBuff : Buff
     {
         // private int originMaxHP;
+        public int Price = 14; 
         public int addMaxHP = 1;
         public override void Apply(Unit unit)
         {
