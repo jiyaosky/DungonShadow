@@ -19,6 +19,8 @@ namespace TbsFramework.Units.Abilities
         // 交互范围
         public int Range = 1;
 
+        public int GainGold = 0;
+
         public GameObject shopPanel;
 
         public ShopManager shopManager;
@@ -103,6 +105,12 @@ namespace TbsFramework.Units.Abilities
             var closeChest = transform.Find("Chest3B");
             openChest.gameObject.SetActive(true);
             closeChest.gameObject.SetActive(false);
+
+            if (FindObjectOfType<GoldController>() != null)
+            {
+                GoldController controller = FindObjectOfType<GoldController>();
+                controller.UpdateValue(0, GainGold);
+            }
 
             isInteracted = true;
         }
