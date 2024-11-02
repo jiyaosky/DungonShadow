@@ -5,7 +5,9 @@ using TbsFramework.Units.Abilities;
 using System;
 using TbsFramework.Cells;
 using System.Collections;
+using RTS_Cam;
 using TbsFramework.Grid;
+using TMPro;
 using UnityEngine.UI;
 
 namespace TbsFramework.Units
@@ -264,6 +266,24 @@ namespace TbsFramework.Units
                 healthBar.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green,
                     (float)(HitPoints / (float)TotalHitPoints));
             }
+        }
+        
+        private void UpdateApBar()
+        {
+            var apBarCanvas = transform.Find("APCanvas");
+            var apBar = apBarCanvas.Find("Text");
+            if (apBar != null)
+            {
+                var text = apBar.GetComponent<TextMeshProUGUI>();
+                text.text = currentActionPoints.ToString();
+                // apBar.LookAt(FindObjectOfType<RTS_Camera>().transform);
+                // apBarCanvas.LookAt(FindObjectOfType<RTS_Camera>().transform);
+            }
+        }
+
+        public void Update()
+        {
+            UpdateApBar();
         }
     }
 }
