@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+//using TMPro;
 using TbsFramework.Grid;
 using TbsFramework.Grid.GridStates;
 using TbsFramework.Players;
 using TbsFramework;
-using TbsFramework.Cells;
-using TbsFramework.Units;
-using UnityEngine;
-using UnityEngine.UI;
+
+
 
 namespace TbsFramework
 {
@@ -21,6 +23,9 @@ namespace TbsFramework
         // public Text currentRoundText;
         //
         // public Text totalRoundText;
+        
+        //[SerializeField]
+        //public TextMeshProUGUI turnCount; 
 
 
         public int currentRound = 0;
@@ -35,6 +40,8 @@ namespace TbsFramework
             CellGrid.TurnEnded += OnTurnEnded;
             CellGrid.GameStarted += OnGameStarted;
             // totalRoundText.text = totalRound.ToString();
+
+            //turnCount.transform.GetComponents<TextMeshPro>().text = totalRound + " Turn Left To Extract";
         }
 
         void Start()
@@ -85,6 +92,8 @@ namespace TbsFramework
             if (Input.GetKeyDown(KeyCode.M) && !(CellGrid.cellGridState is CellGridStateAITurn))
             {
                 EndTurn();//User ends his turn by pressing "m" on keyboard.
+                var round = totalRound - currentRound;
+                //turnCount.transform.GetComponents<TextMeshPro>().text = round + " Turn Left To Extract";
             }
         }
 
