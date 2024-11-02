@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TbsFramework;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
@@ -57,7 +59,10 @@ public class ShopManager : MonoBehaviour
     //record shop pool
     List<int> skillPool;
 
-
+    //Manage gold
+    [SerializeField]
+    public GameObject goldManager;
+    private GoldController goldController;
 
     void Start()
     {
@@ -66,6 +71,8 @@ public class ShopManager : MonoBehaviour
         //allSkills = GameObject.Find("Units/Thief/Canvas/AbilitySelect/Panel");
 
         skillManager = GameObject.Find("Canvas/ActionPanel/SkillManager").GetComponent<SkillManager>();
+        goldController = goldManager.GetComponent<GoldController>();
+
 
         //Tracking the pool
         skillPool = new List<int>();
@@ -178,6 +185,11 @@ public class ShopManager : MonoBehaviour
         buyButton1.gameObject.SetActive(true);
         buyButton2.gameObject.SetActive(true);
         buyButton3.gameObject.SetActive(true);
+        
+        //set price text
+        buyButton1.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + allSkills.transform.GetChild(index1).GetComponent<ToolTip>().getPrice();
+        buyButton2.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + allSkills.transform.GetChild(index2).GetComponent<ToolTip>().getPrice();
+        buyButton3.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + allSkills.transform.GetChild(index3).GetComponent<ToolTip>().getPrice();
 
         //Set buy button
         buyButton1.onClick.AddListener(() => {
@@ -188,6 +200,9 @@ public class ShopManager : MonoBehaviour
             //remove item from the pool
             skillPool.Remove(index1);
 
+            //update gold
+            var int1 = 0 - allSkills.transform.GetChild(index1).GetComponent<ToolTip>().getPrice();
+            goldController.UpdateValue(0,int1);
             //Debug.Log("Remove item " + index1);
 
         });
@@ -198,6 +213,10 @@ public class ShopManager : MonoBehaviour
 
             //remove item from the pool
             skillPool.Remove(index2);
+
+            //update gold
+            var int2 = 0 - allSkills.transform.GetChild(index2).GetComponent<ToolTip>().getPrice();
+            goldController.UpdateValue(0,int2);
 
             //Debug.Log("Remove item " + index2);
 
@@ -210,6 +229,9 @@ public class ShopManager : MonoBehaviour
             //remove item from the pool
             skillPool.Remove(index3);
 
+            //update gold
+            var int3 = 0 - allSkills.transform.GetChild(index3).GetComponent<ToolTip>().getPrice();
+            goldController.UpdateValue(0,int3);
             //Debug.Log("Remove item " + index3);
 
         });

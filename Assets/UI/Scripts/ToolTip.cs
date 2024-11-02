@@ -22,7 +22,7 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public int AP;
     public int CD;
-
+    public int price;
 
 
     void Start()
@@ -56,6 +56,9 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //Debug.Log("The cursor entered the selectable UI element.");
     }
 
+    public int getPrice() {
+        return price;
+    }
 
 
 }
