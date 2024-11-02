@@ -51,6 +51,9 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     private Button leaveButton;
 
+    [SerializeField]
+    private Button refreshButton;
+
     //record shop pool
     List<int> skillPool;
 
@@ -86,23 +89,28 @@ public class ShopManager : MonoBehaviour
         buyButton2 = abilityPanel.transform.GetChild(4).GetComponent<Button>();
         buyButton3 = abilityPanel.transform.GetChild(5).GetComponent<Button>();
 
+        refreshButton.gameObject.SetActive(true);
+
+
         //Leave button
         //leaveButton = this.gameObject.transform.Find("LeaveButton").GetComponent<Button>();
         //Removeall
         leaveButton.onClick.AddListener(() => { 
             this.gameObject.SetActive(false);
+            refreshButton.gameObject.SetActive(false);
+
             Clear();
-            
-            if (buyButton1.interactable == true) {
+
+            if (buyButton1 != null && buyButton1.interactable == true) {
                 skill1.SetActive(false);
             }
 
-            if (buyButton2.interactable == true)
+            if (buyButton1 != null && buyButton2.interactable == true)
             {
                 skill2.SetActive(false);
             }
 
-            if (buyButton3.interactable == true)
+            if (buyButton1 != null && buyButton3.interactable == true)
             {
                 skill3.SetActive(false);
             }
@@ -115,17 +123,15 @@ public class ShopManager : MonoBehaviour
 
     public void Refresh() {
 
-        //Clear();
+        Clear();
 
-        skillSize = allSkills.transform.childCount;
+        skillSize = skillPool.Count;
         relicSize = allRelics.transform.childCount;
 
         //Randomly select three skill
         index1 = Random.Range(0, skillPool.Count);
         index2 = Random.Range(0, skillPool.Count);
         index3 = Random.Range(0, skillPool.Count);
-
-
 
         //Remove Dupolicate
         while (index2 == index1) { index2 = Random.Range(0, skillSize); }
@@ -229,20 +235,32 @@ public class ShopManager : MonoBehaviour
 
     public void Clear() {
 
-        if (index1 != null)
+        if (index1 != null && skillPool.Contains(index1) == true)
         {
             allSkills.transform.GetChild(index1).gameObject.SetActive(false);
         }
-        if (index2 != null)
+
+        if (index2 != null && skillPool.Contains(index2) == true)
         {
             allSkills.transform.GetChild(index2).gameObject.SetActive(false);
         }
-        if (index3 != null)
+
+        if (index3 != null && skillPool.Contains(index3) == true)
         {
             allSkills.transform.GetChild(index3).gameObject.SetActive(false);
         }
-        //relic1.SetActive(false);
-        //relic2.SetActive(false);
+
+        buyButton1.onClick.RemoveAllListeners();
+        buyButton2.onClick.RemoveAllListeners();
+        buyButton3.onClick.RemoveAllListeners();
+
+        if (relic1 != null) {
+            relic1.SetActive(false);
+        }
+        if (relic2 != null) {
+            relic2.SetActive(false);
+        }
+
 
     }
 }
