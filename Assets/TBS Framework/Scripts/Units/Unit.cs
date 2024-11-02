@@ -190,6 +190,10 @@ namespace TbsFramework.Units
             TotalHitPoints = HitPoints;
             TotalMovementPoints = MovementPoints;
             TotalActionPoints = ActionPoints;
+            if (GetComponentInChildren<Animator>() != null)
+            {
+                UnitAnimator = GetComponentInChildren<Animator>();
+            }
 
             foreach (var ability in GetComponentsInChildren<Ability>())
             {
@@ -313,6 +317,12 @@ namespace TbsFramework.Units
         /// </summary>
         public void AttackHandler(Unit unitToAttack, int cost, bool isSpendAttackLimit = true)
         {
+            var animationName = "Base Layer.MeleeAttack_OneHanded";
+            if (this.AttackRange > 1)
+            {
+                animationName = "Base Layer.BowShot";
+            }
+            SetAnimation(animationName,Time.deltaTime * MovementAnimationSpeed);
             ChangeFoward(transform.position, unitToAttack.transform.position);
             AttackAction attackAction = DealDamage(unitToAttack, cost);
             MarkAsAttacking(unitToAttack);
@@ -346,6 +356,7 @@ namespace TbsFramework.Units
             MarkAsDefending(aggressor);
             int damageTaken = Defend(aggressor, damage);
             HitPoints -= damageTaken;
+            SetAnimation("Base Layer.GetHit",Time.deltaTime * MovementAnimationSpeed);
             DefenceActionPerformed();
             if (UnitAttacked != null)
             {
@@ -415,14 +426,23 @@ namespace TbsFramework.Units
                 UnitMoved.Invoke(this, new MovementEventArgs(Cell, destinationCell, path, this));
             }
         }
+
         /// <summary>
         /// Coroutine for moving the unit.
         /// 要在RealPlayer中重写这个动画效果来支持人物移动
         /// </summary>
+        private Animator UnitAnimator;
+
+        public void SetAnimation(string animName, float animationSpeed)
+        {
+            if (UnitAnimator != null)
+            {
+                UnitAnimator.Play(animName, 0, animationSpeed);
+            }
+        }
         public Vector3 currentForward;
         protected virtual IEnumerator MovementAnimation(IList<Cell> path)
         {
-            Animator playerAnimator = GetComponentInChildren<Animator>();
             for (int i = path.Count - 1; i >= 0; i--)
             {
                 var currentCell = path[i];
@@ -434,10 +454,7 @@ namespace TbsFramework.Units
                     ChangeFoward(transform.position, destination_pos);
                     
                     MaskAsAISight();
-                    if (playerAnimator != null)
-                    {
-                        playerAnimator.Play("Base Layer.RunForward", 0, Time.deltaTime * MovementAnimationSpeed);
-                    }
+                    SetAnimation("Base Layer.RunForward",Time.deltaTime * MovementAnimationSpeed);
                     yield return null;
                 }
             }

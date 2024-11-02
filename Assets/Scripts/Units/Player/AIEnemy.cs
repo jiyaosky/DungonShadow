@@ -20,9 +20,11 @@ namespace TbsFramework.Units
         //     // facingDirection = transform.rotation.eulerAngles.y;
         //     Check();
         // }
-
+        // private Animator playerAnimator;
+        
         public override void Initialize()
         {
+            // playerAnimator = GetComponentInChildren<Animator>();
             SetNewCurrentForward();
             base.Initialize();
         }
