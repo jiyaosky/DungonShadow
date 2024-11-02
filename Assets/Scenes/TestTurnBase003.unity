@@ -6711,6 +6711,41 @@ PrefabInstance:
       propertyPath: Skill
       value: 
       objectReference: {fileID: 1731041006}
+    - target: {fileID: 3713369029812295017, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713369029812295017, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713369029812295017, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 931209187}
+    - target: {fileID: 3713369029812295017, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713369029812295017, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndTurn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713369029812295017, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TbsFramework.GUIController, com.crookedhead.tbsf
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713369029812295017, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3740058245028324338, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: m_text
@@ -10595,6 +10630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ab24266c7c67f4b833edf5e15da744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold_text: {fileID: 0}
+  StartingAmount: 5
 --- !u!1001 &523933405
 PrefabInstance:
   m_ObjectHideFlags: 0
