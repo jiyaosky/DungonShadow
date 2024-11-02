@@ -38,7 +38,8 @@ namespace TbsFramework.Units.Abilities
             {
                 // TODO：也许交互会有消耗，那么消耗的应该是玩家的currentActionPoints
                 var interactiveCost = 2;
-
+                UnitReference.ChangeFoward(transform.position, InteractionUnit.transform.position);
+                UnitReference.SetAnimation("Base Layer.Gathering", Time.deltaTime * UnitReference.MovementAnimationSpeed);
                 // ready to interact
                 Debug.Log("Ready to interact");
                 haveInteractiveAbility.InterPlay(haveInteractiveAbility.AbilityName);
