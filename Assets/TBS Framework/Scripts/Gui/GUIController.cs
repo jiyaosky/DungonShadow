@@ -43,7 +43,10 @@ namespace TbsFramework
             // totalRoundText.text = totalRound.ToString();
 
             //text update
-            turnCountText.text = totalRound + " Turn Left To Extract";
+            if (turnCountText != null)
+            {
+                turnCountText.text = totalRound + " Turn Left To Extract";
+            }
         }
 
         void Start()
@@ -95,7 +98,10 @@ namespace TbsFramework
 
                 //text update
                 var round = totalRound - currentRound;
-                turnCountText.text = round + " Turn Left To Extract";
+                if (turnCountText != null)
+                {
+                    turnCountText.text = round + " Turn Left To Extract";
+                }
             }
         }
 
