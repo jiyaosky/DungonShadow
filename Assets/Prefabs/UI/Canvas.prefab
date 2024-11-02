@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold_text: {fileID: 6841996898096076634}
-  StartingAmount: 20
+  StartingAmount: 5
 --- !u!1 &99515438725693622
 GameObject:
   m_ObjectHideFlags: 0
@@ -6872,7 +6872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4848669493869889463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6944,6 +6944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messagePanelImage: {fileID: 0}
+  messagePanelText: {fileID: 8267456730032376577}
 --- !u!1 &3794904448400175034
 GameObject:
   m_ObjectHideFlags: 0
@@ -13980,7 +13981,6 @@ GameObject:
   - component: {fileID: 787268840447605413}
   - component: {fileID: 4854678253640820431}
   - component: {fileID: 7679794855482198686}
-  - component: {fileID: 8889789173953970344}
   m_Layer: 5
   m_Name: TurnCountPanel
   m_TagString: Untagged
@@ -14046,22 +14046,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8889789173953970344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7016450717506313980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a2617058535e3459979d2f366f1b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnController: {fileID: 0}
-  guiController: {fileID: 0}
-  totleRound: 0
-  currentRound: 0
 --- !u!1 &7027032098777028039
 GameObject:
   m_ObjectHideFlags: 0

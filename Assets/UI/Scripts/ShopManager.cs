@@ -202,6 +202,7 @@ public class ShopManager : MonoBehaviour
             if (goldController.GetValue(0) < allSkills.transform.GetChild(index1).GetComponent<ToolTip>().getPrice()) {
                 messagePanel.SetActive(true);
                 messagePopUp.text = "Not Enough Gold";
+                messagePanel.transform.GetComponent<MessageFade>().RunFade();
             }
 
             else {
@@ -223,6 +224,7 @@ public class ShopManager : MonoBehaviour
 
             if (goldController.GetValue(0) < allSkills.transform.GetChild(index2).GetComponent<ToolTip>().getPrice()) {
                 messagePanel.SetActive(true);
+                messagePanel.transform.GetComponent<MessageFade>().RunFade();
                 messagePopUp.text = "Not Enough Gold";
             }
 
@@ -249,6 +251,7 @@ public class ShopManager : MonoBehaviour
             if (goldController.GetValue(0) < allSkills.transform.GetChild(index3).GetComponent<ToolTip>().getPrice()) {
                 messagePanel.SetActive(true);
                 messagePopUp.text = "Not Enough Gold";
+                messagePanel.transform.GetComponent<MessageFade>().RunFade();
             }
 
             else {

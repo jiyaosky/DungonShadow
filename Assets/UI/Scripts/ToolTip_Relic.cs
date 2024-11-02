@@ -70,6 +70,7 @@ public class ToolTip_Relic : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         fakeBuyButton.onClick.AddListener(() => {
               messagePanel.SetActive(true);
+              messagePanel.transform.GetComponent<MessageFade>().RunFade();
               messagePopUp.text = "Not Enough Gold";  
         });
 
