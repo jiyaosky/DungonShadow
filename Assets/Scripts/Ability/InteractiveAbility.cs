@@ -29,9 +29,6 @@ namespace TbsFramework.Units.Abilities
         {
             isInteracted = false;
 
-            //Shop related
-            shopPanel = GameObject.Find("Canvas/ShopPanel");
-            shopManager = shopPanel.GetComponent<ShopManager>();
         }
 
         // 在当前Chest Unit的Range范围内搜索是否有包含Component<RealPlayer>();的Unit
@@ -140,6 +137,8 @@ namespace TbsFramework.Units.Abilities
         public void DoNPC()
         {
             //Shop related
+            shopPanel = GameObject.Find("Canvas/ShopPanel");
+            shopManager = shopPanel.GetComponent<ShopManager>();
             shopManager.Refresh();
             shopPanel.SetActive(true);
         }

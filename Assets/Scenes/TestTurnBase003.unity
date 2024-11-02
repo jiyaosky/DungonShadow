@@ -6089,6 +6089,11 @@ PrefabInstance:
       propertyPath: Skill
       value: 
       objectReference: {fileID: 332630535}
+    - target: {fileID: 765858840964789344, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1391607100874277408, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: Skill
