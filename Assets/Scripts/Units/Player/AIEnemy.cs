@@ -52,6 +52,7 @@ namespace TbsFramework.Units
         {
             var _cellGrid = FindObjectOfType<CellGrid>();
             var readPlayer = _cellGrid.AIGetEnemyUnits()[0];
+            var enemies = _cellGrid.GetAIEnemies();
             
             List<Cell> cells = GetVisibleCells(_cellGrid);
             for (int i = 0; i < cells.Count; i++)
@@ -65,6 +66,20 @@ namespace TbsFramework.Units
                 {
                     AIState = 2;
                 }
+                
+                // 发现其余友军Unit也处于追击状态则一起追击
+                foreach (var enemy in enemies)
+                {
+                    if (enemy.Equals(this))
+                    {
+                        continue;
+                    }
+                    if ((enemy.AIState == 2) && cells[i].Equals(enemy.Cell))
+                    {
+                        AIState = 2;
+                    }
+                }
+                
             }
             
         }
