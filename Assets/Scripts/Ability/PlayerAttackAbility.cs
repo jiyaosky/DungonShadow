@@ -77,7 +77,7 @@ namespace TbsFramework.Units.Abilities
         public override void Initialize()
         {
             Player = GetComponent<RealPlayer>();
-            SetCurrentAttackAbility( 1);
+            SetCurrentAttackAbility(1);
         }
 
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
