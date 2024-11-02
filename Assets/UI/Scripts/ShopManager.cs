@@ -108,16 +108,16 @@ public class ShopManager : MonoBehaviour
 
             Clear();
 
-            if (buyButton1 != null && buyButton1.interactable == true) {
+            if (skill1 != null && buyButton1.interactable == true) {
                 skill1.SetActive(false);
             }
 
-            if (buyButton1 != null && buyButton2.interactable == true)
+            if (skill2 != null && buyButton2.interactable == true)
             {
                 skill2.SetActive(false);
             }
 
-            if (buyButton1 != null && buyButton3.interactable == true)
+            if (skill3 != null && buyButton3.interactable == true)
             {
                 skill3.SetActive(false);
             }
