@@ -1,0 +1,21 @@
+diff a/Assets/UI/Scripts/ShopManager.cs b/Assets/UI/Scripts/ShopManager.cs	(rejected hunks)
+@@ -108,16 +108,16 @@
+ 
+             Clear();
+ 
+-            if (buyButton1 != null && buyButton1.interactable == true) {
++            if (skill1 != null && buyButton1.interactable == true) {
+                 skill1.SetActive(false);
+             }
+ 
+-            if (buyButton1 != null && buyButton2.interactable == true)
++            if (skill2 != null && buyButton2.interactable == true)
+             {
+                 skill2.SetActive(false);
+             }
+ 
+-            if (buyButton1 != null && buyButton3.interactable == true)
++            if (skill3 != null && buyButton3.interactable == true)
+             {
+                 skill3.SetActive(false);
+             }

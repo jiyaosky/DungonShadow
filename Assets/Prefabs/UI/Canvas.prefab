@@ -1201,6 +1201,7 @@ MonoBehaviour:
   CD_info: {fileID: 2255925624990873248}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &822069311760740860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1501,7 @@ MonoBehaviour:
   CD_info: {fileID: 2500856105512857804}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &948191882639744958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1514,6 @@ GameObject:
   - component: {fileID: 3067565495586262803}
   - component: {fileID: 1026545404002999370}
   - component: {fileID: 2068788961643239051}
-  - component: {fileID: 8294302793480667287}
   m_Layer: 5
   m_Name: ReconButton
   m_TagString: Untagged
@@ -1622,26 +1623,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8294302793480667287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 948191882639744958}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8b0c3b79f56a4499372e2e63a86191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialog_box: {fileID: 0}
-  skill: {fileID: 0}
-  AP_panel1: {fileID: 0}
-  CD_panle2: {fileID: 0}
-  AP_info: {fileID: 0}
-  CD_info: {fileID: 0}
-  AP: 0
-  CD: 0
 --- !u!1 &983990097793069241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,6 +2298,7 @@ MonoBehaviour:
   CD_info: {fileID: 7512668079436123384}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &1695218560218086019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,7 +3499,6 @@ GameObject:
   - component: {fileID: 7292283071367672652}
   - component: {fileID: 4150887114417209176}
   - component: {fileID: 7781820859069757047}
-  - component: {fileID: 299901323694352072}
   m_Layer: 5
   m_Name: AttackButton
   m_TagString: Untagged
@@ -3627,26 +3608,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &299901323694352072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2634293156358597926}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8b0c3b79f56a4499372e2e63a86191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialog_box: {fileID: 0}
-  skill: {fileID: 0}
-  AP_panel1: {fileID: 0}
-  CD_panle2: {fileID: 0}
-  AP_info: {fileID: 0}
-  CD_info: {fileID: 0}
-  AP: 0
-  CD: 0
 --- !u!1 &2684098634993811426
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allSkills: {fileID: 3505020108644056441}
+  tempHolder: {fileID: 0}
 --- !u!1 &2778260436476673435
 GameObject:
   m_ObjectHideFlags: 0
@@ -4170,6 +4132,7 @@ MonoBehaviour:
   CD_info: {fileID: 0}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &2970385909047126125
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,6 +5073,7 @@ MonoBehaviour:
   CD_info: {fileID: 2921623248529158037}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &3572174526488814154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5410,7 +5374,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allSkills: {fileID: 3505020108644056441}
+  allRelics: {fileID: 0}
   leaveButton: {fileID: 5604490623402985725}
+  refreshButton: {fileID: 0}
+  goldManager: {fileID: 0}
 --- !u!1 &3932666149519193343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6104,6 +6071,7 @@ MonoBehaviour:
   CD_info: {fileID: 7021332027349051315}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &4327676892858932818
 GameObject:
   m_ObjectHideFlags: 0
@@ -8481,6 +8449,7 @@ MonoBehaviour:
   CD_info: {fileID: 0}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &6256661178478441622
 GameObject:
   m_ObjectHideFlags: 0
@@ -9651,6 +9620,7 @@ MonoBehaviour:
   CD_info: {fileID: 4894553657787768337}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &6606152470173169926
 GameObject:
   m_ObjectHideFlags: 0
@@ -11101,7 +11071,6 @@ GameObject:
   - component: {fileID: 2772766325144817017}
   - component: {fileID: 4037445759869694156}
   - component: {fileID: 880611518938373305}
-  - component: {fileID: 4966498980094747139}
   m_Layer: 5
   m_Name: InteractButton
   m_TagString: Untagged
@@ -11211,26 +11180,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4966498980094747139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7448600960083582624}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8b0c3b79f56a4499372e2e63a86191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialog_box: {fileID: 0}
-  skill: {fileID: 0}
-  AP_panel1: {fileID: 0}
-  CD_panle2: {fileID: 0}
-  AP_info: {fileID: 0}
-  CD_info: {fileID: 0}
-  AP: 0
-  CD: 0
 --- !u!1 &7512970283216142105
 GameObject:
   m_ObjectHideFlags: 0
@@ -13303,6 +13252,7 @@ MonoBehaviour:
   CD_info: {fileID: 0}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &8604770102351606393
 GameObject:
   m_ObjectHideFlags: 0
@@ -13579,6 +13529,7 @@ MonoBehaviour:
   CD_info: {fileID: 0}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &9166375222281525264
 GameObject:
   m_ObjectHideFlags: 0
@@ -13744,6 +13695,7 @@ MonoBehaviour:
   CD_info: {fileID: 4761503155521001081}
   AP: 0
   CD: 0
+  price: 0
 --- !u!1 &9211546589120882676
 GameObject:
   m_ObjectHideFlags: 0
