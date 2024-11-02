@@ -183,5 +183,11 @@ namespace TbsFramework.Units
             AIState = 2;
             base.DefenceActionPerformed();
         }
+
+        public override void OnTurnStart()
+        {
+            MaskAsAISight();
+            base.OnTurnStart();
+        }
     }
 }

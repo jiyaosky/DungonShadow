@@ -249,5 +249,21 @@ namespace TbsFramework.Units
             OnMoveFinished();
         }
 
+        protected override void DefenceActionPerformed()
+        {
+            UpdateHpBar();
+            base.DefenceActionPerformed();
+        }
+        
+        private void UpdateHpBar()
+        {
+            var healthBar = transform.Find("HealthCanvas").Find("HealthBar");
+            if (healthBar != null)
+            {
+                healthBar.GetComponent<Image>().transform.localScale = new Vector3((float)(HitPoints / (float)TotalHitPoints), 1, 1);
+                healthBar.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green,
+                    (float)(HitPoints / (float)TotalHitPoints));
+            }
+        }
     }
 }
