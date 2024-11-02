@@ -921,6 +921,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5909405147549306574}
   m_SourcePrefab: {fileID: 100100000, guid: ba2e5d86148740648bda209e2fb8e3ec, type: 3}
+--- !u!137 &1036373908300098720 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2023465648521078271, guid: ba2e5d86148740648bda209e2fb8e3ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1330035087377959263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2387239543890505773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3698605842638305650, guid: ba2e5d86148740648bda209e2fb8e3ec,
@@ -1032,6 +1038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitHighlighterAggregator: {fileID: 57087222041058976}
+  AIState: 0
   Obstructable: 1
   cell: {fileID: 0}
   HitPoints: 30
@@ -1044,3 +1051,8 @@ MonoBehaviour:
   PlayerNumber: 1
   currentForward: {x: 0, y: 0, z: 0}
   UnitName: Enemy
+  sightRange: 3
+  sightAngle: 45
+  AICellStartCell: {fileID: 0}
+  AICellEndCell: {fileID: 0}
+  aiRenderer: {fileID: 1036373908300098720}

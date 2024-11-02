@@ -63,6 +63,16 @@ namespace TbsFramework.Units
         public UnitHighlighterAggregator UnitHighlighterAggregator;
 
 
+        public virtual void UnitShow()
+        {
+            
+        }
+
+        public virtual void UnitHide()
+        {
+            
+        }
+
         public int AIState = 0; // 0=未发现玩家的自然状态，1=警戒状态， 2=发现玩家的状态
         public virtual void NatureBehaviour()
         {

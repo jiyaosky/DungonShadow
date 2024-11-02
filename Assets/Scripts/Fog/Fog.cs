@@ -91,10 +91,12 @@ public class Fog : MonoBehaviour
                 Vector2.Angle(enemyPosition - position, playerDirection) <= ViewAngle)
             {
                 //todo: 显示
+                unit.UnitShow();
             }
             else
             {
                 //todo: 隐藏
+                unit.UnitHide();
             }
         }
 

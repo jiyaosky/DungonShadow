@@ -180,6 +180,17 @@ namespace TbsFramework.Units
             return selectedPath;
         }
 
+        public Renderer aiRenderer;
+        public override void UnitShow()
+        {
+            aiRenderer.enabled = true;
+        }
+
+        public override void UnitHide()
+        {
+            aiRenderer.enabled = false;
+        }
+
         protected override void DefenceActionPerformed()
         {
             AIState = 2;
