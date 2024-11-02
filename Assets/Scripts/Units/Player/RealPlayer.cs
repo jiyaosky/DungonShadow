@@ -9,6 +9,7 @@ using RTS_Cam;
 using TbsFramework.Grid;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace TbsFramework.Units
 {
@@ -70,6 +71,7 @@ namespace TbsFramework.Units
         // </summary>
         public override void OnMouseDown()
         {
+            if (IsPointerOverUIObject()) return; 
             base.OnMouseDown();
         }
         
@@ -79,6 +81,7 @@ namespace TbsFramework.Units
         /// </summary>
         public override void OnUnitSelected()
         {
+
             SelectedAbility = MovementAbility;
             base.OnUnitSelected();
         }
@@ -284,6 +287,16 @@ namespace TbsFramework.Units
         public void Update()
         {
             UpdateApBar();
+        }
+
+        //UI Dectection
+        public static bool IsPointerOverUIObject()
+        {
+            PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+            eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+            return results.Count > 0;
         }
     }
 }

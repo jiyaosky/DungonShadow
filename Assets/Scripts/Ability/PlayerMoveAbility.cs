@@ -6,6 +6,7 @@ using TbsFramework.Grid;
 using TbsFramework.Grid.GridStates;
 using TbsFramework.Units;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace TbsFramework.Units.Abilities
 {
@@ -52,6 +53,12 @@ namespace TbsFramework.Units.Abilities
 
         public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
         {
+
+            if (IsPointerOverUIObject()) 
+            {
+            Debug.Log("Over UI");    
+            return;}
+
             if (cellGrid.GetCurrentPlayerUnits().Contains(unit))
             {
                 cellGrid.cellGridState = new CellGridStateAbilitySelected(cellGrid, unit, unit.GetComponents<Ability>().ToList());
@@ -60,6 +67,9 @@ namespace TbsFramework.Units.Abilities
 
         public override void OnCellClicked(Cell cell, CellGrid cellGrid)
         {
+
+            if (IsPointerOverUIObject()) return;    
+
             if (availableDestinations.Contains(cell))
             {
                 Destination = cell;
@@ -74,6 +84,8 @@ namespace TbsFramework.Units.Abilities
 
         public override void OnCellSelected(Cell cell, CellGrid cellGrid)
         {
+            if (IsPointerOverUIObject()) return;
+
             if (Player.currentActionPoints > 0 && availableDestinations.Contains(cell))
             {
                 currentPath = Player.FindPath(cellGrid.Cells, cell);
@@ -86,6 +98,7 @@ namespace TbsFramework.Units.Abilities
 
         public override void OnCellDeselected(Cell cell, CellGrid cellGrid)
         {
+
             if (Player.currentActionPoints > 0 && availableDestinations.Contains(cell))
             {
                 if (currentPath == null)
@@ -134,5 +147,17 @@ namespace TbsFramework.Units.Abilities
             Destination = actionDestination;
             yield return StartCoroutine(RemoteExecute(cellGrid));
         }
+
+
+        //UI Dectection
+        public static bool IsPointerOverUIObject()
+        {
+            PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+            eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+            return results.Count > 0;
+        }
+
     }
 }
