@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483478, guid: ce1b1c89cc01b594b97ffd660fb7409e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 483478, guid: ce1b1c89cc01b594b97ffd660fb7409e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -109,6 +109,7 @@ MonoBehaviour:
   MarkAsHighlightedFn: []
   UnMarkFn: []
   IsTaken: 0
+  IsSightObstructed: 0
   MovementCost: 1
   _tileID: -1
   _ruleID: 0
@@ -118,3 +119,4 @@ MonoBehaviour:
   _localRotation: {x: 0, y: 0, z: 0, w: 0}
   _isBaked: 0
   View: {fileID: 8615981822231433126}
+  MaskAISight: {fileID: 0}

@@ -21,3 +21,11 @@ MonoBehaviour:
     Random: 0
     _name: Ground
     Rules: []
+  - _group: Level02
+    _tileID: -1487504309
+    Default: {fileID: 7663869790123039227, guid: 0d3ac4733bebd144c978ea90d5177a20,
+      type: 3}
+    Randoms: []
+    Random: 0
+    _name: New Tile
+    Rules: []
