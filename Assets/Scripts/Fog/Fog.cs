@@ -1,10 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using TbsFramework.Cells;
 using TbsFramework.Grid;
+using TbsFramework.Units;
 using Unity.VisualScripting;
 using UnityEngine;
+
+using Unit = TbsFramework.Units.Unit;
 
 [RequireComponent(typeof(MeshRenderer))]
 public class Fog : MonoBehaviour
@@ -22,8 +26,12 @@ public class Fog : MonoBehaviour
     private Material _materialInstance;
     private Renderer _renderer;
 
+    private readonly List<Cell> _cells = new List<Cell>();
+
     private int _lastPlayerX = -1;
     private int _lastPlayerY = -1;
+
+    public float ViewAngle = 90;
 
     private void Awake()
     {
@@ -61,9 +69,8 @@ public class Fog : MonoBehaviour
     public void LightUpRadius(Vector2 position, float radius, bool through)
     {
         SetAllDark();
-        List<Cell> cells = new List<Cell>();
-        CellGrid.GetCellsInsight(cells, position, radius, PlayerTransform.rotation.eulerAngles.y, 90, through);
-        foreach (var cell in cells)
+        CellGrid.GetCellsInsight(_cells, position, radius, PlayerTransform.rotation.eulerAngles.y, ViewAngle, through);
+        foreach (var cell in _cells)
         {
             Vector2Int cellIndex = CellGrid.GetCellIndexInMap(cell);
             //Debug.Log(cellIndex);
@@ -71,6 +78,26 @@ public class Fog : MonoBehaviour
         }
 
         UpdateToGPU();
+
+        List<Unit> allUnits = CellGrid.GetAIEnemies();
+
+
+        Vector2 playerDirection = GridUtils.GetDirectionByAngle(PlayerTransform.rotation.eulerAngles.y);
+
+        foreach (var unit in allUnits)
+        {
+            Vector2 enemyPosition = new Vector2(unit.transform.position.x, unit.transform.position.z);
+            if (Vector2.SqrMagnitude(enemyPosition - position) <= radius * radius &&
+                Vector2.Angle(enemyPosition - position, playerDirection) <= ViewAngle)
+            {
+                //todo: 显示
+            }
+            else
+            {
+                //todo: 隐藏
+            }
+        }
+
     }
 
     public void SetDark(int x, int y)
