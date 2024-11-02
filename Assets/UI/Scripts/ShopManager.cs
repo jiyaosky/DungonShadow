@@ -56,6 +56,11 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     private Button refreshButton;
 
+    [SerializeField]
+    private GameObject messagePanel;
+    [SerializeField]
+    private TextMeshProUGUI messagePopUp;
+
     //record shop pool
     List<int> skillPool;
 
@@ -193,47 +198,74 @@ public class ShopManager : MonoBehaviour
 
         //Set buy button
         buyButton1.onClick.AddListener(() => {
-            skillManager.getSkill(index1);
-            //skill1.SetActive(false);
-            buyButton1.gameObject.SetActive(false);
+  
+            if (goldController.GetValue(0) < allSkills.transform.GetChild(index1).GetComponent<ToolTip>().getPrice()) {
+                messagePanel.SetActive(true);
+                messagePopUp.text = "Not Enough Gold";
+            }
 
-            //remove item from the pool
-            skillPool.Remove(index1);
+            else {
+                skillManager.getSkill(index1);
+                //skill1.SetActive(false);
+                buyButton1.gameObject.SetActive(false);
 
-            //update gold
-            var int1 = 0 - allSkills.transform.GetChild(index1).GetComponent<ToolTip>().getPrice();
-            goldController.UpdateValue(0,int1);
-            //Debug.Log("Remove item " + index1);
+                //remove item from the pool
+                skillPool.Remove(index1);
+
+                //update gold
+                var int1 = 0 - allSkills.transform.GetChild(index1).GetComponent<ToolTip>().getPrice();
+                goldController.UpdateValue(0,int1);
+                //Debug.Log("Remove item " + index1);
+            }
 
         });
         buyButton2.onClick.AddListener(() => {
-            skillManager.getSkill(index2);
-            //skill2.SetActive(false);
-            buyButton2.gameObject.SetActive(false);
 
-            //remove item from the pool
-            skillPool.Remove(index2);
+            if (goldController.GetValue(0) < allSkills.transform.GetChild(index2).GetComponent<ToolTip>().getPrice()) {
+                messagePanel.SetActive(true);
+                messagePopUp.text = "Not Enough Gold";
+            }
 
-            //update gold
-            var int2 = 0 - allSkills.transform.GetChild(index2).GetComponent<ToolTip>().getPrice();
-            goldController.UpdateValue(0,int2);
+            else{
 
-            //Debug.Log("Remove item " + index2);
+                skillManager.getSkill(index2);
+                //skill2.SetActive(false);
+                buyButton2.gameObject.SetActive(false);
+
+                //remove item from the pool
+                skillPool.Remove(index2);
+
+                //update gold
+                var int2 = 0 - allSkills.transform.GetChild(index2).GetComponent<ToolTip>().getPrice();
+                goldController.UpdateValue(0,int2);
+
+                //Debug.Log("Remove item " + index2);
+            }
 
         });
         buyButton3.onClick.AddListener(() => {
-            skillManager.getSkill(index3);
-            //skill3.SetActive(false);
-            buyButton3.gameObject.SetActive(false);
 
-            //remove item from the pool
-            skillPool.Remove(index3);
 
-            //update gold
-            var int3 = 0 - allSkills.transform.GetChild(index3).GetComponent<ToolTip>().getPrice();
-            goldController.UpdateValue(0,int3);
-            //Debug.Log("Remove item " + index3);
+            if (goldController.GetValue(0) < allSkills.transform.GetChild(index3).GetComponent<ToolTip>().getPrice()) {
+                messagePanel.SetActive(true);
+                messagePopUp.text = "Not Enough Gold";
+            }
 
+            else {
+
+                skillManager.getSkill(index3);
+
+                //skill3.SetActive(false);
+                buyButton3.gameObject.SetActive(false);
+
+                //remove item from the pool
+                skillPool.Remove(index3);
+
+                //update gold
+                var int3 = 0 - allSkills.transform.GetChild(index3).GetComponent<ToolTip>().getPrice();
+                goldController.UpdateValue(0,int3);
+                //Debug.Log("Remove item " + index3);
+            }
         });
 
         //Load Relics, Relics come with button

@@ -46,7 +46,6 @@ namespace TbsFramework
             
             //text update
             gold_text.text = "" + Account[playerNumber];
-
         }
     }
 }
