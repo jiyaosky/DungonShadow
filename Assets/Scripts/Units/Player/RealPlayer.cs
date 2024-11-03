@@ -291,6 +291,7 @@ namespace TbsFramework.Units
                 healthBar.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green,
                     (float)(HitPoints / (float)TotalHitPoints));
             }
+             
 
             health.text = (HitPoints + "/" + TotalHitPoints);
 
@@ -316,6 +317,8 @@ namespace TbsFramework.Units
             var apBar = apBarCanvas.Find("Text");
             var text = apBar.GetComponent<TextMeshProUGUI>();
             text.text = currentActionPoints.ToString();
+
+
 
             health.text = (HitPoints + "/" + TotalHitPoints);
         }

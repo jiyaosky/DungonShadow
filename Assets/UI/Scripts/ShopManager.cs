@@ -103,7 +103,7 @@ public class ShopManager : MonoBehaviour
         buyButton2 = abilityPanel.transform.GetChild(4).GetComponent<Button>();
         buyButton3 = abilityPanel.transform.GetChild(5).GetComponent<Button>();
 
-        refreshButton.gameObject.SetActive(true);
+        //refreshButton.gameObject.SetActive(true);
 
 
         //Leave button
@@ -111,7 +111,7 @@ public class ShopManager : MonoBehaviour
         //Removeall
         leaveButton.onClick.AddListener(() => { 
             this.gameObject.SetActive(false);
-            refreshButton.gameObject.SetActive(false);
+            //refreshButton.gameObject.SetActive(false);
 
             Clear();
 
