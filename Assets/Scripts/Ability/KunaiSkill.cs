@@ -17,6 +17,7 @@ namespace TbsFramework.Units.Abilities
         // 可以添加特定于 Skill 的属性和方法
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
+            (UnitReference as RealPlayer).currentActionPoints -= APCost;
             UnitReference.AttackHandler(UnitToAttack, APCost, false);
             yield return null;
         }

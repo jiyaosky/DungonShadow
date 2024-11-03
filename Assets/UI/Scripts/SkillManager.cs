@@ -59,7 +59,7 @@ public class SkillManager : MonoBehaviour
              });
 
 
-            changeSkill.GetComponent<SkillDetails>().Skill.Activate();
+            // changeSkill.GetComponent<SkillDetails>().Skill.Activate();
 
             skillSlot.SetActive(false);
 
