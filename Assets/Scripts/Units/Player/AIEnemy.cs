@@ -7,12 +7,14 @@ using TbsFramework.Example1;
 using TbsFramework.Grid;
 using TbsFramework.Units.Abilities;
 using UnityEngine;
-
+using TMPro;
 
 namespace TbsFramework.Units
 {
     public class AIEnemy : MyUnit
     {
+
+        public TextMeshProUGUI health; 
         // 0 ->0
         // 
         // public override void MaskAsAISight()
@@ -29,6 +31,10 @@ namespace TbsFramework.Units
             _cellGrid.AIGetEnemyUnits()[0].UnitMoved += OnUnitMoved;
             SetNewCurrentForward();
             base.Initialize();
+        }
+
+        void Update() {
+            health.text = "" + this.HitPoints;
         }
 
         private void OnUnitMoved(object sender, MovementEventArgs e)
