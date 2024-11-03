@@ -8,6 +8,7 @@ using TbsFramework.Grid;
 using TbsFramework.Units.Abilities;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 namespace TbsFramework.Units
 {
@@ -214,6 +215,13 @@ namespace TbsFramework.Units
         {
             MaskAsAISight();
             base.OnTurnStart();
+        }
+
+        protected override void OnDestroyed()
+        {
+            var _cellGrid = FindObjectOfType<CellGrid>();
+            _cellGrid.AIGetEnemyUnits()[0].UnitMoved -= OnUnitMoved;
+            base.OnDestroyed();
         }
     }
 }

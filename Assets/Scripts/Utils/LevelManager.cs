@@ -12,10 +12,14 @@ public class LevelManager : MonoBehaviour
     public RTS_Camera RTSCamera;
     public Unit currentPlayer;
 
-    public int weaponIndex;
-
     public GameGUIController UIController;
     
+    // 武器
+    public int weaponIndex;
+    // buff
+    public List<Buff> BuffList;
+    // 技能
+    // public List<>
     
     public CellGrid currentCellGrid;
     public void InstantiateLevel(int weapon)
@@ -46,12 +50,12 @@ public class LevelManager : MonoBehaviour
     {
         levels[0].SetActive(false);
         currentCellGrid.GameEnded -= OnGameEnd;
-        currentPlayer.OnDestroy();
         NextLevel(1);
     }
 
     private void OnGameEnd(object sender, GameEndedArgs e)
     {
+        currentPlayer.OnDestroy();
         EndLevel();
     }
     
@@ -63,6 +67,8 @@ public class LevelManager : MonoBehaviour
         // 开始游戏吧
         currentCellGrid.InitializeAndStart();
         currentCellGrid.GameEnded += OnGameEnd;
+        currentPlayer = currentCellGrid.AIGetEnemyUnits()[0];
+        (currentPlayer as RealPlayer).PlayerAttackAbility.SetCurrentAttackAbility(weaponIndex);
         // 设置RTSCamera
         RTSCamera = FindObjectOfType<RTS_Camera>();
         RTSCamera.SetTarget(currentPlayer.transform);

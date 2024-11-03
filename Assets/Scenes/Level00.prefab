@@ -42008,6 +42008,11 @@ PrefabInstance:
       objectReference: {fileID: 6765039802446676240}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
+      propertyPath: HitPoints
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
       propertyPath: AICellEndCell
       value: 
       objectReference: {fileID: 551943986158159524}
@@ -43162,6 +43167,11 @@ PrefabInstance:
       objectReference: {fileID: 6731528021653853534}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
+      propertyPath: HitPoints
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
       propertyPath: AICellEndCell
       value: 
       objectReference: {fileID: 5820159670353635976}
@@ -44228,6 +44238,16 @@ PrefabInstance:
       propertyPath: cell
       value: 
       objectReference: {fileID: 441755854765559488}
+    - target: {fileID: 767868654995508937, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: MaxHP
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 767868654995508937, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
+        type: 3}
+      propertyPath: totalActionPoints
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4783229825609753673, guid: 1e3ae5c8d17e14f4fb62b726a6912663,
         type: 3}
       propertyPath: m_Name
@@ -46241,6 +46261,11 @@ PrefabInstance:
       propertyPath: cell
       value: 
       objectReference: {fileID: 8991727578572821556}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: HitPoints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
       propertyPath: AICellEndCell
@@ -49603,6 +49628,11 @@ PrefabInstance:
       propertyPath: cell
       value: 
       objectReference: {fileID: 2293580944252168803}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: HitPoints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
       propertyPath: AICellEndCell
@@ -58912,9 +58942,29 @@ PrefabInstance:
       objectReference: {fileID: 1662377622200312608}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
+      propertyPath: HitPoints
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: AttackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: AttackFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
       propertyPath: AICellEndCell
       value: 
       objectReference: {fileID: 2323800546195170271}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: movementPoints
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
       propertyPath: AICellStartCell
