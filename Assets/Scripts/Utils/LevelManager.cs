@@ -45,8 +45,18 @@ public class LevelManager : MonoBehaviour
         
     }
     
-    public void NextLevel()
+    public void NextLevel(int levelIndex)
     {
-        
+        levels[levelIndex].SetActive(true);
+        // 找到CellGrid
+        currentCellGrid = levels[levelIndex].GetComponentInChildren<CellGrid>();
+        // 开始游戏吧
+        currentCellGrid.InitializeAndStart();
+        currentPlayer = currentCellGrid.AIGetEnemyUnits()[0];
+        // 设置RTSCamera
+        RTSCamera = FindObjectOfType<RTS_Camera>();
+        RTSCamera.SetTarget(currentPlayer.transform);
+        // 设置GUI的CellGrid
+        UIController.CellGrid = currentCellGrid;
     }
 }

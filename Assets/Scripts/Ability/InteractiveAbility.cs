@@ -25,10 +25,11 @@ namespace TbsFramework.Units.Abilities
 
         public ShopManager shopManager;
 
+        public CellGrid _cellGrid;
+
         private void Start()
         {
             isInteracted = false;
-
         }
 
 
@@ -89,6 +90,8 @@ namespace TbsFramework.Units.Abilities
                     case "NPC":
                         DoNPC();
                         break;
+                    case "EndPoint":
+                        break;
                     default:
                         Debug.Log("Invalid action number");
                         break;
@@ -141,6 +144,11 @@ namespace TbsFramework.Units.Abilities
             shopPanel.SetActive(true);
             shopManager = shopPanel.GetComponent<ShopManager>();
             shopManager.Refresh();
+        }
+
+        public void DoEndPoint()
+        {
+            
         }
     }
 }
