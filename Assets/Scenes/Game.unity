@@ -325,6 +325,11 @@ PrefabInstance:
       propertyPath: GainGold
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6074433622222141440, guid: 9f7afa2872c950b4091c30a314be23a0,
+        type: 3}
+      propertyPath: TurnLimit
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6707358395612972269, guid: 9f7afa2872c950b4091c30a314be23a0,
         type: 3}
       propertyPath: m_Name
@@ -821,6 +826,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1766300560}
     m_Modifications:
+    - target: {fileID: 554997794782196849, guid: c89efde9e81847c4fa49d137f69abf0e,
+        type: 3}
+      propertyPath: TurnLimit
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 814221722875925456, guid: c89efde9e81847c4fa49d137f69abf0e,
         type: 3}
       propertyPath: m_LocalPosition.x
