@@ -53,6 +53,8 @@ namespace TbsFramework
         {
             // Canvas.transform.Find("AbilitySet").GetComponentsInChildren<ToolTip>();
             turnCountText.text = totalRound + " Turn Left To Extract";
+
+            SetSkills();
         }
 
         private void OnGameStarted(object sender, EventArgs e)
@@ -62,7 +64,6 @@ namespace TbsFramework
                 EndTurnButton.interactable = CellGrid.CurrentPlayer is HumanPlayer;
             }
 
-            SetSkills();
         }
 
         private void OnTurnEnded(object sender, bool isNetworkInvoked)
@@ -117,6 +118,8 @@ namespace TbsFramework
 
         public void SetSkills()
         {
+            Debug.Log("Set all Skill Button");
+            
             var skillDetails = Canvas.transform.Find("AbilitySet").GetComponentsInChildren<SkillDetails>();
             foreach (var skillDetail in skillDetails)
             {
