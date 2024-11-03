@@ -259,6 +259,11 @@ PrefabInstance:
       propertyPath: shopManager
       value: 
       objectReference: {fileID: 526644278}
+    - target: {fileID: 3523734452709897801, guid: 9f7afa2872c950b4091c30a314be23a0,
+        type: 3}
+      propertyPath: GainGold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6707358395612972269, guid: 9f7afa2872c950b4091c30a314be23a0,
         type: 3}
       propertyPath: m_Name
@@ -268,6 +273,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7319291642372170896, guid: 9f7afa2872c950b4091c30a314be23a0,
+        type: 3}
+      propertyPath: GainGold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097435186754838748, guid: 9f7afa2872c950b4091c30a314be23a0,
+        type: 3}
+      propertyPath: GainGold
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -605,10 +620,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1031223884264836001, guid: c89efde9e81847c4fa49d137f69abf0e,
+        type: 3}
+      propertyPath: GainGold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104022221873877903, guid: c89efde9e81847c4fa49d137f69abf0e,
+        type: 3}
+      propertyPath: GainGold
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233599172257675668, guid: c89efde9e81847c4fa49d137f69abf0e,
+        type: 3}
+      propertyPath: GainGold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2875650281638502982, guid: c89efde9e81847c4fa49d137f69abf0e,
         type: 3}
       propertyPath: ShouldStartGameImmediately
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409856076487867962, guid: c89efde9e81847c4fa49d137f69abf0e,
+        type: 3}
+      propertyPath: GainGold
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6585582681950880566, guid: c89efde9e81847c4fa49d137f69abf0e,
         type: 3}
