@@ -35,20 +35,20 @@ namespace TbsFramework
 
         public override void Display(CellGrid cellGrid)
         {
-            AbilitySelect.SetActive(true);
-
-            foreach (var panel in SkillPanels)
-            {
-                var skill = panel.GetComponent<SkillDetails>().Skill;
-                if (skill.IsActive)
-                {
-                    panel.SetActive(true);
-                }
-                else
-                {
-                    panel.SetActive(false);
-                }
-            }
+            // AbilitySelect.SetActive(true);
+            //
+            // foreach (var panel in SkillPanels)
+            // {
+            //     var skill = panel.GetComponent<SkillDetails>().Skill;
+            //     if (skill.IsActive)
+            //     {
+            //         panel.SetActive(true);
+            //     }
+            //     else
+            //     {
+            //         panel.SetActive(false);
+            //     }
+            // }
         }
 
         public override void CleanUp(CellGrid cellGrid)
@@ -58,7 +58,7 @@ namespace TbsFramework
             //     Destroy(panel);
             // }
 
-            AbilitySelect.SetActive(false);
+            // AbilitySelect.SetActive(false);
             // SkillPanels = new List<GameObject>();
         }
 
