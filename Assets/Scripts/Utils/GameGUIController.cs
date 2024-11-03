@@ -21,6 +21,8 @@ namespace TbsFramework
         public GameObject realPlayer;
         public GameObject Canvas;
 
+        public GameObject GameEnd;
+
         // public Text currentRoundText;
         //
         // public Text totalRoundText;
@@ -106,6 +108,11 @@ namespace TbsFramework
                 {
                     turnCountText.text = round + " Turn Left To Extract";
                 }
+            }
+
+            //Debug.Log("turns left = " + currentRound);
+            if (currentRound >= totalRound) {
+                GameEnd.SetActive(true);
             }
         }
 
