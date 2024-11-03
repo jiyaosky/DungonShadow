@@ -31,6 +31,7 @@ namespace TbsFramework.Units.Abilities
 
         }
 
+
         // 在当前Chest Unit的Range范围内搜索是否有包含Component<RealPlayer>();的Unit
         public bool isPlayerInRange(CellGrid cellGrid)
         {
@@ -137,7 +138,6 @@ namespace TbsFramework.Units.Abilities
         public void DoNPC()
         {
             //Shop related
-            shopPanel = GameObject.Find("Canvas/ShopPanel");
             shopPanel.SetActive(true);
             shopManager = shopPanel.GetComponent<ShopManager>();
             shopManager.Refresh();
