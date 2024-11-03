@@ -372,6 +372,7 @@ namespace RTS_Cam
         public void SetTarget(Transform target)
         {
             targetFollow = target;
+            defaultTargetFollow = targetFollow;
         }
 
         /// <summary>
