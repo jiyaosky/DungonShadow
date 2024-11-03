@@ -54,10 +54,7 @@ namespace TbsFramework.Units.Abilities
         public override void OnUnitClicked(Unit unit, CellGrid cellGrid)
         {
 
-            if (IsPointerOverUIObject()) 
-            {
-            Debug.Log("Over UI");    
-            return;}
+            if (IsPointerOverUIObject()) return;
 
             if (cellGrid.GetCurrentPlayerUnits().Contains(unit))
             {
