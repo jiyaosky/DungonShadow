@@ -67,6 +67,8 @@ public class ToolTip_Relic : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void Refresh(){
         
+        buyButton.onClick.RemoveAllListeners();
+        
 
         fakeBuyButton.onClick.AddListener(() => {
               messagePanel.SetActive(true);
