@@ -32,6 +32,9 @@ namespace TbsFramework.Units
         public int attackLimit = 1;
         
 
+        //血量信息
+        public TextMeshProUGUI health; 
+
         // 当前暗杀力
         [SerializeField]
         public int currentAssassinationPower;
@@ -288,6 +291,9 @@ namespace TbsFramework.Units
                 healthBar.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green,
                     (float)(HitPoints / (float)TotalHitPoints));
             }
+
+            health.text = (HitPoints + "/" + TotalHitPoints);
+
         }
         
         private void UpdateApBar()
@@ -307,6 +313,7 @@ namespace TbsFramework.Units
         public void Update()
         {
             UpdateApBar();
+            health.text = (HitPoints + "/" + TotalHitPoints);
         }
 
 
