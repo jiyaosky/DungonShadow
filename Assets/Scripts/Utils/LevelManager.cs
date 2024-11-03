@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using RTS_Cam;
+using TbsFramework;
 using TbsFramework.Grid;
 using TbsFramework.Units;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class LevelManager : MonoBehaviour
 
     public int weaponIndex;
 
+    public GUIController UIController;
+    
     
     public CellGrid currentCellGrid;
     public void InstantiateLevel(int weapon)
@@ -31,11 +34,15 @@ public class LevelManager : MonoBehaviour
         // 设置RTSCamera
         RTSCamera = FindObjectOfType<RTS_Camera>();
         RTSCamera.SetTarget(currentPlayer.transform);
+        
+        // 设置GUI的CellGrid
+        UIController.CellGrid = currentCellGrid;
+        
+    }
 
-        // 设置Fog
-
-
-
+    public void EndLevel()
+    {
+        
     }
     
     public void NextLevel()

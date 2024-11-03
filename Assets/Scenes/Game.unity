@@ -662,6 +662,7 @@ MonoBehaviour:
   RTSCamera: {fileID: 0}
   currentPlayer: {fileID: 0}
   weaponIndex: 0
+  UIController: {fileID: 620858124}
   currentCellGrid: {fileID: 0}
 --- !u!1 &1928974758
 GameObject:
