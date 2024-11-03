@@ -13,6 +13,10 @@ public class ToolTip_Basic: MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     [SerializeField]
     private GameObject dialog_box;
 
+    [SerializeField]
+    private GameObject messagePanel;
+    [SerializeField]
+    private TextMeshProUGUI messagePopUp;
 
     public void OnPointerEnter(PointerEventData eventData)
     {

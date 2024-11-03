@@ -12,7 +12,6 @@ namespace TbsFramework.Units.Abilities
         
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
-            (UnitReference as RealPlayer).currentActionPoints -= APCost;
             UnitReference.SetAnimation("Base Layer.Buff", Time.deltaTime * UnitReference.MovementAnimationSpeed);
             var fog = FindObjectOfType<Fog>();
 

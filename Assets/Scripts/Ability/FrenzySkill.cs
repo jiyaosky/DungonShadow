@@ -15,7 +15,6 @@ namespace TbsFramework.Units.Abilities
             UnitReference.SetAnimation("Base Layer.Buff", Time.deltaTime * UnitReference.MovementAnimationSpeed);
             var realPlayer = UnitReference as RealPlayer;
             realPlayer.attackLimit = 99;
-            realPlayer.currentActionPoints -= APCost;
             IsActive = false;
             yield return null;
         }

@@ -36,6 +36,7 @@ namespace TbsFramework
         public override void Display(CellGrid cellGrid)
         {
             AbilitySelect.SetActive(true);
+
             foreach (var panel in SkillPanels)
             {
                 var skill = panel.GetComponent<SkillDetails>().Skill;
@@ -57,7 +58,7 @@ namespace TbsFramework
             //     Destroy(panel);
             // }
 
-            // AbilitySelect.SetActive(false);
+            AbilitySelect.SetActive(false);
             // SkillPanels = new List<GameObject>();
         }
 

@@ -7,15 +7,12 @@ using TbsFramework.Example1;
 using TbsFramework.Grid;
 using TbsFramework.Units.Abilities;
 using UnityEngine;
-using TMPro;
-using Unity.VisualScripting;
+
 
 namespace TbsFramework.Units
 {
     public class AIEnemy : MyUnit
     {
-
-        public TextMeshProUGUI health; 
         // 0 ->0
         // 
         // public override void MaskAsAISight()
@@ -28,19 +25,8 @@ namespace TbsFramework.Units
         public override void Initialize()
         {
             // playerAnimator = GetComponentInChildren<Animator>();
-            var _cellGrid = FindObjectOfType<CellGrid>();
-            _cellGrid.AIGetEnemyUnits()[0].UnitMoved += OnUnitMoved;
             SetNewCurrentForward();
             base.Initialize();
-        }
-
-        void Update() {
-            health.text = "" + this.HitPoints;
-        }
-
-        private void OnUnitMoved(object sender, MovementEventArgs e)
-        {
-            CheckAISight();
         }
 
         public void SetNewCurrentForward()
@@ -215,13 +201,6 @@ namespace TbsFramework.Units
         {
             MaskAsAISight();
             base.OnTurnStart();
-        }
-
-        protected override void OnDestroyed()
-        {
-            var _cellGrid = FindObjectOfType<CellGrid>();
-            _cellGrid.AIGetEnemyUnits()[0].UnitMoved -= OnUnitMoved;
-            base.OnDestroyed();
         }
     }
 }

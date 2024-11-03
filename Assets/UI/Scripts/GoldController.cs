@@ -15,31 +15,21 @@ namespace TbsFramework
         public TextMeshProUGUI  gold_text;
 
         private Dictionary<int, int> Account = new Dictionary<int, int>();
-        public int StartingAmount = 0;
+        public int StartingAmount = 5;
         // public int realPlayerGold = ;
-        
-        public void Initialize()
-        {
-            Debug.Log("初始化金币");
-            //FindObjectOfType<CellGrid>().GameStarted += OnGameStarted;
-
-            UpdateValue(0, StartingAmount);
-            gold_text.text = "" + GetValue(0);
-        }
-
         
         public void Awake()
         {
-            //text update
+            FindObjectOfType<CellGrid>().GameStarted += OnGameStarted;
 
+            //text update
+            gold_text.text = "" + StartingAmount;
         }
 
-        /*
         private void OnGameStarted(object sender, System.EventArgs e)
         {
             Account.Add(0, StartingAmount);
         }
-        */
 
         public int GetValue(int playerNumber)
         {
@@ -51,8 +41,9 @@ namespace TbsFramework
         }
         public void UpdateValue(int playerNumber, int delta)
         {
-            if (!Account.ContainsKey(playerNumber)){Account.Add(0, StartingAmount);}
+            Assert.IsTrue(Account.ContainsKey(playerNumber), string.Format("The Account of player number {0} was not initialized", playerNumber));
             Account[playerNumber] += delta;
+            
             //text update
             gold_text.text = "" + Account[playerNumber];
         }

@@ -6,8 +6,6 @@ using TbsFramework.Grid;
 using TbsFramework.Grid.GridStates;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-
 
 namespace TbsFramework.Units.Abilities
 {
@@ -18,9 +16,6 @@ namespace TbsFramework.Units.Abilities
         public int UnitToAttackID { get; set; }
 
         List<Unit> inAttackRange;
-
-        //update message
-        public TextMeshProUGUI message;
 
         // public List<Ability> PlayerAttackAbilities;
         // public Ability CurrentSelectedAttackAbility;
@@ -74,10 +69,6 @@ namespace TbsFramework.Units.Abilities
             Player.UpdateAttackFactor(AbilityDamage);
             Player.UpdateAssassinationPower(AssassinationPower);
             Player.AttackRange = AbilityRange;
-
-            //update message
-            message.text = "攻击范围：" + AbilityRange + "\n攻击力：" + AbilityDamage + "\n暗杀力：" + AssassinationPower;
-
         }
         // 不同攻击方式的攻击力加成和攻击范围
 
@@ -86,7 +77,7 @@ namespace TbsFramework.Units.Abilities
         public override void Initialize()
         {
             Player = GetComponent<RealPlayer>();
-            // SetCurrentAttackAbility(1);
+            SetCurrentAttackAbility( 1);
         }
 
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)

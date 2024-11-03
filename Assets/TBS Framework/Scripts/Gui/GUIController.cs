@@ -8,6 +8,8 @@ using TbsFramework.Grid.GridStates;
 using TbsFramework.Players;
 using TbsFramework;
 
+
+
 namespace TbsFramework
 {
     public class GUIController : MonoBehaviour
@@ -31,7 +33,7 @@ namespace TbsFramework
 
         public int totalRound = 10;
 
-        public void InitializeLevel()
+        void Awake()
         {
             CellGrid.LevelLoading += OnLevelLoading;
             CellGrid.LevelLoadingDone += OnLevelLoadingDone;
@@ -58,8 +60,6 @@ namespace TbsFramework
             {
                 EndTurnButton.interactable = CellGrid.CurrentPlayer is HumanPlayer;
             }
-
-            // Canvas.GetComponentInChildren<>();
         }
 
         private void OnTurnEnded(object sender, bool isNetworkInvoked)
@@ -114,5 +114,4 @@ namespace TbsFramework
 
         
     }
-    
 }

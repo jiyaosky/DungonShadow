@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +10,10 @@ public class MessageFade : MonoBehaviour
 
     public TextMeshProUGUI messagePanelText;
 
-    private void Awake()
+    void Start()
     {
         messagePanelImage = this.gameObject.GetComponent<Image>();
-    }
 
-    private void Start()
-    {
         RunFade();
     }
 

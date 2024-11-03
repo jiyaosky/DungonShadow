@@ -15,7 +15,7 @@ namespace TbsFramework.Units.Abilities
         // 是否为单次交互
         bool isOnceInteract = false;
         // 是否已经交互
-        public bool isInteracted = false;
+        bool isInteracted = false;
         // 交互范围
         public int Range = 1;
 
@@ -25,13 +25,14 @@ namespace TbsFramework.Units.Abilities
 
         public ShopManager shopManager;
 
-        public CellGrid _cellGrid;
-
         private void Start()
         {
             isInteracted = false;
-        }
 
+            //Shop related
+            shopPanel = GameObject.Find("Canvas/ShopPanel");
+            shopManager = shopPanel.GetComponent<ShopManager>();
+        }
 
         // 在当前Chest Unit的Range范围内搜索是否有包含Component<RealPlayer>();的Unit
         public bool isPlayerInRange(CellGrid cellGrid)
@@ -81,6 +82,7 @@ namespace TbsFramework.Units.Abilities
                 switch (abilityName)
                 {
                     case "Chest":
+                        // Debug.Log("Chest");
                         DoChest();
                         break;
                     case "Door":
@@ -88,9 +90,6 @@ namespace TbsFramework.Units.Abilities
                         break;
                     case "NPC":
                         DoNPC();
-                        break;
-                    case "EndPoint":
-                        DoEndPoint();
                         break;
                     default:
                         Debug.Log("Invalid action number");
@@ -141,15 +140,8 @@ namespace TbsFramework.Units.Abilities
         public void DoNPC()
         {
             //Shop related
-            shopPanel.SetActive(true);
-            shopManager = shopPanel.GetComponent<ShopManager>();
             shopManager.Refresh();
-        }
-
-        public void DoEndPoint()
-        {
-            isInteracted = true;
-            _cellGrid.CheckGameFinished();
+            shopPanel.SetActive(true);
         }
     }
 }

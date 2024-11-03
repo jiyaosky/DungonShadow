@@ -17,7 +17,6 @@ namespace TbsFramework.Units.Abilities
         public override IEnumerator Act(CellGrid cellGrid, bool isNetworkInvoked = false)
         {
             // UnitReference.AttackHandler(UnitToAttack, APCost, false);
-            (UnitReference as RealPlayer).currentActionPoints -= APCost;
             UnitToAttack.AddBuff(immobilizationBuff);
             UnitToAttack.SetAnimation("Base Layer.StunnedLoop", Time.deltaTime * UnitReference.MovementAnimationSpeed);
             yield return null;

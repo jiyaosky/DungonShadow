@@ -35,7 +35,7 @@ public class Fog : MonoBehaviour
 
     private void Awake()
     {
-        CellGrid.GameStarted += (object sender, EventArgs e) =>
+        CellGrid.LevelLoadingDone += (object sender, EventArgs e) =>
         {
             _fogTexture = new Texture2D(CellGrid.Width, CellGrid.Height);
             _fogColors = new Color[CellGrid.Width * CellGrid.Height];

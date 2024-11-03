@@ -9,7 +9,6 @@ using RTS_Cam;
 using TbsFramework.Grid;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 namespace TbsFramework.Units
 {
@@ -32,9 +31,6 @@ namespace TbsFramework.Units
         public int attackLimit = 1;
         
 
-        //血量信息
-        public TextMeshProUGUI health; 
-
         // 当前暗杀力
         [SerializeField]
         public int currentAssassinationPower;
@@ -47,6 +43,7 @@ namespace TbsFramework.Units
         public InteractionAbility InteractionAbility { get; set; }
         // 移动能力
         public PlayerMoveAbility MovementAbility { get; set; }
+
         // 选择的技能
         public Ability SelectedAbility;
         // 设置选择的技能
@@ -55,14 +52,6 @@ namespace TbsFramework.Units
             SelectedAbility = ability;
         }
         
-        //信息提示
-        public GameObject messageCanvas;
-        private MessageMove messageMove;
-
-        //读取一下文本更新脚本
-        void Awake() {
-            messageMove = messageCanvas.GetComponent<MessageMove>();
-        }
         // 
         
         // <summary>
@@ -81,7 +70,6 @@ namespace TbsFramework.Units
         // </summary>
         public override void OnMouseDown()
         {
-            if (IsPointerOverUIObject()) return; 
             base.OnMouseDown();
         }
         
@@ -91,7 +79,6 @@ namespace TbsFramework.Units
         /// </summary>
         public override void OnUnitSelected()
         {
-
             SelectedAbility = MovementAbility;
             base.OnUnitSelected();
         }
@@ -151,23 +138,11 @@ namespace TbsFramework.Units
         protected override AttackAction DealDamage(Unit unitToAttack, int cost)
         {
             var damage = currentAttackFactor;
-
-            messageMove.LoadMessage("攻击!");
-            messageMove.RunMoveUp();
-
             if (IsBehindAnotherUnit(unitToAttack))
             {
-                //Debug.Log("刺杀");
-
-
+                Debug.Log("刺杀");
                 damage = currentAttackFactor + currentAssassinationPower;
             }
-
-
-            //消息提示
-            
-
-
             return new AttackAction(damage, PlayerAttackAbility.AbilityCost);
         }
 
@@ -291,9 +266,6 @@ namespace TbsFramework.Units
                 healthBar.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green,
                     (float)(HitPoints / (float)TotalHitPoints));
             }
-
-            health.text = (HitPoints + "/" + TotalHitPoints);
-
         }
         
         private void UpdateApBar()
@@ -304,32 +276,14 @@ namespace TbsFramework.Units
             {
                 var text = apBar.GetComponent<TextMeshProUGUI>();
                 text.text = currentActionPoints.ToString();
-
-                //apBar.LookAt(FindObjectOfType<RTS_Camera>().transform);
-                //apBarCanvas.LookAt(FindObjectOfType<RTS_Camera>().transform);
+                // apBar.LookAt(FindObjectOfType<RTS_Camera>().transform);
+                // apBarCanvas.LookAt(FindObjectOfType<RTS_Camera>().transform);
             }
         }
 
         public void Update()
         {
-            var apBarCanvas = transform.Find("APCanvas");
-            var apBar = apBarCanvas.Find("Text");
-            var text = apBar.GetComponent<TextMeshProUGUI>();
-            text.text = currentActionPoints.ToString();
-
-            health.text = (HitPoints + "/" + TotalHitPoints);
-        }
-
-
-
-        //UI Dectection
-        public static bool IsPointerOverUIObject()
-        {
-            PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-            eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            List<RaycastResult> results = new List<RaycastResult>();
-            EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-            return results.Count > 0;
+            UpdateApBar();
         }
     }
 }
