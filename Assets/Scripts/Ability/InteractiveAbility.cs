@@ -148,6 +148,7 @@ namespace TbsFramework.Units.Abilities
 
         public void DoEndPoint()
         {
+            isInteracted = true;
             _cellGrid.CheckGameFinished();
         }
     }

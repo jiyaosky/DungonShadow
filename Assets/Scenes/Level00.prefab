@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 8944798604860228000}
   - component: {fileID: 2710685045587986116}
   - component: {fileID: 554997794782196849}
+  - component: {fileID: 558814553991331396}
   m_Layer: 0
   m_Name: CellGrid
   m_TagString: Untagged
@@ -790,6 +791,20 @@ MonoBehaviour:
   TurnLimit: 10
   AppliesToPlayerNo: 0
   isPositive: 1
+--- !u!114 &558814553991331396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383093457207669576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7785dd3cc4d1a3d49ae3549f9156e60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestinationUnit: {fileID: 6050925935757000034}
+  AppliesToPlayerNo: 0
 --- !u!1 &4876103015234035205
 GameObject:
   m_ObjectHideFlags: 0
@@ -20190,6 +20205,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3039739897963377273}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6050925935757000034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8779316951509765915, guid: 8fdfaf70a5e36d24da1aae7e86fd185f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3039739897963377273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c366e80e5a7ce87439b4f57a93ad5084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3048324177664354232
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ namespace TbsFramework
             
             if (interAbility.isInteracted)
             {
+                Debug.Log("到达终点了下一关吧");
                 var winningPlayers = new List<int>() { 0 };
                 var loosingPlayers = cellGrid.Players.Where(p => p.PlayerNumber != 0)
                     .Select(p => p.PlayerNumber)
