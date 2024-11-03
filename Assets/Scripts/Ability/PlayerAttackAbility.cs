@@ -57,6 +57,8 @@ namespace TbsFramework.Units.Abilities
                     AbilityRange = 1;
                     AbilityDamage = 1;
                     AssassinationPower = 1;
+                    (UnitReference as RealPlayer).MaxHP += 2;
+                    (UnitReference as RealPlayer).HitPoints += 2;
                     currentWeaponAbility = gameObject.AddComponent<BroadswordAttack>();
                     break;
                 // Dart

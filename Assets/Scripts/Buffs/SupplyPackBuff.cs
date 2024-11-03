@@ -15,13 +15,13 @@ namespace TbsFramework
         public int Price = 18;
         public override void Apply(Unit unit)
         {
-            originMaxAP = (int)unit.TotalActionPoints;
-            unit.TotalActionPoints += addMaxAp;
+            originMaxAP = (int)(unit as RealPlayer).totalActionPoints;
+            (unit as RealPlayer).totalActionPoints += addMaxAp;
         }
 
         public override void Undo(Unit unit)
         {
-            unit.TotalActionPoints = originMaxAP;
+            (unit as RealPlayer).totalActionPoints += originMaxAP;
         }
     }
 }
