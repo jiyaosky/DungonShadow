@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 5773165243648345276}
   - component: {fileID: 8944798604860228000}
   - component: {fileID: 2710685045587986116}
+  - component: {fileID: 554997794782196849}
   m_Layer: 0
   m_Name: CellGrid
   m_TagString: Untagged
@@ -774,6 +775,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42089343e0f26844b930bb4058976d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &554997794782196849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383093457207669576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8604b61bb73b34e862a016e1d55013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnLimit: 10
+  AppliesToPlayerNo: 0
+  isPositive: 1
 --- !u!1 &4876103015234035205
 GameObject:
   m_ObjectHideFlags: 0
