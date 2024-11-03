@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +10,7 @@ using TbsFramework;
 
 namespace TbsFramework
 {
-    public class GUIController : MonoBehaviour
+    public class GameGUIController : MonoBehaviour
     {
 
         public CellGrid CellGrid;
@@ -59,7 +59,7 @@ namespace TbsFramework
                 EndTurnButton.interactable = CellGrid.CurrentPlayer is HumanPlayer;
             }
 
-            // Canvas.GetComponentInChildren<>();
+            
         }
 
         private void OnTurnEnded(object sender, bool isNetworkInvoked)

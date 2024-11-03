@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
 
     public int weaponIndex;
 
-    public GUIController UIController;
+    public GameGUIController UIController;
     
     
     public CellGrid currentCellGrid;
@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
         
         // 设置GUI的CellGrid
         UIController.CellGrid = currentCellGrid;
-        
+        UIController.Canvas.GetComponentInChildren<GoldController>().Initialize();
     }
 
     public void EndLevel()

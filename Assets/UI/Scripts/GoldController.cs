@@ -20,6 +20,7 @@ namespace TbsFramework
         
         public void Initialize()
         {
+            Debug.Log("初始化金币");
             FindObjectOfType<CellGrid>().GameStarted += OnGameStarted;
         }
 
@@ -45,9 +46,8 @@ namespace TbsFramework
         }
         public void UpdateValue(int playerNumber, int delta)
         {
-            Assert.IsTrue(Account.ContainsKey(playerNumber), string.Format("The Account of player number {0} was not initialized", playerNumber));
+            if (!Account.ContainsKey(playerNumber)){Account.Add(0, StartingAmount);}
             Account[playerNumber] += delta;
-            
             //text update
             gold_text.text = "" + Account[playerNumber];
         }
