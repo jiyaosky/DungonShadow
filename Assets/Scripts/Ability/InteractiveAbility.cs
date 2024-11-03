@@ -15,7 +15,7 @@ namespace TbsFramework.Units.Abilities
         // 是否为单次交互
         bool isOnceInteract = false;
         // 是否已经交互
-        bool isInteracted = false;
+        public bool isInteracted = false;
         // 交互范围
         public int Range = 1;
 
