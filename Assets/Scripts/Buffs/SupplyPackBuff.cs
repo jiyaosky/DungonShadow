@@ -21,7 +21,7 @@ namespace TbsFramework
 
         public override void Undo(Unit unit)
         {
-            (unit as RealPlayer).totalActionPoints += originMaxAP;
+            (unit as RealPlayer).totalActionPoints -= originMaxAP;
         }
     }
 }
