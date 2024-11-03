@@ -4,7 +4,8 @@ using System.Linq;
 using TbsFramework.Cells;
 using TbsFramework.Grid;
 using TbsFramework.Grid.GameResolvers;
-using Unity.VisualScripting;
+using TbsFramework.Units;
+using TbsFramework.Units.Abilities;
 using UnityEngine;
 
 namespace TbsFramework
@@ -16,17 +17,18 @@ namespace TbsFramework
 
         public override GameResult CheckCondition(CellGrid cellGrid)
         {
-        //     if (DestinationCell.CurrentUnits.Count > 0
-        //         && (DestinationCell.CurrentUnits.Exists(u => u.PlayerNumber == AppliesToPlayerNo) || AnyPlayer == true))
-        //     {
-        //         var winningPlayers = new List<int>() { DestinationUnit.PlayerNumber };
-        //         var loosingPlayers = cellGrid.Players.Where(p => p.PlayerNumber != DestinationCell.CurrentUnits[0].PlayerNumber)
-        //             .Select(p => p.PlayerNumber)
-        //             .ToList();
-        //
-        //         return new GameResult(true, winningPlayers, loosingPlayers);
-        //     }
-        //
+            var interAbility = DestinationUnit.GetComponent<InteractiveAbility>();
+            
+            if (interAbility.isInteracted)
+            {
+                Debug.Log("到达终点了下一关吧");
+                var winningPlayers = new List<int>() { 0 };
+                var loosingPlayers = cellGrid.Players.Where(p => p.PlayerNumber != 0)
+                    .Select(p => p.PlayerNumber)
+                    .ToList();
+            
+                return new GameResult(true, winningPlayers, loosingPlayers);
+            }
             return new GameResult(false, null, null);
         }
     }
