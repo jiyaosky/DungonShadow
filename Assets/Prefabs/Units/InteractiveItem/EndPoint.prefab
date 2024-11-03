@@ -443,6 +443,7 @@ MonoBehaviour:
   GainGold: 5
   shopPanel: {fileID: 0}
   shopManager: {fileID: 0}
+  _cellGrid: {fileID: 0}
 --- !u!1 &5348907798002095030
 GameObject:
   m_ObjectHideFlags: 0

@@ -81,7 +81,6 @@ namespace TbsFramework.Units.Abilities
                 switch (abilityName)
                 {
                     case "Chest":
-                        // Debug.Log("Chest");
                         DoChest();
                         break;
                     case "Door":
@@ -91,6 +90,7 @@ namespace TbsFramework.Units.Abilities
                         DoNPC();
                         break;
                     case "EndPoint":
+                        DoEndPoint();
                         break;
                     default:
                         Debug.Log("Invalid action number");
@@ -148,7 +148,7 @@ namespace TbsFramework.Units.Abilities
 
         public void DoEndPoint()
         {
-            
+            _cellGrid.CheckGameFinished();
         }
     }
 }

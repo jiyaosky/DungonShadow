@@ -263,6 +263,7 @@ namespace TbsFramework.Units
             ActionPoints = TotalActionPoints;
 
             SetState(new UnitStateNormal(this));
+            FindObjectOfType<CellGrid>().CheckGameFinished();
         }
 
         /// <summary>
