@@ -942,6 +942,7 @@ Transform:
   - {fileID: 9030542602934340724}
   - {fileID: 2988805377794573311}
   - {fileID: 5348938567313757906}
+  - {fileID: 8898209841678552512}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8051484285365477459
@@ -32870,6 +32871,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4947546285199541334}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4956673109996778608
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 814221722875925456}
+    m_Modifications:
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406677617684327791, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+        type: 3}
+      propertyPath: m_Name
+      value: ArtMap
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: daf94ac3d0c8bbf418662bb3de2634c8, type: 3}
+--- !u!4 &8898209841678552512 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4590691231972211120, guid: daf94ac3d0c8bbf418662bb3de2634c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 4956673109996778608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4963608303536512521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42026,6 +42101,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowboy_RIO Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9198519150671773321, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: m_text
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43184,6 +43264,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cowboy_RIO Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198519150671773321, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: m_text
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46280,6 +46365,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cowboy_RIO Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198519150671773321, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: m_text
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49647,6 +49737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cowboy_RIO Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198519150671773321, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: m_text
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58974,6 +59069,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cowboy_RIO Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198519150671773321, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: m_text
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
