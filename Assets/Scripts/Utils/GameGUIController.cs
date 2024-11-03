@@ -50,6 +50,7 @@ namespace TbsFramework
         void Start()
         {
             // Canvas.transform.Find("AbilitySet").GetComponentsInChildren<ToolTip>();
+            turnCountText.text = totalRound + " Turn Left To Extract";
         }
 
         private void OnGameStarted(object sender, EventArgs e)

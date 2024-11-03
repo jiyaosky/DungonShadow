@@ -152,6 +152,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f180308aacc58d24dbaa3dc90894551a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &493589134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3203139680437259423, guid: 83304d973bd44ed42bf4114c782232d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1437007647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &526644276 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3794904448400175034, guid: 83304d973bd44ed42bf4114c782232d6,
@@ -218,7 +230,7 @@ MonoBehaviour:
   EndTurnButton: {fileID: 0}
   realPlayer: {fileID: 0}
   Canvas: {fileID: 329449134}
-  turnCountText: {fileID: 0}
+  turnCountText: {fileID: 493589134}
   currentRound: 0
   totalRound: 10
 --- !u!1001 &737594397
