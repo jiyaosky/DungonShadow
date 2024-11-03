@@ -69,7 +69,7 @@ public class ShopManager : MonoBehaviour
     public GameObject goldManager;
     private GoldController goldController;
 
-    void Awake()
+    void Start()
     {
         //Get all skills
         //allSkills = GameObject.FindChild("Canvas/AbilitySet");
