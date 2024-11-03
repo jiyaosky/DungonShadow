@@ -1907,6 +1907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: InformationPerceptionSkill
   DescriptionText: {fileID: 0}
   Skill: {fileID: 0}
 --- !u!223 &7388312905165086916
@@ -2205,6 +2206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: KunaiSkill
   DescriptionText: {fileID: 0}
   Skill: {fileID: 0}
 --- !u!223 &1648988790617114385
@@ -3339,7 +3341,7 @@ GameObject:
   - component: {fileID: 8889703154134270528}
   - component: {fileID: 1515853571439285478}
   m_Layer: 5
-  m_Name: QiPunchSkillPanel
+  m_Name: ShortTermAmnesiaSkillPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3427,6 +3429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: ShortTermAmnesiaSkill
   DescriptionText: {fileID: 0}
   Skill: {fileID: 0}
 --- !u!223 &4630309209338370735
@@ -7562,6 +7565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1817256299065401785}
+  - component: {fileID: 6466022903862195093}
   m_Layer: 5
   m_Name: AbilitySet
   m_TagString: Untagged
@@ -7595,6 +7599,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -172}
   m_SizeDelta: {x: 1500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6466022903862195093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505020108644056441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61cf3a7dcefbe994191f10d3d008c371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3512253840184352415
 GameObject:
   m_ObjectHideFlags: 0
@@ -7773,6 +7789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: CircularSlashSkill
   DescriptionText: {fileID: 0}
   Skill: {fileID: 0}
 --- !u!223 &3048488259916309198
@@ -9158,6 +9175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: FrenzySkill
   DescriptionText: {fileID: 0}
   Skill: {fileID: 0}
 --- !u!223 &2125828511087424758
@@ -15457,6 +15475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: ImmobilizationSkill
   DescriptionText: {fileID: 0}
   Skill: {fileID: 0}
 --- !u!223 &3492621341628701515
@@ -20683,6 +20702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: SlipAwaySkill
   DescriptionText: {fileID: 0}
   Skill: {fileID: 0}
 --- !u!223 &1816633912924750408

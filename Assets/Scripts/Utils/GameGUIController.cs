@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -7,6 +8,7 @@ using TbsFramework.Grid;
 using TbsFramework.Grid.GridStates;
 using TbsFramework.Players;
 using TbsFramework;
+using TbsFramework.Units.Abilities;
 
 namespace TbsFramework
 {
@@ -60,7 +62,7 @@ namespace TbsFramework
                 EndTurnButton.interactable = CellGrid.CurrentPlayer is HumanPlayer;
             }
 
-            
+            SetSkills();
         }
 
         private void OnTurnEnded(object sender, bool isNetworkInvoked)
@@ -111,6 +113,26 @@ namespace TbsFramework
             currentRound++;
             Debug.Log("currentRound:"+currentRound+".TotalRound:"+totalRound);
             CellGrid.EndTurn();
+        }
+
+        public void SetSkills()
+        {
+            var skillDetails = Canvas.transform.Find("AbilitySet").GetComponentsInChildren<SkillDetails>();
+            foreach (var skillDetail in skillDetails)
+            {
+                var skills = realPlayer.transform.Find("Skills").GetComponentsInChildren<SkillAbility>();
+                foreach (var skill in skills)
+                {
+                    if (skill.name == skillDetail.skillName)
+                    {
+                        skillDetail.Skill = skill;
+                        skillDetail.transform.Find("Button").GetComponent<Button>().onClick.AddListener(() =>
+                        {
+                            skill.Activate();
+                        });
+                    }
+                }
+            }
         }
 
         

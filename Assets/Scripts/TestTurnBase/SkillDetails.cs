@@ -7,6 +7,7 @@ namespace TbsFramework
 {
     public class SkillDetails : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
+        public string skillName;
         public Text DescriptionText;
         public SkillAbility Skill;
 

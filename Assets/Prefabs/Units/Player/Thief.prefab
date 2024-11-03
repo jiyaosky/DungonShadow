@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39292c72e8b75de4cbe44aa952358cb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: 
+  SkillName: InformationPerceptionSkill
   Description: 
   IsActive: 1
   Range: 0
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddd09bd0cde0094abce3f2e9b9c30b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: 
+  SkillName: FrenzySkill
   Description: 
   IsActive: 1
   Range: 0
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2563825ebc376244bd5e1fee752630a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: 
+  SkillName: KunaiSkill
   Description: 
   IsActive: 1
   Range: 4
@@ -994,6 +994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: 
   DescriptionText: {fileID: 7930129386744636133}
   Skill: {fileID: 2056469356482525998}
 --- !u!1 &2778494176296052375
@@ -1123,7 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410a4d6023cf9f644ba12a1b8f3b8ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: 
+  SkillName: ShortTermAmnesiaSkill
   Description: 
   IsActive: 1
   Range: 2
@@ -1225,6 +1226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: 
   DescriptionText: {fileID: 7930129386744636133}
   Skill: {fileID: 8870271658762135198}
 --- !u!1 &4338010183477178175
@@ -1914,6 +1916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: 
   DescriptionText: {fileID: 7930129386744636133}
   Skill: {fileID: 6286525026832793210}
 --- !u!1 &5345828035581735159
@@ -2011,6 +2014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: 
   DescriptionText: {fileID: 7930129386744636133}
   Skill: {fileID: 3234633776716818678}
 --- !u!1 &5408342898653718724
@@ -2303,6 +2307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: 
   DescriptionText: {fileID: 7930129386744636133}
   Skill: {fileID: 928766233548591228}
 --- !u!1 &6006129578343120367
@@ -2483,7 +2488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f05465515f21344a762834fdf391fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: 
+  SkillName: CircularSlashSkill
   Description: 
   IsActive: 1
   Range: 2
@@ -2671,6 +2676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: 
   DescriptionText: {fileID: 7930129386744636133}
   Skill: {fileID: 5978126873448242146}
 --- !u!1 &6647280272346568475
@@ -3117,7 +3123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2301bc7ffc4bf44991da5704396bea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: 
+  SkillName: SlipAwaySkill
   Description: 
   IsActive: 1
   Range: 0
@@ -3220,6 +3226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: 
   DescriptionText: {fileID: 7930129386744636133}
   Skill: {fileID: 2898524530313153727}
 --- !u!1 &7415892687560382131
@@ -3449,6 +3456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425e7123cf6bf6749bb0fe998a120f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: 
   DescriptionText: {fileID: 7930129386744636133}
   Skill: {fileID: 4220867452425490530}
 --- !u!1 &7764282978473490605
@@ -3894,7 +3902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeaaaf8a952a1224ea79ad3dbdeae062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: 
+  SkillName: QiPunchSkill
   Description: 
   IsActive: 1
   Range: 1
@@ -3946,7 +3954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f180308aacc58d24dbaa3dc90894551a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: 
+  SkillName: ImmobilizationSkill
   Description: 
   IsActive: 1
   Range: 2

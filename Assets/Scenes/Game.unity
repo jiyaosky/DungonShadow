@@ -553,16 +553,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2148466089959179035, guid: 83304d973bd44ed42bf4114c782232d6,
-        type: 3}
-      propertyPath: StartingAmount
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2331657015222577850, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: Skill
       value: 
       objectReference: {fileID: 1914893288}
+    - target: {fileID: 2331657015222577850, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: skillName
+      value: ShortTermAmnesiaSkill
+      objectReference: {fileID: 0}
     - target: {fileID: 3694484653252108448, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: Skill
@@ -573,6 +573,11 @@ PrefabInstance:
       propertyPath: Skill
       value: 
       objectReference: {fileID: 991848613}
+    - target: {fileID: 4218994391968383970, guid: 83304d973bd44ed42bf4114c782232d6,
+        type: 3}
+      propertyPath: skillName
+      value: KunaiSkill
+      objectReference: {fileID: 0}
     - target: {fileID: 5149170173743573888, guid: 83304d973bd44ed42bf4114c782232d6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
