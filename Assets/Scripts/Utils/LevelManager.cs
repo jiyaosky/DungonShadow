@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour
         currentCellGrid.InitializeAndStart();
         currentPlayer = currentCellGrid.AIGetEnemyUnits()[0];
         (currentPlayer as RealPlayer).PlayerAttackAbility.SetCurrentAttackAbility(weapon);
+        currentCellGrid.GameEnded += OnGameEnd;
         
         // 设置RTSCamera
         RTSCamera = FindObjectOfType<RTS_Camera>();
@@ -43,7 +44,15 @@ public class LevelManager : MonoBehaviour
 
     public void EndLevel()
     {
-        
+        levels[0].SetActive(false);
+        currentCellGrid.GameEnded -= OnGameEnd;
+        currentPlayer.OnDestroy();
+        NextLevel(1);
+    }
+
+    private void OnGameEnd(object sender, GameEndedArgs e)
+    {
+        EndLevel();
     }
     
     public void NextLevel(int levelIndex)
@@ -53,7 +62,7 @@ public class LevelManager : MonoBehaviour
         currentCellGrid = levels[levelIndex].GetComponentInChildren<CellGrid>();
         // 开始游戏吧
         currentCellGrid.InitializeAndStart();
-        currentPlayer = currentCellGrid.AIGetEnemyUnits()[0];
+        currentCellGrid.GameEnded += OnGameEnd;
         // 设置RTSCamera
         RTSCamera = FindObjectOfType<RTS_Camera>();
         RTSCamera.SetTarget(currentPlayer.transform);
