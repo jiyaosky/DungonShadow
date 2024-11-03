@@ -54,6 +54,7 @@ public class SkillManager : MonoBehaviour
 
             changeSkill.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() =>
             {
+                //Debug.Log("Setting Skills");
                 skill.Activate();
              });
 
@@ -70,6 +71,5 @@ public class SkillManager : MonoBehaviour
 
         else return;
     }
-
 
 }
