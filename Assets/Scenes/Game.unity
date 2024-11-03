@@ -122,6 +122,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &526644276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3794904448400175034, guid: 83304d973bd44ed42bf4114c782232d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1437007647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &526644278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2223506257886389258, guid: 83304d973bd44ed42bf4114c782232d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1437007647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526644276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ef9f15728c66c49919e5fe3f48372c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &620858123
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +249,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3206712195863631716, guid: 9f7afa2872c950b4091c30a314be23a0,
+        type: 3}
+      propertyPath: shopPanel
+      value: 
+      objectReference: {fileID: 526644276}
+    - target: {fileID: 3206712195863631716, guid: 9f7afa2872c950b4091c30a314be23a0,
+        type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 526644278}
     - target: {fileID: 6707358395612972269, guid: 9f7afa2872c950b4091c30a314be23a0,
         type: 3}
       propertyPath: m_Name
@@ -592,6 +620,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8103976202406989888, guid: c89efde9e81847c4fa49d137f69abf0e,
+        type: 3}
+      propertyPath: shopPanel
+      value: 
+      objectReference: {fileID: 526644276}
+    - target: {fileID: 8103976202406989888, guid: c89efde9e81847c4fa49d137f69abf0e,
+        type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 526644278}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5067543632263510293, guid: c89efde9e81847c4fa49d137f69abf0e, type: 3}
