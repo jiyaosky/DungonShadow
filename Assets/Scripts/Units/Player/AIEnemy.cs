@@ -25,8 +25,15 @@ namespace TbsFramework.Units
         public override void Initialize()
         {
             // playerAnimator = GetComponentInChildren<Animator>();
+            var _cellGrid = FindObjectOfType<CellGrid>();
+            _cellGrid.AIGetEnemyUnits()[0].UnitMoved += OnUnitMoved;
             SetNewCurrentForward();
             base.Initialize();
+        }
+
+        private void OnUnitMoved(object sender, MovementEventArgs e)
+        {
+            CheckAISight();
         }
 
         public void SetNewCurrentForward()

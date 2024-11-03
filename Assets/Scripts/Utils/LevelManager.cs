@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
         // 开始游戏吧
         currentCellGrid.InitializeAndStart();
         currentPlayer = currentCellGrid.AIGetEnemyUnits()[0];
+        (currentPlayer as RealPlayer).PlayerAttackAbility.SetCurrentAttackAbility(weapon);
         
         // 设置RTSCamera
         RTSCamera = FindObjectOfType<RTS_Camera>();
