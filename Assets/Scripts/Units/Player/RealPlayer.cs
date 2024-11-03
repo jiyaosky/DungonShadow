@@ -312,7 +312,11 @@ namespace TbsFramework.Units
 
         public void Update()
         {
-            UpdateApBar();
+            var apBarCanvas = transform.Find("APCanvas");
+            var apBar = apBarCanvas.Find("Text");
+            var text = apBar.GetComponent<TextMeshProUGUI>();
+            text.text = currentActionPoints.ToString();
+
             health.text = (HitPoints + "/" + TotalHitPoints);
         }
 
