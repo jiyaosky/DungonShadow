@@ -33,7 +33,7 @@ namespace TbsFramework
 
         public int totalRound = 10;
 
-        void Awake()
+        public void InitializeLevel()
         {
             CellGrid.LevelLoading += OnLevelLoading;
             CellGrid.LevelLoadingDone += OnLevelLoadingDone;
