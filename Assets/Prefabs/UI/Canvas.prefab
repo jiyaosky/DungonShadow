@@ -2258,8 +2258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog_box: {fileID: 2481812186562476803}
-  messagePanel: {fileID: 0}
-  messagePopUp: {fileID: 0}
 --- !u!1 &983990097793069241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,7 +2593,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u4E22\u51FA\u82E6\u65E0\uFF0C\u4F7F\u4E00\u4E2A\u654C\u4EBA\u53D7\u5230\u7B49\u540C\u4E8E\u81EA\u8EAB\u6697\u6740\u529B\u7684\u4F24\u5BB3"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3814,7 +3812,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u589E\u52A0\u6700\u5927\u751F\u547D\u503C\u4E0A\u9650"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4439,7 +4437,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u8FDB\u5165\u72C2\u66B4\uFF0C\u672C\u56DE\u5408\u79FB\u9664\u653B\u51FB\u7684CD"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4996,8 +4994,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog_box: {fileID: 2684098634993811426}
-  messagePanel: {fileID: 0}
-  messagePopUp: {fileID: 0}
 --- !u!1 &2684098634993811426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5217,14 +5213,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TbsFramework.Units.Abilities.PlayerAttackAbility,
-          Assembly-CSharp
-        m_MethodName: SetCurrentAttackAbility
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: InstantiateLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7837,14 +7832,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TbsFramework.Units.Abilities.PlayerAttackAbility,
-          Assembly-CSharp
-        m_MethodName: SetCurrentAttackAbility
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: InstantiateLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9667,7 +9661,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u589E\u52A0\u89C6\u91CE\u8303\u56F4"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10810,7 +10804,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u589E\u52A0\u6700\u5927AP\u4E0A\u9650\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -12886,14 +12880,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TbsFramework.Units.Abilities.PlayerAttackAbility,
-          Assembly-CSharp
-        m_MethodName: SetCurrentAttackAbility
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: InstantiateLevel
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -15008,7 +15001,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u672C\u56DE\u5408\u83B7\u5F97\u7A7F\u900F\u89C6\u91CE\uFF0C\u5E76\u4F7F\u89C6\u91CE+1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16026,8 +16019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog_box: {fileID: 8498290994485915954}
-  messagePanel: {fileID: 0}
-  messagePopUp: {fileID: 0}
 --- !u!1 &7460735650943022199
 GameObject:
   m_ObjectHideFlags: 0
@@ -16229,7 +16220,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5BF9\u5468\u56F4\u4E00\u4E2A\u6240\u6709\u654C\u4EBA\u9020\u6210\u7B49\u540C\u4E8E\u653B\u51FB\u529B\u6570\u503C\u7684\u4F24\u5BB3"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -17063,7 +17054,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5BF9\u4E00\u4E2A\u654C\u4EBA\u9020\u6210\u4F24\u5BB3\u5E76\u5C06\u5176\u51FB\u9000"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -18126,7 +18117,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5B9A\u8EAB\u4E00\u4E2A\u654C\u4EBA\uFF0C\u4F7F\u5176\u4E0B\u56DE\u5408\u65E0\u6CD5\u79FB\u52A8"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -19537,7 +19528,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u672C\u56DE\u5408AP\u589E\u52A0\uFF0C\u4F46\u65E0\u6CD5\u8FDB\u653B\u51FB"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

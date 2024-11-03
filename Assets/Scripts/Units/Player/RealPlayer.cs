@@ -279,8 +279,9 @@ namespace TbsFramework.Units
             {
                 var text = apBar.GetComponent<TextMeshProUGUI>();
                 text.text = currentActionPoints.ToString();
-                // apBar.LookAt(FindObjectOfType<RTS_Camera>().transform);
-                // apBarCanvas.LookAt(FindObjectOfType<RTS_Camera>().transform);
+
+                //apBar.LookAt(FindObjectOfType<RTS_Camera>().transform);
+                //apBarCanvas.LookAt(FindObjectOfType<RTS_Camera>().transform);
             }
         }
 
