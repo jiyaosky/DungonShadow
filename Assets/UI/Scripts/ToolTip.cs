@@ -20,8 +20,6 @@ public class ToolTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField]
     public TextMeshProUGUI CD_info;
 
-    public int AP;
-    public int CD;
     public int price;
 
 

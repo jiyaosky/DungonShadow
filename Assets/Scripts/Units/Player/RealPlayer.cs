@@ -44,7 +44,6 @@ namespace TbsFramework.Units
         public InteractionAbility InteractionAbility { get; set; }
         // 移动能力
         public PlayerMoveAbility MovementAbility { get; set; }
-
         // 选择的技能
         public Ability SelectedAbility;
         // 设置选择的技能
@@ -53,6 +52,14 @@ namespace TbsFramework.Units
             SelectedAbility = ability;
         }
         
+        //信息提示
+        public GameObject messageCanvas;
+        private MessageMove messageMove;
+
+        //读取一下文本更新脚本
+        void Awake() {
+            messageMove = messageCanvas.GetComponent<MessageMove>();
+        }
         // 
         
         // <summary>
@@ -141,11 +148,23 @@ namespace TbsFramework.Units
         protected override AttackAction DealDamage(Unit unitToAttack, int cost)
         {
             var damage = currentAttackFactor;
+
+            messageMove.LoadMessage("攻击!");
+            messageMove.RunMoveUp();
+
             if (IsBehindAnotherUnit(unitToAttack))
             {
-                Debug.Log("刺杀");
+                //Debug.Log("刺杀");
+
+
                 damage = currentAttackFactor + currentAssassinationPower;
             }
+
+
+            //消息提示
+            
+
+
             return new AttackAction(damage, PlayerAttackAbility.AbilityCost);
         }
 
@@ -289,6 +308,8 @@ namespace TbsFramework.Units
         {
             UpdateApBar();
         }
+
+
 
         //UI Dectection
         public static bool IsPointerOverUIObject()

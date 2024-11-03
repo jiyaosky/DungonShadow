@@ -61,6 +61,8 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI messagePopUp;
 
+    public GameObject SkillPanel;
+
     //record shop pool
     List<int> skillPool;
 
@@ -75,7 +77,7 @@ public class ShopManager : MonoBehaviour
         //allSkills = GameObject.FindChild("Canvas/AbilitySet");
         //allSkills = GameObject.Find("Units/Thief/Canvas/AbilitySelect/Panel");
 
-        skillManager = GameObject.Find("Canvas/ActionPanel/SkillManager").GetComponent<SkillManager>();
+        skillManager = SkillPanel.GetComponent<SkillManager>();
         goldController = goldManager.GetComponent<GoldController>();
 
 
@@ -130,6 +132,7 @@ public class ShopManager : MonoBehaviour
         });
 
         Refresh();
+        Refresh();
 
     }
 
@@ -137,7 +140,10 @@ public class ShopManager : MonoBehaviour
 
         Clear();
 
+        if (skillPool != null) {
+        
         skillSize = skillPool.Count;
+
         relicSize = allRelics.transform.childCount;
 
         //Randomly select three skill
@@ -195,6 +201,10 @@ public class ShopManager : MonoBehaviour
         buyButton1.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + allSkills.transform.GetChild(index1).GetComponent<ToolTip>().getPrice();
         buyButton2.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + allSkills.transform.GetChild(index2).GetComponent<ToolTip>().getPrice();
         buyButton3.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "" + allSkills.transform.GetChild(index3).GetComponent<ToolTip>().getPrice();
+
+
+
+        Debug.Log("PlayerGold" + goldController.GetValue(0));
 
         //Set buy button
         buyButton1.onClick.AddListener(() => {
@@ -287,29 +297,40 @@ public class ShopManager : MonoBehaviour
 
         relic1.transform.position = relicSlot1.transform.position;
         relic2.transform.position = relicSlot2.transform.position;
+
+        }
     }
 
 
     public void Clear() {
 
-        if (index1 != null && skillPool.Contains(index1) == true)
+        if (index1 != null && skillPool != null && skillPool.Contains(index1) == true)
         {
             allSkills.transform.GetChild(index1).gameObject.SetActive(false);
         }
 
-        if (index2 != null && skillPool.Contains(index2) == true)
+        if (index2 != null && skillPool != null && skillPool.Contains(index2) == true)
         {
             allSkills.transform.GetChild(index2).gameObject.SetActive(false);
         }
 
-        if (index3 != null && skillPool.Contains(index3) == true)
+        if (index3 != null && skillPool != null && skillPool.Contains(index3) == true)
         {
             allSkills.transform.GetChild(index3).gameObject.SetActive(false);
         }
 
-        buyButton1.onClick.RemoveAllListeners();
-        buyButton2.onClick.RemoveAllListeners();
-        buyButton3.onClick.RemoveAllListeners();
+
+        if (buyButton1 != null) {
+            buyButton1.onClick.RemoveAllListeners();
+        }
+
+        if (buyButton2 != null) {
+            buyButton2.onClick.RemoveAllListeners();
+        }
+
+        if (buyButton3 != null) {
+            buyButton3.onClick.RemoveAllListeners();
+        }
 
         if (relic1 != null) {
             relic1.SetActive(false);

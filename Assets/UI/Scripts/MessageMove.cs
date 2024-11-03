@@ -14,8 +14,10 @@ public class MessageMove : MonoBehaviour
 
     void Awake()
     {
-        originalPosition = messagePanelText.gameObject.transform.position;
-        LoadMessage("Test Message Moving Up");
+        //originalPosition = messagePanelText.gameObject.transform.position;
+        //Debug.Log("1 time" + originalPosition.x + "," + originalPosition.y + "," + originalPosition.z);
+        originalPosition = new Vector3 (587, 316, 0);
+        LoadMessage("ÓÎÏ·¿ªÊ¼");
         RunMoveUp();
     }
 
@@ -23,8 +25,9 @@ public class MessageMove : MonoBehaviour
     public void LoadMessage(string text) {
         messagePanelText.text = text;
         messagePanelText.gameObject.SetActive(true);
-        messagePanelText.gameObject.transform.position = originalPosition;
-
+        //Debug.Log("2 time" + originalPosition.x + "," + originalPosition.y + "," + originalPosition.z);
+        messagePanelText.gameObject.transform.position = new Vector3 (587, 316, 0);
+        //Debug.Log("message position" + messagePanelText.gameObject.transform.position.x + "," + messagePanelText.gameObject.transform.position.y + "," + messagePanelText.gameObject.transform.position.z);
     }
     
 
@@ -32,8 +35,8 @@ public class MessageMove : MonoBehaviour
         {
             for (float i = 0; i <= 1.2; i += Time.deltaTime)
             {
-                    // set color with i as alpha
                     messagePanelText.gameObject.transform.position = new Vector3(messagePanelText.gameObject.transform.position.x, messagePanelText.gameObject.transform.position.y + i/2, messagePanelText.gameObject.transform.position.z);
+                    //Debug.Log("2 time" + messagePanelText.gameObject.transform.position.x + "," + messagePanelText.gameObject.transform.position.y + "," + messagePanelText.gameObject.transform.position.z);
                     yield return null;
             }
 
