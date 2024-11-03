@@ -855,8 +855,9 @@ MonoBehaviour:
   - {fileID: 737594399}
   RTSCamera: {fileID: 0}
   currentPlayer: {fileID: 0}
-  weaponIndex: 0
   UIController: {fileID: 620858126}
+  weaponIndex: 0
+  BuffList: []
   currentCellGrid: {fileID: 0}
 --- !u!114 &1888806822 stripped
 MonoBehaviour:
