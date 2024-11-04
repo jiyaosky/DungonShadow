@@ -33,7 +33,10 @@ namespace TbsFramework.Units
         
 
         //血量信息
-        public TextMeshProUGUI health; 
+        public TextMeshProUGUI health;
+
+        //end panel
+        public GameObject endScreen;
 
         // 当前暗杀力
         [SerializeField]
@@ -321,6 +324,10 @@ namespace TbsFramework.Units
 
 
             health.text = (HitPoints + "/" + TotalHitPoints);
+
+            if (HitPoints == 0) {
+                endScreen.SetActive(true);
+            }
         }
 
 
