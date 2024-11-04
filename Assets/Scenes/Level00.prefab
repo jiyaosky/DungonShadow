@@ -42088,6 +42088,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
+      propertyPath: DestoryCoins
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
       propertyPath: AICellEndCell
       value: 
       objectReference: {fileID: 551943986158159524}
@@ -43249,6 +43254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: HitPoints
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: DestoryCoins
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
@@ -46350,6 +46360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: HitPoints
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: DestoryCoins
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
@@ -49722,6 +49737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: HitPoints
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: DestoryCoins
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}
@@ -59049,6 +59069,11 @@ PrefabInstance:
         type: 3}
       propertyPath: AttackFactor
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
+        type: 3}
+      propertyPath: DestoryCoins
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5909405147549306574, guid: 0329a5050d59c354eaf1a90716a196a5,
         type: 3}

@@ -224,9 +224,14 @@ namespace TbsFramework.Units
             base.OnTurnStart();
         }
 
+        public int DestoryCoins = 1;
         protected override void OnDestroyed()
         {
             var _cellGrid = FindObjectOfType<CellGrid>();
+            var goldController = FindObjectOfType<GoldController>();
+            goldController.UpdateValue(0,DestoryCoins);
+            
+            
             _cellGrid.AIGetEnemyUnits()[0].UnitMoved -= OnUnitMoved;
             base.OnDestroyed();
         }
