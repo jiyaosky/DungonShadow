@@ -251,7 +251,7 @@ MonoBehaviour:
   GameEnd: {fileID: 274079581}
   turnCountText: {fileID: 493589134}
   currentRound: 0
-  totalRound: 10
+  totalRound: 30
 --- !u!1001 &737594397
 PrefabInstance:
   m_ObjectHideFlags: 0

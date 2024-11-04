@@ -156,7 +156,14 @@ namespace TbsFramework.Units
                 AITargetCell = startCell;
             }
             moveAbility.OnAbilitySelected(FindObjectOfType<CellGrid>());
-            moveAbility.Destination = CalculatePatrolPath(AITargetCell)[0];
+            if (CalculatePatrolPath(AITargetCell) == null)
+            {
+                moveAbility.Destination = startCell;
+            }
+            else
+            {
+                moveAbility.Destination = CalculatePatrolPath(AITargetCell)[0];
+            }
             StartCoroutine(moveAbility.Act(FindObjectOfType<CellGrid>(), false));
         }
 

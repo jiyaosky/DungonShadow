@@ -33,7 +33,7 @@ namespace TbsFramework
 
         public int currentRound = 0;
 
-        public int totalRound = 10;
+        public int totalRound = 30;
 
         public void InitializeLevel()
         {
