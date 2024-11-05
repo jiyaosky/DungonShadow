@@ -95,16 +95,16 @@ namespace TbsFramework.Units.Abilities
         {
             if (CanPerform(cellGrid) && Player.IsUnitAttackable(UnitToAttack, Player.Cell))
             {
-                // 根据选择的攻击方式调整攻击力和攻击范围
-                // TODO:
-                // int adjustedAttackFactor = Player.GetCurrentAttackFactor() + attackFactorBonuses[(int)SelectedAttackType];
-                // int adjustedAttackRange = attackRanges[(int)SelectedAttackType];
-
-                // 执行攻击
+                
                 Player.AttackHandler(UnitToAttack, AbilityCost);
                 yield return new WaitForSeconds(0.5f);
             }
             yield return null;
+        }
+
+        public void QTEAction()
+        {
+            
         }
         // 需要选择Attack攻击
         // public Button buttonAttackAbility; 
@@ -200,17 +200,10 @@ namespace TbsFramework.Units.Abilities
             return actionParameters;
         }
 
-        // public override IEnumerator Apply(CellGrid cellGrid, IDictionary<string, string> actionParams, bool isNetworkInvoked = false)
-        // {
-        //     var targetID = int.Parse(actionParams["target_id"]);
-        //     var target = cellGrid.Units.Find(u => u.UnitID == targetID);
-
-        //     UnitToAttack = target;
-        //     UnitToAttackID = targetID;
-        //     // TODO:
-        //     SelectedAttackType = (AttackType)int.Parse(actionParams["attack_type"]);
-        //     yield return StartCoroutine(RemoteExecute(cellGrid));
-        // }
+        public void ActWeaponAttack()
+        {
+            
+        }
         
     }
 }
